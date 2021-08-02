@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1360.0" stylesheets="@../../lib/css/bms-system.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.AppHome.LoginController">
+   <children>
+      <AnchorPane prefHeight="768.0" prefWidth="1360.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane prefHeight="468.0" prefWidth="1360.0" styleClass="system-background" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+            <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="300.0" prefWidth="1360.0" styleClass="system-background-theme" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+         </children>
+      </AnchorPane>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="748.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="5.0" width="1340.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e3e3e3" height="460.0" stroke="#4d0024" strokeType="INSIDE" strokeWidth="5.0" width="1340.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+      <ImageView fitHeight="420.0" fitWidth="1401.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="298.0" AnchorPane.leftAnchor="80.0" AnchorPane.topAnchor="50.0">
+         <image>
+            <Image url="@../../lib/img/cover.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="420.0" fitWidth="1401.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" rotate="-180.0" AnchorPane.leftAnchor="80.0" AnchorPane.topAnchor="298.0">
+         <image>
+            <Image url="@../../lib/img/cover.png" />
+         </image>
+      </ImageView>
+      <AnchorPane prefHeight="500.0" prefWidth="760.0" styleClass="system-fore-ground" AnchorPane.bottomAnchor="134.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="134.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="480.0" layoutX="151.0" layoutY="112.0" stroke="#4d0024" strokeType="INSIDE" strokeWidth="5.0" width="740.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
+            <ImageView fitHeight="161.0" fitWidth="153.0" layoutX="304.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="304.0" AnchorPane.rightAnchor="303.0">
+               <image>
+                  <Image url="@../../lib/img/haivy-icon.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="165.0" layoutY="195.0" text="HAIVY PASTRY SHOP" textFill="#4d0024" AnchorPane.leftAnchor="165.0" AnchorPane.rightAnchor="166.0">
+               <font>
+                  <Font name="Calibri Bold" size="50.0" />
+               </font>
+            </Label>
+            <Label layoutX="192.0" layoutY="258.0" text="BAKERY MANAGEMENT SYSTEM" AnchorPane.leftAnchor="192.0" AnchorPane.rightAnchor="191.0">
+               <font>
+                  <Font name="Calibri Bold" size="28.0" />
+               </font>
+            </Label>
+            <TextField layoutX="190.0" layoutY="305.0" prefHeight="35.0" prefWidth="380.0" promptText="Enter Username" AnchorPane.leftAnchor="190.0" AnchorPane.rightAnchor="190.0" />
+            <PasswordField layoutX="190.0" layoutY="346.0" prefHeight="35.0" prefWidth="380.0" promptText="Enter Password" AnchorPane.leftAnchor="190.0" AnchorPane.rightAnchor="190.0" />
+            <JFXButton layoutX="205.0" layoutY="418.0" prefHeight="40.0" prefWidth="185.0" style="-fx-border-color: #4d0024; -fx-border-radius: 5;" styleClass="default-button-color-scheme1" text="LOGIN" textFill="WHITE" AnchorPane.leftAnchor="190.0">
+               <font>
+                  <Font name="Calibri Bold" size="19.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="423.0" layoutY="417.0" prefHeight="40.0" prefWidth="185.0" style="-fx-border-color: #4d0024; -fx-border-radius: 5;" styleClass="default-button-color-scheme2" text="CLEAR" AnchorPane.rightAnchor="190.0">
+               <font>
+                  <Font name="Calibri Bold" size="19.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

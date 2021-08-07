@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="730.0" prefWidth="1355.0" styleClass="system-background-theme" stylesheets="@../../lib/css/bms-system.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.InventoryManagement.ItemStockController">
+   <children>
+      <AnchorPane prefHeight="30.0" prefWidth="1355.0" styleClass="system-background" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <MenuBar nodeOrientation="LEFT_TO_RIGHT" prefHeight="30.0" prefWidth="800.0" styleClass="system-background" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="2.0">
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Close" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Inventory">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Stock Items" />
+                        <MenuItem mnemonicParsing="false" text="Bakery Items" />
+                        <MenuItem mnemonicParsing="false" text="Agency Products" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Suppliers">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="About" />
+                  </items>
+                </Menu>
+                  <Menu mnemonicParsing="false" text="Employee">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="About" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Finance &amp; Statistics">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="About" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="System Users">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="About" />
+                     </items>
+                  </Menu>
+              </menus>
+            </MenuBar>
+            <MenuButton fx:id="OptionMenuButton" layoutX="1251.0" layoutY="4.0" mnemonicParsing="false" styleClass="system-background" text="My Account" AnchorPane.bottomAnchor="3.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="4.0">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#adminPanel" text="Admin Panel" />
+                <MenuItem mnemonicParsing="false" onAction="#cashierPanel" text="Cashier Panel" />
+                  <MenuItem mnemonicParsing="false" onAction="#supervisorPanel" text="Supervisor Panel" />
+                  <MenuItem mnemonicParsing="false" onAction="#logoutSession" text="Logout" />
+              </items>
+            </MenuButton>
+            <Label fx:id="sessionUser" alignment="CENTER_RIGHT" layoutX="1221.0" layoutY="8.0" prefHeight="17.0" prefWidth="343.0" text="User" AnchorPane.rightAnchor="110.0" AnchorPane.topAnchor="8.0">
+               <graphic>
+                  <FontAwesomeIconView glyphName="USER" size="14.0" />
+               </graphic>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="70.0" prefWidth="1355.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="34.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="70.0" layoutX="32.0" layoutY="-65.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="5.0" width="1351.0" AnchorPane.leftAnchor="2.0" AnchorPane.topAnchor="0.0" />
+            <Label layoutX="523.0" layoutY="4.0" text="HAIVY PASTRY SHOP" textFill="WHITE" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="500.0" AnchorPane.topAnchor="4.0">
+               <font>
+                  <Font name="Calibri" size="55.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="422.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="5.0" AnchorPane.topAnchor="5.0">
+               <image>
+                  <Image url="@../../lib/img/haivy-head-icon%2060x60.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="624.0" prefWidth="1355.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="106.0">
+         <children>
+            <AnchorPane prefHeight="40.0" prefWidth="1351.0" styleClass="system-background" AnchorPane.bottomAnchor="584.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <HBox prefHeight="40.0" prefWidth="1351.0" spacing="5.0" AnchorPane.rightAnchor="2.0">
+                     <children>
+                        <JFXButton prefHeight="30.0" prefWidth="150.0" style="-fx-border-radius: 10;" styleClass="default-selected-button-color-scheme1" text="STOCK ITEMS" textFill="WHITE">
+                           <font>
+                              <Font name="Calibri Bold" size="13.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </JFXButton>
+                        <JFXButton prefHeight="30.0" prefWidth="150.0" style="-fx-border-radius: 10;" styleClass="default-button-color-scheme1" text="BAKERY ITEMS" textFill="WHITE">
+                           <font>
+                              <Font name="Calibri Bold" size="13.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton prefHeight="30.0" prefWidth="150.0" style="-fx-border-radius: 10;" styleClass="default-button-color-scheme1" text="AGENCY PRODUCTS" textFill="WHITE">
+                           <font>
+                              <Font name="Calibri Bold" size="13.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="584.0" prefWidth="1351.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="580.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="5.0" width="1351.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0" />
+                  <AnchorPane layoutX="69.0" layoutY="69.0" prefHeight="564.0" prefWidth="200.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+                     <children>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="564.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="5.0" width="198.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <ImageView fitHeight="178.0" fitWidth="522.0" layoutX="-162.0" layoutY="197.0" pickOnBounds="true" rotate="-90.0" AnchorPane.leftAnchor="-162.0" AnchorPane.rightAnchor="-160.0" AnchorPane.topAnchor="197.0">
+                           <image>
+                              <Image url="@../../lib/img/cover.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="1151.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="210.0" AnchorPane.topAnchor="10.0">
+                     <children>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="564.0" layoutX="141.0" layoutY="82.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="5.0" width="1133.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

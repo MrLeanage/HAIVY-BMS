@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="730.0" prefWidth="1355.0" styleClass="system-background-theme" stylesheets="@../../lib/css/bms-system.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.FinanceManagement.BillingController">
+   <children>
+      <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="30.0" prefWidth="1355.0" styleClass="system-background" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <MenuBar nodeOrientation="LEFT_TO_RIGHT" prefHeight="30.0" prefWidth="800.0" styleClass="system-background" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="2.0">
+               <menus>
+                  <Menu mnemonicParsing="false" text="File">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Exit" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Sales Info">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Exit" />
+                     </items>
+                  </Menu>
+               </menus>
+            </MenuBar>
+            <MenuButton fx:id="OptionMenuButton" layoutX="1251.0" layoutY="4.0" mnemonicParsing="false" styleClass="system-background" text="My Account" AnchorPane.bottomAnchor="3.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="4.0">
+               <items>
+                  <MenuItem fx:id="AdminPanelMenuItem" mnemonicParsing="false" onAction="#adminPanel" text="Admin Panel" />
+                  <MenuItem fx:id="CashierPanelMenuItem" mnemonicParsing="false" onAction="#cashierPanel" text="Cashier Panel" />
+                  <MenuItem fx:id="SupervisorPanelMenuItem" mnemonicParsing="false" onAction="#supervisorPanel" text="Supervisor Panel" />
+                  <MenuItem mnemonicParsing="false" onAction="#logoutSession" text="Logout" />
+               </items>
+            </MenuButton>
+            <Label fx:id="sessionUser" alignment="CENTER_RIGHT" layoutX="1221.0" layoutY="8.0" prefHeight="17.0" prefWidth="343.0" text="User" AnchorPane.rightAnchor="110.0" AnchorPane.topAnchor="8.0">
+               <graphic>
+                  <FontAwesomeIconView glyphName="USER" size="14.0" />
+               </graphic>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="70.0" prefWidth="1355.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="34.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="70.0" layoutX="32.0" layoutY="-65.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="5.0" width="1351.0" AnchorPane.leftAnchor="2.0" AnchorPane.topAnchor="0.0" />
+            <Label layoutX="523.0" layoutY="4.0" text="HAIVY PASTRY SHOP" textFill="WHITE" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="500.0" AnchorPane.topAnchor="4.0">
+               <font>
+                  <Font name="Calibri" size="55.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="422.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="5.0" AnchorPane.topAnchor="5.0">
+               <image>
+                  <Image url="@../../lib/img/haivy-head-icon%2060x60.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

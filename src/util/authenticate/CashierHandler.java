@@ -33,6 +33,15 @@ public class CashierHandler {
         }
 
     }
+    public void loadBilling(AnchorPane rootpane){
+        try{
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("/view/FinanceManagement/Billing.fxml"));
+            rootpane.getChildren().setAll(pane);
+        }catch(IOException ex){
+            AlertPopUp.generalError(ex);
+        }
+
+    }
     public void loadProducts(AnchorPane rootpane){
         try{
             AnchorPane pane = FXMLLoader.load(getClass().getResource("/view/InventoryManagement/Products.fxml"));

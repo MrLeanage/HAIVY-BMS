@@ -26,6 +26,14 @@ public class SupervisorHandler {
             AlertPopUp.generalError(ex);
         }
     }
+    public void loadItemWithdraw(AnchorPane rootpane){
+        try{
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("/view/InventoryManagement/ItemWithdraw.fxml"));
+            rootpane.getChildren().setAll(pane);
+        }catch(IOException ex){
+            AlertPopUp.generalError(ex);
+        }
+    }
     public void loadWithdrawedItems(AnchorPane rootpane){
         try{
             AnchorPane pane = FXMLLoader.load(getClass().getResource("/view/InventoryManagement/WithdrawedItems.fxml"));

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="624.0" prefWidth="1355.0" styleClass="system-background-theme" stylesheets="@../../lib/css/bms-system.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.InventoryManagement.BakeryProductController">
+   <children>
+      <AnchorPane fx:id="rootpane" layoutX="10.0" layoutY="10.0" prefHeight="624.0" prefWidth="1355.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="620.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="5.0" width="1351.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0" />
+            <AnchorPane layoutX="69.0" layoutY="69.0" prefHeight="564.0" prefWidth="200.0" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="1145.0" AnchorPane.topAnchor="10.0">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="605.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="3.0" width="198.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <ImageView fitHeight="187.0" fitWidth="557.0" layoutX="-181.0" layoutY="229.0" pickOnBounds="true" rotate="-90.0" AnchorPane.leftAnchor="-181.0" AnchorPane.rightAnchor="-176.0" AnchorPane.topAnchor="229.0">
+                     <image>
+                        <Image url="@../../lib/img/cover.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" layoutX="3.0" layoutY="1.0" prefHeight="42.0" prefWidth="193.0" style="-fx-background-color: #ffffff;" text="BAKERY ITEMS" textFill="#8c0000">
+                     <font>
+                        <Font name="Calibri Bold" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="1145.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="210.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0">
+               <children>
+                  <Label alignment="CENTER" layoutX="-3.0" layoutY="580.0" prefHeight="30.0" prefWidth="1135.0" style="-fx-background-color: #ffffff;" text="DEVELOPED BY TECH_LEAD IT SOLUTIONS PVT (LTD) 2021 All rights Reserved " AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="10.0">
+                     <font>
+                        <Font name="Calibri Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <TableView fx:id="BakeryProductsTable" layoutX="7.0" layoutY="40.0" onMousePressed="#loadSelectedData" prefHeight="342.0" prefWidth="1127.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="13.0">
+                     <columns>
+                        <TableColumn fx:id="BPIDColumn" prefWidth="64.00003051757812" text="ID" />
+                        <TableColumn fx:id="BPNameColumn" prefWidth="216.00006103515625" text="Product Name" />
+                        <TableColumn fx:id="BPTypeColumn" prefWidth="122.99993896484375" text="Product Type" />
+                        <TableColumn fx:id="BPWeightPerUnitColumn" prefWidth="112.6666259765625" text="Weight/Unit" />
+                        <TableColumn fx:id="BPDescriptionColumn" prefWidth="348.666748046875" text="Product Description" />
+                        <TableColumn fx:id="BPPriceColumn" prefWidth="97.333251953125" text="Price" />
+                        <TableColumn fx:id="BPStatusColumn" prefWidth="115.6666259765625" text="Production Status" />
+                     </columns>
+                  </TableView>
+                  <TextField fx:id="SearchTextBox" layoutX="14.0" layoutY="8.0" prefHeight="30.0" prefWidth="1080.0" promptText="Search in Here" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="5.0">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="14.0" layoutY="409.0" prefHeight="21.0" prefWidth="127.0" text="Product Name :" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="341.0" layoutY="410.0" prefHeight="21.0" prefWidth="111.0" text="Product Type :" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="648.0" layoutY="410.0" text="Appr Weight :" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="476.0" text="Description :" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="BPNameTextField" layoutX="144.0" layoutY="409.0" prefHeight="25.0" prefWidth="190.0" />
+                  <TextField fx:id="BPWeightTextField" layoutX="773.0" layoutY="410.0" prefHeight="25.0" prefWidth="190.0" promptText="KG/L" />
+                  <JFXButton buttonType="RAISED" layoutX="1005.0" layoutY="434.0" onAction="#addData" prefHeight="40.0" prefWidth="110.0" style="-fx-background-color: f8ea03;" text="Add" AnchorPane.rightAnchor="30.0">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" layoutX="1005.0" layoutY="480.0" onAction="#updateData" prefHeight="40.0" prefWidth="110.0" style="-fx-background-color: f8ea03;" text="Update" AnchorPane.rightAnchor="30.0">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" layoutX="1005.0" layoutY="526.0" onAction="#deleteData" prefHeight="40.0" prefWidth="110.0" style="-fx-background-color: #b8020b;" text="Delete" textFill="WHITE" AnchorPane.rightAnchor="30.0">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" layoutX="1005.0" layoutY="389.0" onAction="#clearFields" prefHeight="40.0" prefWidth="110.0" style="-fx-background-color: #585757;" text="Clear Fields" textFill="WHITE" AnchorPane.rightAnchor="30.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXButton>
+                  <FontAwesomeIconView fill="#182c49" glyphName="SEARCH" layoutX="1112.0" layoutY="29.0" size="20" text="" AnchorPane.topAnchor="8.0" />
+                  <Label fx:id="BPNameLabel" layoutX="14.0" layoutY="436.0" prefHeight="21.0" prefWidth="320.0" textFill="#f8ea03" />
+                  <Label fx:id="BPWeightLabel" layoutX="648.0" layoutY="438.0" prefHeight="21.0" prefWidth="314.0" textFill="#f8ea03" />
+                  <Label fx:id="BPTypeLabel" layoutX="341.0" layoutY="437.0" prefHeight="21.0" prefWidth="298.0" textFill="#f8ea03" />
+                  <Label layoutX="648.0" layoutY="462.0" text="Price :" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="BPPriceTextField" layoutX="774.0" layoutY="463.0" prefHeight="25.0" prefWidth="190.0" />
+                  <Label fx:id="BPPriceLabel" layoutX="649.0" layoutY="491.0" prefHeight="21.0" prefWidth="314.0" textFill="#f8ea03" />
+                  <TextArea fx:id="BPDescriptionTextArea" layoutX="142.0" layoutY="473.0" prefHeight="72.0" prefWidth="497.0" />
+                  <ChoiceBox fx:id="BPTypeChoiceBox" layoutX="449.0" layoutY="410.0" prefHeight="25.0" prefWidth="190.0" />
+                  <Label fx:id="BPDescriptionLabel" layoutX="13.0" layoutY="550.0" prefHeight="21.0" prefWidth="625.0" textFill="#f8ea03" />
+                  <Label layoutX="648.0" layoutY="513.0" text="Status :" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <ChoiceBox fx:id="BPStatusChoiceBox" layoutX="773.0" layoutY="515.0" prefHeight="25.0" prefWidth="190.0" />
+                  <Label fx:id="BPStatusLabel" layoutX="664.0" layoutY="561.0" prefHeight="21.0" prefWidth="314.0" textFill="#f8ea03" />
+                  <Label fx:id="BPStatusLabel" layoutX="649.0" layoutY="544.0" prefHeight="21.0" prefWidth="314.0" textFill="#f8ea03" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

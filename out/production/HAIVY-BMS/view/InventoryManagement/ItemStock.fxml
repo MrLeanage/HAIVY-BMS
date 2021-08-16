@@ -1,130 +1,150 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuButton?>
-<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="730.0" prefWidth="1355.0" styleClass="system-background-theme" stylesheets="@../../lib/css/bms-system.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.InventoryManagement.ItemStockController">
-   <children>
-      <AnchorPane prefHeight="106.0" prefWidth="1355.0" AnchorPane.bottomAnchor="624.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <children>
-            <AnchorPane prefHeight="30.0" prefWidth="1355.0" styleClass="system-background" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-               <children>
-                  <MenuBar nodeOrientation="LEFT_TO_RIGHT" prefHeight="30.0" prefWidth="800.0" styleClass="system-background" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="2.0">
-                    <menus>
-                      <Menu mnemonicParsing="false" text="File">
-                        <items>
-                          <MenuItem mnemonicParsing="false" text="Close" />
-                        </items>
-                      </Menu>
-                      <Menu mnemonicParsing="false" text="Inventory">
-                        <items>
-                          <MenuItem mnemonicParsing="false" text="Stock Items" />
-                              <MenuItem mnemonicParsing="false" text="Bakery Items" />
-                              <MenuItem mnemonicParsing="false" text="Agency Products" />
-                        </items>
-                      </Menu>
-                      <Menu mnemonicParsing="false" text="Suppliers">
-                        <items>
-                          <MenuItem mnemonicParsing="false" text="About" />
-                        </items>
-                      </Menu>
-                        <Menu mnemonicParsing="false" text="Employee">
-                           <items>
-                              <MenuItem mnemonicParsing="false" text="About" />
-                           </items>
-                        </Menu>
-                        <Menu mnemonicParsing="false" text="Finance &amp; Statistics">
-                           <items>
-                              <MenuItem mnemonicParsing="false" text="About" />
-                           </items>
-                        </Menu>
-                        <Menu mnemonicParsing="false" text="System Users">
-                           <items>
-                              <MenuItem mnemonicParsing="false" text="About" />
-                           </items>
-                        </Menu>
-                    </menus>
-                  </MenuBar>
-                  <MenuButton fx:id="OptionMenuButton" layoutX="1251.0" layoutY="4.0" mnemonicParsing="false" styleClass="system-background" text="My Account" AnchorPane.bottomAnchor="3.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="4.0">
-                    <items>
-                      <MenuItem mnemonicParsing="false" onAction="#adminPanel" text="Admin Panel" />
-                      <MenuItem mnemonicParsing="false" onAction="#cashierPanel" text="Cashier Panel" />
-                        <MenuItem mnemonicParsing="false" onAction="#supervisorPanel" text="Supervisor Panel" />
-                        <MenuItem mnemonicParsing="false" onAction="#logoutSession" text="Logout" />
-                    </items>
-                  </MenuButton>
-                  <Label fx:id="sessionUser" alignment="CENTER_RIGHT" layoutX="889.0" layoutY="8.0" prefHeight="17.0" prefWidth="343.0" text="User" AnchorPane.rightAnchor="123.0" AnchorPane.topAnchor="8.0">
-                     <graphic>
-                        <FontAwesomeIconView glyphName="USER" size="14.0" />
-                     </graphic>
-                  </Label>
-               </children>
-            </AnchorPane>
-            <AnchorPane prefHeight="70.0" prefWidth="1355.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="34.0">
-               <children>
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="70.0" layoutX="32.0" layoutY="-65.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="5.0" visible="false" width="1351.0" AnchorPane.leftAnchor="2.0" AnchorPane.topAnchor="0.0" />
-                  <Label layoutX="92.0" layoutY="7.0" text="HAIVY PASTRY SHOP" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="92.0" AnchorPane.topAnchor="7.0">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="624.0" prefWidth="1355.0" styleClass="system-background-theme" stylesheets="@../../lib/css/bms-system.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.InventoryManagement.ItemStockController">
+    <children>
+        <AnchorPane fx:id="rootpane" layoutX="10.0" layoutY="10.0" prefHeight="624.0" prefWidth="1355.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="620.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="5.0" width="1351.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0" />
+                <AnchorPane layoutX="69.0" layoutY="69.0" prefHeight="564.0" prefWidth="200.0" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="1145.0" AnchorPane.topAnchor="10.0">
+                    <children>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="605.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="3.0" width="198.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <ImageView fitHeight="187.0" fitWidth="557.0" layoutX="-181.0" layoutY="229.0" pickOnBounds="true" rotate="-90.0" AnchorPane.leftAnchor="-181.0" AnchorPane.rightAnchor="-176.0" AnchorPane.topAnchor="229.0">
+                            <image>
+                                <Image url="@../../lib/img/cover.png" />
+                            </image>
+                        </ImageView>
+                        <Label alignment="CENTER" layoutX="3.0" layoutY="1.0" prefHeight="42.0" prefWidth="193.0" style="-fx-background-color: #ffffff;" text="STOCK ITEMS" textFill="#8c0000">
+                            <font>
+                                <Font name="Calibri Bold" size="20.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </AnchorPane>
+                <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="1145.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="210.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0">
+                    <children>
+                        <Label alignment="CENTER" layoutX="-3.0" layoutY="580.0" prefHeight="30.0" prefWidth="1135.0" style="-fx-background-color: #ffffff;" text="DEVELOPED BY TECH_LEAD IT SOLUTIONS PVT (LTD) 2021 All rights Reserved " AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="10.0">
+                            <font>
+                                <Font name="Calibri Bold" size="12.0" />
+                            </font>
+                        </Label>
+                  <TableView fx:id="ItemStockTable" layoutX="5.0" layoutY="41.0" onMouseClicked="#loadSelectedModelData" onMousePressed="#loadSelectedData" prefHeight="315.0" prefWidth="1125.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="41.0">
+                     <columns>
+                        <TableColumn fx:id="IIDColumn" prefWidth="64.00003051757812" text="IID" />
+                        <TableColumn fx:id="INameColumn" prefWidth="128.0" text="Items Name" />
+                        <TableColumn fx:id="ISIIDColumn" prefWidth="49.888916015625" text="SID" />
+                        <TableColumn fx:id="ISISupplierNameColumn" prefWidth="160.3333740234375" text="Supplier Name" />
+                        <TableColumn fx:id="IUnitsPerBlockColumn" prefWidth="69.11114501953125" text="Units/Block" />
+                        <TableColumn fx:id="IBlocksColumn" prefWidth="45.55548095703125" text="Blocks" />
+                        <TableColumn fx:id="IWeightPerUnitColumn" prefWidth="81.22216796875" text="Weight/Unit" />
+                        <TableColumn fx:id="IBuyingPriceColumn" prefWidth="81.22216796875" text="Buying Price" />
+                        <TableColumn fx:id="IExpireDateColumn" prefWidth="74.22222900390625" text="Expire Date" />
+                        <TableColumn fx:id="IAddedDateColumn" prefWidth="80.555419921875" text="Added Date" />
+                        <TableColumn fx:id="IMinQuantityColumn" prefWidth="59.7777099609375" text="Min Qty " />
+                        <TableColumn fx:id="IAvailableQuantityColumn" prefWidth="88.0" text="Available Qty" />
+                        <TableColumn fx:id="IStatusColumn" prefWidth="92.0" text="Status" />
+                     </columns>
+                  </TableView>
+                  <TextField fx:id="SearchTextBox" layoutX="33.0" layoutY="14.0" prefHeight="30.0" prefWidth="1125.0" promptText="Search in Here" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="5.0">
                      <font>
-                        <Font name="Calibri" size="55.0" />
+                        <Font size="13.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="29.0" layoutY="391.0" prefHeight="21.0" prefWidth="127.0" text="Item Name :" textFill="WHITE" AnchorPane.leftAnchor="20.0">
+                     <font>
+                        <Font size="15.0" />
                      </font>
                   </Label>
-                  <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="14.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="2.0" AnchorPane.topAnchor="8.0">
-                     <image>
-                        <Image url="@../../lib/img/haivy-head-icon%2060x60.png" />
-                     </image>
-                  </ImageView>
-                  <Label alignment="CENTER_RIGHT" layoutX="1169.0" layoutY="10.0" prefHeight="28.0" prefWidth="257.0" text="20th August 2021" textFill="WHITE" AnchorPane.rightAnchor="11.0">
+                  <Label layoutX="354.0" layoutY="500.0" text="Select Supplier :" textFill="WHITE">
                      <font>
-                        <Font name="Calibri Bold" size="24.0" />
+                        <Font size="15.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER_RIGHT" layoutX="1171.0" layoutY="39.0" prefHeight="28.0" prefWidth="172.0" text="8.59 AM" textFill="WHITE">
+                  <Label layoutX="354.0" layoutY="391.0" prefHeight="21.0" prefWidth="111.0" text="Units per Block :" textFill="WHITE">
                      <font>
-                        <Font name="Calibri Bold" size="22.0" />
+                        <Font size="15.0" />
                      </font>
                   </Label>
-               </children>
-            </AnchorPane>
-         </children>
-      </AnchorPane>
-      <AnchorPane prefHeight="624.0" prefWidth="1355.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="106.0">
-         <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="620.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="5.0" width="1351.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0" />
-            <AnchorPane layoutX="69.0" layoutY="69.0" prefHeight="564.0" prefWidth="200.0" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="1145.0" AnchorPane.topAnchor="10.0">
-               <children>
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="605.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="3.0" width="198.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                  <ImageView fitHeight="187.0" fitWidth="557.0" layoutX="-181.0" layoutY="229.0" pickOnBounds="true" rotate="-90.0" AnchorPane.leftAnchor="-181.0" AnchorPane.rightAnchor="-176.0" AnchorPane.topAnchor="229.0">
-                     <image>
-                        <Image url="@../../lib/img/cover.png" />
-                     </image>
-                  </ImageView>
-                  <Label alignment="CENTER" layoutX="3.0" layoutY="1.0" prefHeight="42.0" prefWidth="193.0" style="-fx-background-color: #ffffff;" text="STOCK ITEMS" textFill="#8c0000">
+                  <Label layoutX="678.0" layoutY="391.0" text="Blocks :" textFill="WHITE" AnchorPane.leftAnchor="680.0">
                      <font>
-                        <Font name="Calibri Bold" size="20.0" />
+                        <Font size="15.0" />
                      </font>
                   </Label>
-               </children>
-            </AnchorPane>
-            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="1145.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="210.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0">
-               <children>
-                  <Label alignment="CENTER" layoutX="-3.0" layoutY="580.0" prefHeight="30.0" prefWidth="1135.0" style="-fx-background-color: #ffffff;" text="DEVELOPED BY TECH_LEAD IT SOLUTIONS PVT (LTD) 2021 All rights Reserved " AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="10.0">
+                  <Label layoutX="29.0" layoutY="441.0" text="Weight per Unit :" textFill="WHITE" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="445.0">
                      <font>
-                        <Font name="Calibri Bold" size="12.0" />
+                        <Font size="15.0" />
                      </font>
                   </Label>
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="578.0" layoutX="257.0" layoutY="102.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="3.0" width="1135.0" AnchorPane.bottomAnchor="26.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0" />
-               </children>
-            </AnchorPane>
-         </children>
-      </AnchorPane>
-   </children>
+                  <Label layoutX="354.0" layoutY="441.0" text="Buying Price :" textFill="WHITE" AnchorPane.topAnchor="445.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="INameTextField" layoutX="159.0" layoutY="391.0" prefHeight="25.0" prefWidth="200.0" AnchorPane.leftAnchor="145.0" />
+                  <TextField fx:id="IUnitsPerBlockTextField" layoutX="464.0" layoutY="391.0" prefHeight="25.0" prefWidth="200.0" />
+                  <TextField fx:id="IBlocksTextField" layoutX="789.0" layoutY="391.0" prefHeight="25.0" prefWidth="200.0" AnchorPane.rightAnchor="150.0" />
+                  <TextField fx:id="IWeightPerUnitTextField" layoutX="159.0" layoutY="441.0" prefHeight="25.0" prefWidth="200.0" promptText="KG/L" AnchorPane.leftAnchor="145.0" AnchorPane.topAnchor="445.0" />
+                  <TextField fx:id="IBuyingPriceTextField" layoutX="464.0" layoutY="441.0" prefHeight="25.0" prefWidth="200.0" AnchorPane.rightAnchor="481.0" AnchorPane.topAnchor="445.0" />
+                  <JFXButton buttonType="RAISED" layoutX="1009.0" layoutY="417.0" onAction="#addData" prefHeight="40.0" prefWidth="110.0" style="-fx-background-color: f8ea03;" text="Add" AnchorPane.rightAnchor="26.0">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" layoutX="1009.0" layoutY="469.0" onAction="#updateData" prefHeight="40.0" prefWidth="110.0" style="-fx-background-color: f8ea03;" text="Update" AnchorPane.rightAnchor="26.0">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" layoutX="1009.0" layoutY="523.0" onAction="#deleteData" prefHeight="40.0" prefWidth="110.0" style="-fx-background-color: #b8020b;" text="Delete" textFill="WHITE" AnchorPane.rightAnchor="26.0">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" layoutX="1009.0" layoutY="365.0" onAction="#clearFields" prefHeight="40.0" prefWidth="110.0" style="-fx-background-color: #585757;" text="Clear Fields" textFill="WHITE" AnchorPane.rightAnchor="26.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXButton>
+                  <Label layoutX="20.0" layoutY="500.0" text="Expire Date :" textFill="WHITE" AnchorPane.leftAnchor="20.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <FontAwesomeIconView fill="#182c49" glyphName="SEARCH" layoutX="1109.0" layoutY="26.0" size="20" text="" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="10.0" />
+                  <DatePicker fx:id="IExpireDateDatePicker" editable="false" layoutX="145.0" layoutY="500.0" prefHeight="25.0" prefWidth="200.0" showWeekNumbers="true" AnchorPane.leftAnchor="145.0" />
+                  <TextField fx:id="ISupplierNameTextField" editable="false" layoutX="534.0" layoutY="500.0" prefHeight="25.0" prefWidth="130.0" promptText="Supplier Name" AnchorPane.rightAnchor="481.0" />
+                  <Button fx:id="ISelectSupplierButton" layoutX="679.0" layoutY="500.0" mnemonicParsing="false" onAction="#selectSupplier" text="Browse" />
+                  <Label fx:id="INameLabel" layoutX="29.0" layoutY="418.0" prefHeight="21.0" prefWidth="315.0" textFill="#f8ea03" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="420.0" />
+                  <Label fx:id="IBlocksLabel" layoutX="678.0" layoutY="418.0" prefHeight="21.0" prefWidth="314.0" textFill="#f8ea03" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="420.0" />
+                  <Label fx:id="IUnitsPerBlockLabel" layoutX="355.0" layoutY="418.0" prefHeight="21.0" prefWidth="315.0" textFill="#f8ea03" AnchorPane.rightAnchor="475.0" AnchorPane.topAnchor="420.0" />
+                  <Label fx:id="IWeightPerUnitLabel" layoutX="20.0" layoutY="475.0" prefHeight="21.0" prefWidth="315.0" textFill="#f8ea03" AnchorPane.leftAnchor="20.0" />
+                  <Label fx:id="IExpireDateLabel" layoutX="20.0" layoutY="527.0" prefHeight="21.0" prefWidth="320.0" textFill="#f8ea03" AnchorPane.leftAnchor="20.0" />
+                  <Label fx:id="ISupplierNameLabel" layoutX="355.0" layoutY="527.0" prefHeight="21.0" prefWidth="315.0" textFill="#f8ea03" />
+                  <Label fx:id="IBuyingPriceLabel" layoutX="355.0" layoutY="475.0" prefHeight="21.0" prefWidth="315.0" textFill="#f8ea03" />
+                  <TextField fx:id="ISupplierIDTextField" editable="false" layoutX="464.0" layoutY="500.0" prefHeight="25.0" prefWidth="65.0" promptText="ID" AnchorPane.leftAnchor="464.0" />
+                  <Label layoutX="679.0" layoutY="442.0" text="Min Qty Limit :" textFill="WHITE" AnchorPane.leftAnchor="680.0" AnchorPane.topAnchor="445.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="IMinQuantityLimitTextField" layoutX="789.0" layoutY="442.0" prefHeight="25.0" prefWidth="200.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="445.0" />
+                  <Label fx:id="IMinQuantityLimitLabel" layoutX="681.0" layoutY="476.0" prefHeight="21.0" prefWidth="314.0" textFill="#f8ea03" AnchorPane.rightAnchor="150.0" />
+                    </children>
+                </AnchorPane>
+            </children>
+        </AnchorPane>
+    </children>
 </AnchorPane>

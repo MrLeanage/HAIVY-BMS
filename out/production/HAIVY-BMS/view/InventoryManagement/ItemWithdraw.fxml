@@ -1,58 +1,121 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuButton?>
-<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="730.0" prefWidth="1355.0" styleClass="system-background-theme" stylesheets="@../../lib/css/bms-system.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.InventoryManagement.ItemWithdrawController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="624.0" prefWidth="1355.0" styleClass="system-background-theme" stylesheets="@../../lib/css/bms-system.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.InventoryManagement.ItemWithdrawController">
    <children>
-      <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="30.0" prefWidth="1355.0" styleClass="system-background" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane fx:id="rootpane" layoutX="10.0" layoutY="10.0" prefHeight="624.0" prefWidth="1355.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <MenuBar nodeOrientation="LEFT_TO_RIGHT" prefHeight="30.0" prefWidth="800.0" styleClass="system-background" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="2.0">
-               <menus>
-                  <Menu mnemonicParsing="false" text="File">
-                     <items>
-                        <MenuItem mnemonicParsing="false" text="Exit" />
-                     </items>
-                  </Menu>
-               </menus>
-            </MenuBar>
-            <MenuButton fx:id="OptionMenuButton" layoutX="1251.0" layoutY="4.0" mnemonicParsing="false" styleClass="system-background" text="My Account" AnchorPane.bottomAnchor="3.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="4.0">
-               <items>
-                  <MenuItem fx:id="AdminPanelMenuItem" mnemonicParsing="false" onAction="#adminPanel" text="Admin Panel" />
-                  <MenuItem fx:id="CashierPanelMenuItem" mnemonicParsing="false" onAction="#cashierPanel" text="Cashier Panel" />
-                  <MenuItem fx:id="SupervisorPanelMenuItem" mnemonicParsing="false" onAction="#supervisorPanel" text="Supervisor Panel" />
-                  <MenuItem mnemonicParsing="false" onAction="#logoutSession" text="Logout" />
-               </items>
-            </MenuButton>
-            <Label fx:id="sessionUser" alignment="CENTER_RIGHT" layoutX="1221.0" layoutY="8.0" prefHeight="17.0" prefWidth="343.0" text="User" AnchorPane.rightAnchor="110.0" AnchorPane.topAnchor="8.0">
-               <graphic>
-                  <FontAwesomeIconView glyphName="USER" size="14.0" />
-               </graphic>
-            </Label>
-         </children>
-      </AnchorPane>
-      <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="70.0" prefWidth="1355.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="34.0">
-         <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="70.0" layoutX="32.0" layoutY="-65.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="5.0" width="1351.0" AnchorPane.leftAnchor="2.0" AnchorPane.topAnchor="0.0" />
-            <Label layoutX="523.0" layoutY="4.0" text="HAIVY PASTRY SHOP" textFill="WHITE" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="500.0" AnchorPane.topAnchor="4.0">
-               <font>
-                  <Font name="Calibri" size="55.0" />
-               </font>
-            </Label>
-            <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="422.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="5.0" AnchorPane.topAnchor="5.0">
-               <image>
-                  <Image url="@../../lib/img/haivy-head-icon%2060x60.png" />
-               </image>
-            </ImageView>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="620.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="5.0" width="1351.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0" />
+            <AnchorPane layoutX="69.0" layoutY="69.0" prefHeight="564.0" prefWidth="200.0" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="1145.0" AnchorPane.topAnchor="10.0">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="605.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="3.0" width="198.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <ImageView fitHeight="187.0" fitWidth="557.0" layoutX="-181.0" layoutY="229.0" pickOnBounds="true" rotate="-90.0" AnchorPane.leftAnchor="-181.0" AnchorPane.rightAnchor="-176.0" AnchorPane.topAnchor="229.0">
+                     <image>
+                        <Image url="@../../lib/img/cover.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" layoutX="3.0" layoutY="1.0" prefHeight="42.0" prefWidth="193.0" style="-fx-background-color: #ffffff;" text="Food Processing Cart" textFill="#8c0000">
+                     <font>
+                        <Font name="Calibri Bold" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="1145.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="210.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0">
+               <children>
+                  <Label alignment="CENTER" layoutX="-3.0" layoutY="580.0" prefHeight="30.0" prefWidth="1135.0" style="-fx-background-color: #ffffff;" text="DEVELOPED BY TECH_LEAD IT SOLUTIONS PVT (LTD) 2021 All rights Reserved " AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="10.0">
+                     <font>
+                        <Font name="Calibri Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <TableView fx:id="WithdrawTable" layoutX="14.0" layoutY="16.0" prefHeight="504.0" prefWidth="625.0" stylesheets="@../../lib/css/pms-ui.css" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0">
+                     <columns>
+                        <TableColumn fx:id="WIDColumn" prefWidth="34.000030517578125" text=" ID" />
+                        <TableColumn fx:id="WNameColumn" prefWidth="172.0" text="Item Name" />
+                        <TableColumn fx:id="WDescriptionColumn" minWidth="0.0" prefWidth="197.0" text="Withdraw Description" />
+                        <TableColumn fx:id="WWeightColumn" prefWidth="48.0" text="Weight" />
+                        <TableColumn fx:id="WQuantityColumn" prefWidth="42.0" text="Qty" />
+                        <TableColumn fx:id="WActionColumn" prefWidth="130.0" text="Action" />
+                     </columns>
+                  </TableView>
+                  <TextField fx:id="SearchTextBox" layoutX="637.0" layoutY="15.0" prefHeight="25.0" prefWidth="471.0" promptText="Search in Here" AnchorPane.leftAnchor="635.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="5.0" />
+                  <Label layoutX="718.0" layoutY="332.0" prefHeight="21.0" prefWidth="158.0" text="Item Name : " textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="718.0" layoutY="446.0" text="Withdraw Description :" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="718.0" layoutY="397.0" text="Withdrawing Quantity :" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <JFXButton buttonType="RAISED" layoutX="875.0" layoutY="525.0" onAction="#addDataToCart" prefHeight="37.0" prefWidth="244.0" style="-fx-background-color: f8ea03;" text="Add to Food Processing Cart" AnchorPane.rightAnchor="47.0">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" layoutX="730.0" layoutY="525.0" onAction="#clearFields" prefHeight="37.0" prefWidth="110.0" style="-fx-background-color: #585757;" text="Clear Fields" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXButton>
+                  <Label layoutX="718.0" layoutY="299.0" prefHeight="17.0" prefWidth="171.0" text="Item Code ID : " textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <TextArea fx:id="IWDescriptionTextArea" layoutX="897.0" layoutY="444.0" prefHeight="56.0" prefWidth="200.0" AnchorPane.rightAnchor="47.0" />
+                  <Label layoutX="718.0" layoutY="365.0" text="Weight of Quantity :" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="IWeightTextBox" editable="false" layoutX="898.0" layoutY="363.0" prefHeight="25.0" prefWidth="200.0" AnchorPane.rightAnchor="47.0" />
+                  <JFXButton buttonType="RAISED" layoutX="386.0" layoutY="523.0" onAction="#withdrawItemList" prefHeight="37.0" prefWidth="244.0" style="-fx-background-color: f8ea03;" text="Withdraw Item List">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" layoutX="260.0" layoutY="523.0" onMouseClicked="#clearCart" prefHeight="37.0" prefWidth="110.0" style="-fx-background-color: #585757;" text="Clear Cart" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXButton>
+                  <TextField fx:id="INameTextBox" editable="false" layoutX="898.0" layoutY="330.0" prefHeight="25.0" prefWidth="200.0" AnchorPane.rightAnchor="47.0" />
+                  <TextField fx:id="IIDTextBox" editable="false" layoutX="898.0" layoutY="297.0" prefHeight="25.0" prefWidth="200.0" AnchorPane.rightAnchor="47.0" />
+                  <FontAwesomeIconView glyphName="SEARCH" layoutX="1077.0" layoutY="26.0" size="20" text="" />
+                  <TableView fx:id="ItemTable" layoutX="635.0" layoutY="36.0" onMouseClicked="#loadSelectedData" onMousePressed="#loadSelectedDataModel" prefHeight="245.0" prefWidth="472.0" AnchorPane.leftAnchor="635.0" AnchorPane.rightAnchor="13.0">
+                     <columns>
+                        <TableColumn fx:id="IIDColumn" prefWidth="75.0" text="ID" />
+                        <TableColumn fx:id="INameColumn" prefWidth="176.00006103515625" text="Item Name" />
+                        <TableColumn fx:id="IWeightColumn" prefWidth="54.99993896484375" text="Weight" />
+                        <TableColumn fx:id="IQuantityColumn" prefWidth="80.33349609375" text="Available Qty" />
+                        <TableColumn fx:id="IStatusColumn" prefWidth="86.0" text="Status" />
+                     </columns>
+                  </TableView>
+                  <Label fx:id="IQuantityLabel" layoutX="716.0" layoutY="425.0" prefHeight="17.0" prefWidth="380.0" textFill="#f8ea03" />
+                  <Label fx:id="IDescriptionLabel" layoutX="717.0" layoutY="502.0" prefHeight="17.0" prefWidth="381.0" textFill="#f8ea03" />
+                  <Spinner fx:id="IQuantitySpinner" layoutX="898.0" layoutY="397.0" prefHeight="25.0" prefWidth="200.0" AnchorPane.rightAnchor="47.0" />
+               </children>
+            </AnchorPane>
          </children>
       </AnchorPane>
    </children>

@@ -91,7 +91,7 @@ public class UserAuthentication {
         //Notification notification = new Notification();
         if(userSession.getuType().equals("Admin")){
             try {
-                AnchorPane home_page = (AnchorPane) FXMLLoader.load(getClass().getResource("/view/InventoryManagement/ItemStock.fxml"));
+                AnchorPane home_page = (AnchorPane) FXMLLoader.load(getClass().getResource("/view/AppHome/adminBase.fxml"));
 
                 Scene scene = new Scene(home_page);
                 Stage app=(Stage)((Node) actionEvent.getSource()).getScene().getWindow();
@@ -103,7 +103,7 @@ public class UserAuthentication {
         }else if(userSession.getuType().equals("Supervisor")){
             setCurrentAdminType("default");
             try {
-                AnchorPane home_page = (AnchorPane) FXMLLoader.load(getClass().getResource("/view/InventoryManagement/ItemWithdraw.fxml"));
+                AnchorPane home_page = (AnchorPane) FXMLLoader.load(getClass().getResource("/view/AppHome/supervisorBase.fxml"));
 
                 Scene scene = new Scene(home_page);
                 Stage app=(Stage)((Node) actionEvent.getSource()).getScene().getWindow();
@@ -118,7 +118,7 @@ public class UserAuthentication {
         }else if(userSession.getuType().equals("Cashier")){
             setCurrentAdminType("default");
             try {
-                AnchorPane home_page = (AnchorPane) FXMLLoader.load(getClass().getResource("/view/FinanceManagement/Billing.fxml"));
+                AnchorPane home_page = (AnchorPane) FXMLLoader.load(getClass().getResource("/view/AppHome/cashierBase.fxml"));
 
                 Scene scene = new Scene(home_page);
                 Stage app=(Stage)((Node) actionEvent.getSource()).getScene().getWindow();
@@ -135,7 +135,7 @@ public class UserAuthentication {
         setCurrentAdminType(userSession.getuType());
         //Notification notification = new Notification();
         try {
-            AnchorPane home_page = (AnchorPane) FXMLLoader.load(getClass().getResource("/view/FinanceManagement/Billing.fxml"));
+            AnchorPane home_page = (AnchorPane) FXMLLoader.load(getClass().getResource("/view/AppHome/cashierBase.fxml"));
 
             Scene scene = new Scene(home_page);
             Stage app = (Stage) menuButton.getScene().getWindow();;
@@ -151,7 +151,7 @@ public class UserAuthentication {
         setCurrentAdminType(userSession.getuType());
         //Notification notification = new Notification();
         try {
-            AnchorPane home_page = (AnchorPane) FXMLLoader.load(getClass().getResource("/view/InventoryManagement/ItemWithdraw.fxml"));
+            AnchorPane home_page = (AnchorPane) FXMLLoader.load(getClass().getResource("/view/AppHome/supervisorBase.fxml"));
 
             Scene scene = new Scene(home_page);
             Stage app = (Stage) menuButton.getScene().getWindow();;
@@ -167,7 +167,7 @@ public class UserAuthentication {
         setCurrentAdminType(userSession.getuType());
         //Notification notification = new Notification();
         try {
-            AnchorPane home_page = (AnchorPane) FXMLLoader.load(getClass().getResource("/view/InventoryManagement/ItemStock.fxml"));
+            AnchorPane home_page = (AnchorPane) FXMLLoader.load(getClass().getResource("/view/AppHome/adminBase.fxml"));
 
             Scene scene = new Scene(home_page);
             Stage app = (Stage) menuButton.getScene().getWindow();

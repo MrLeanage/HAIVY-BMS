@@ -9,6 +9,15 @@ import java.io.IOException;
 public class InventoryHandler {
     public InventoryHandler() {
     }
+    public void loadStockItems(AnchorPane rootpane){
+        try{
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("/view/InventoryManagement/ItemStock.fxml"));
+            rootpane.getChildren().setAll(pane);
+        }catch(IOException ex){
+            AlertPopUp.generalError(ex);
+        }
+    }
+
     public void loadBakeryProducts(AnchorPane rootpane){
         try{
             AnchorPane pane = FXMLLoader.load(getClass().getResource("/view/InventoryManagement/BakeryProducts.fxml"));

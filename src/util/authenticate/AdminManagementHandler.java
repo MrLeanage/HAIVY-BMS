@@ -55,41 +55,50 @@ public class AdminManagementHandler {
             AlertPopUp.generalError(ex);
         }
     }
-
-    public void loadSalesCounter(ActionEvent actionEvent){
-        try {
-            AnchorPane home_page = (AnchorPane) FXMLLoader.load(getClass().getResource("/view/FinanceManagement/SalesCounterAdmin.fxml"));
-
-            Scene scene = new Scene(home_page);
-            Stage app=(Stage)((Node) actionEvent.getSource()).getScene().getWindow();
-            app.setScene(scene);
-            app.show();
-        } catch (IOException ex) {
+    public void loadEmployeeAccount(AnchorPane rootpane){
+        try{
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("/view/EmployeeManagement/Employee.fxml"));
+            rootpane.getChildren().setAll(pane);
+        }catch(IOException ex){
+            AlertPopUp.generalError(ex);
+            System.out.println(ex);
+        }
+    }
+    public void loadSalaryScheme(AnchorPane rootpane){
+        try{
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("/view/EmployeeManagement/SalarySchemes.fxml"));
+            rootpane.getChildren().setAll(pane);
+        }catch(IOException ex){
             AlertPopUp.generalError(ex);
         }
     }
-    public void loadOrderStatus(ActionEvent actionEvent){
-        try {
-            AnchorPane home_page = (AnchorPane) FXMLLoader.load(getClass().getResource("/view/OrderManagement/OrdersStatusAdmin.fxml"));
-
-            Scene scene = new Scene(home_page);
-            Stage app=(Stage)((Node) actionEvent.getSource()).getScene().getWindow();
-            app.setScene(scene);
-            app.show();
-        } catch (IOException ex) {
+    public void loadAllowance(AnchorPane rootpane){
+        try{
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("/view/EmployeeManagement/Allowances.fxml"));
+            rootpane.getChildren().setAll(pane);
+        }catch(IOException ex){
             System.out.println(ex);
             AlertPopUp.generalError(ex);
         }
     }
-    public void loadEmployees(ActionEvent actionEvent){
-        try {
-            AnchorPane home_page = (AnchorPane) FXMLLoader.load(getClass().getResource("/view/EmployeeManagement/Employee.fxml"));
-
-            Scene scene = new Scene(home_page);
-            Stage app=(Stage)((Node) actionEvent.getSource()).getScene().getWindow();
-            app.setScene(scene);
-            app.show();
-        } catch (IOException ex) {
+    /**
+     * Admin Order Management
+     */
+    public void loadOrderMenu(AnchorPane rootpane){
+        try{
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("/view/OrderManagement/OrdersMenuAdmin.fxml"));
+            rootpane.getChildren().setAll(pane);
+        }catch(IOException ex){
+            System.out.println(ex);
+            AlertPopUp.generalError(ex);
+        }
+    }
+    public void loadOrderStatus(AnchorPane rootpane){
+        try{
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("/view/OrderManagement/OrdersStatusAdmin.fxml"));
+            rootpane.getChildren().setAll(pane);
+        }catch(IOException ex){
+            System.out.println(ex);
             AlertPopUp.generalError(ex);
         }
     }

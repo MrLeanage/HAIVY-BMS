@@ -25,9 +25,22 @@
                               <MenuItem mnemonicParsing="false" text="Exit" />
                            </items>
                         </Menu>
-                        <Menu mnemonicParsing="false" text="Sales Info">
+                        <Menu mnemonicParsing="false" text="Finance Management">
                            <items>
-                              <MenuItem mnemonicParsing="false" text="Exit" />
+                              <MenuItem mnemonicParsing="false" onAction="#loadBilling" text="Cashier Billing" />
+                              <MenuItem mnemonicParsing="false" text="Sales Info" />
+                           </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Inventory Management">
+                           <items>
+                              <MenuItem mnemonicParsing="false" text="Products" />
+                           </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Order Management">
+                           <items>
+                              <MenuItem mnemonicParsing="false" onAction="#loadNewOrder" text="Place New Order" />
+                              <MenuItem mnemonicParsing="false" onAction="#loadOrderMenu" text="Order Menu" />
+                              <MenuItem mnemonicParsing="false" onAction="#loadOrderStatus" text="Order Status" />
                            </items>
                         </Menu>
                      </menus>
@@ -60,12 +73,12 @@
                         <Image url="@../../lib/img/haivy-head-icon%2060x60.png" />
                      </image>
                   </ImageView>
-                  <Label alignment="CENTER_RIGHT" layoutX="1169.0" layoutY="10.0" prefHeight="28.0" prefWidth="257.0" text="20th August 2021" textFill="WHITE" AnchorPane.rightAnchor="11.0">
+                  <Label fx:id="systemDateLabel" alignment="CENTER_RIGHT" layoutX="1169.0" layoutY="10.0" prefHeight="28.0" prefWidth="450.0" text="20th August 2021" textFill="WHITE" AnchorPane.rightAnchor="11.0">
                      <font>
                         <Font name="Calibri Bold" size="24.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER_RIGHT" layoutX="1171.0" layoutY="39.0" prefHeight="28.0" prefWidth="172.0" text="8.59 AM" textFill="WHITE">
+                  <Label fx:id="systemTimeLabel" alignment="CENTER_RIGHT" layoutX="1171.0" layoutY="39.0" prefHeight="28.0" prefWidth="400.0" text="8.59 AM" textFill="WHITE" AnchorPane.rightAnchor="11.0">
                      <font>
                         <Font name="Calibri Bold" size="22.0" />
                      </font>

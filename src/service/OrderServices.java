@@ -22,14 +22,15 @@ public class OrderServices {
 
 
 
-    private ObservableList<Order> ordersData;
+
     public  ObservableList<Order> loadData(){
         OrderMenu orderMenuData ;
         OrderMenuServices orderMenuServices = new OrderMenuServices();
         PreparedStatement psLoadOrder = null;
+        ObservableList<Order> ordersData = FXCollections.observableArrayList();
         try {
             Connection conn = DBConnection.getDBConnection();
-            ordersData = FXCollections.observableArrayList();
+
             ResultSet rsLoadOrder = conn.createStatement().executeQuery(OrderQueries.LOAD_ORDER_DATA_QUERY);
 
             while (rsLoadOrder.next()) {
@@ -46,9 +47,10 @@ public class OrderServices {
         OrderMenu orderMenuData ;
         OrderMenuServices orderMenuServices = new OrderMenuServices();
         PreparedStatement psLoadOrder = null;
+        ObservableList<Order> ordersData = FXCollections.observableArrayList();
         try {
             Connection conn = DBConnection.getDBConnection();
-            ordersData = FXCollections.observableArrayList();
+
             psLoadOrder = conn.prepareStatement(OrderQueries.LOAD_ORDER_DATA_BY_PAYMENT_QUERY);
             psLoadOrder.setString(1, paymentStatusNotEqual);
             ResultSet rsLoadOrder = psLoadOrder.executeQuery();
@@ -68,9 +70,10 @@ public class OrderServices {
         OrderMenuServices orderMenuServices = new OrderMenuServices();
         PreparedStatement psLoadOrder = null;
         ResultSet rsLoadOrder = null;
+        ObservableList<Order> ordersData = FXCollections.observableArrayList();
         try {
             Connection conn = DBConnection.getDBConnection();
-            ordersData = FXCollections.observableArrayList();
+
             psLoadOrder = conn.prepareStatement(OrderQueries.LOAD_ORDER_DATA_WITH_STATUS_QUERY);
             psLoadOrder.setString(1, sortQuery);
             rsLoadOrder = psLoadOrder.executeQuery();
@@ -83,14 +86,6 @@ public class OrderServices {
         } catch (SQLException ex) {
             AlertPopUp.sqlQueryError(ex);
         }
-        finally {
-            try{
-                psLoadOrder.close();
-                rsLoadOrder.close();
-            }catch(SQLException ex){
-                AlertPopUp.sqlQueryError(ex);
-            }
-        }
         return ordersData;
     }
     public  ObservableList<Order> loadData(String  processQuery, String notPayQuery) throws SQLException {
@@ -98,9 +93,10 @@ public class OrderServices {
         OrderMenuServices orderMenuServices = new OrderMenuServices();
         PreparedStatement psLoadOrder = null;
         ResultSet rsLoadOrder = null;
+        ObservableList<Order> ordersData = FXCollections.observableArrayList();
         try {
             Connection conn = DBConnection.getDBConnection();
-            ordersData = FXCollections.observableArrayList();
+
             psLoadOrder = conn.prepareStatement(OrderQueries.LOAD_ORDER_PENDING_QUERY);
             psLoadOrder.setString(1, processQuery);
             psLoadOrder.setString(2, notPayQuery);
@@ -114,10 +110,6 @@ public class OrderServices {
         } catch (SQLException ex) {
             AlertPopUp.sqlQueryError(ex);
         }
-        finally {
-            psLoadOrder.close();
-            rsLoadOrder.close();
-        }
         return ordersData;
     }
     public Order loadSpecificData(int oID){
@@ -125,7 +117,7 @@ public class OrderServices {
         PreparedStatement psSpecificOrderData;
         try {
             Connection conn = DBConnection.getDBConnection();
-            ordersData = FXCollections.observableArrayList();
+
             psSpecificOrderData = conn.prepareStatement(OrderQueries.LOAD_SPECIFIC_ORDER_DATA_QUERY);
             psSpecificOrderData.setInt(1, oID);
             ResultSet rsLoadOrder = psSpecificOrderData.executeQuery();
@@ -175,7 +167,7 @@ public class OrderServices {
             psOrder.setString(9, order.getoCustomerPhone());
             psOrder.setString(10,order.getoTakenDate());
             psOrder.setString(11,order.getoTakenTime());
-            psOrder.setInt(12, UtilityMethod.seperateID(order.getoTakenUID()));
+            psOrder.setString(12, order.getoTakenUID());
             psOrder.setString(13,order.getoStatus());
             psOrder.setString(14,order.getoProcessingStatus());
             psOrder.execute();
@@ -184,9 +176,6 @@ public class OrderServices {
 
         } catch (SQLException ex) {
             AlertPopUp.insertionFailed(ex, "Order");
-        }
-        finally{
-            psOrder.close();
         }
         return resultval;
     }
@@ -220,8 +209,6 @@ public class OrderServices {
 
             AlertPopUp.updateFailed(ex, "Order Process ");
 
-        } finally {
-            psOrder.close();
         }
         return resultVal;
     }public boolean updateOrderPayStatus(String id, String status) throws Exception {
@@ -242,8 +229,6 @@ public class OrderServices {
 
             AlertPopUp.updateFailed(ex, "Order Process ");
 
-        } finally {
-            psOrder.close();
         }
         return resultVal;
     }
@@ -267,7 +252,7 @@ public class OrderServices {
             psOrder.setString(9, order.getoCustomerPhone());
             psOrder.setString(10,order.getoTakenDate());
             psOrder.setString(11,order.getoTakenTime());
-            psOrder.setInt(12, UtilityMethod.seperateID(order.getoTakenUID()));
+            psOrder.setString(12, order.getoTakenUID());
 
             psOrder.setString(13,order.getoStatus());
             psOrder.setString(14,order.getoProcessingStatus());
@@ -279,8 +264,6 @@ public class OrderServices {
 
             AlertPopUp.updateFailed(ex, "Order");
 
-        } finally {
-            psOrder.close();
         }
         return resultVal;
     }
@@ -297,8 +280,6 @@ public class OrderServices {
 
         }catch (SQLException ex) {
             AlertPopUp.deleteFailed(ex, "Order");
-        }finally{
-            psOrder.close();
         }
         return resultVal;
     }
@@ -383,9 +364,10 @@ public class OrderServices {
         OrderMenuServices orderMenuServices = new OrderMenuServices();
         PreparedStatement psLoadOrder = null;
         ResultSet rsLoadOrder = null;
+        ObservableList<Order> ordersData = FXCollections.observableArrayList();
         try {
             Connection conn = DBConnection.getDBConnection();
-            ordersData = FXCollections.observableArrayList();
+
             psLoadOrder = conn.prepareStatement(OrderQueries.LOAD_ORDER_PENDING_QUERY);
             psLoadOrder.setString(1, processQuery);
             psLoadOrder.setString(2, notPayQuery);
@@ -398,10 +380,6 @@ public class OrderServices {
             }
         } catch (SQLException ex) {
             AlertPopUp.sqlQueryError(ex);
-        }
-        finally {
-            psLoadOrder.close();
-            rsLoadOrder.close();
         }
         //Wrap the ObservableList in a filtered List (initially display all data)
         FilteredList<Order> filteredData = new FilteredList<>(ordersData, b -> true);
@@ -437,15 +415,16 @@ public class OrderServices {
         SortedList<Order> sortedData = new SortedList<>(filteredData);
         return sortedData;
     }
-    public SortedList<Order> searchTable(TextField searchTextField, String sortQuery) throws SQLException {
+    public SortedList<Order> searchTable(TextField searchTextField, String sortQuery){
         //Retreiving all data from database
         OrderMenu orderMenuData ;
         OrderMenuServices orderMenuServices = new OrderMenuServices();
         PreparedStatement psLoadOrder = null;
         ResultSet rsLoadOrder = null;
+        ObservableList<Order> ordersData = FXCollections.observableArrayList();
         try {
             Connection conn = DBConnection.getDBConnection();
-            ordersData = FXCollections.observableArrayList();
+
             psLoadOrder = conn.prepareStatement(OrderQueries.LOAD_ORDER_DATA_WITH_STATUS_QUERY);
             psLoadOrder.setString(1, sortQuery);
             rsLoadOrder = psLoadOrder.executeQuery();
@@ -457,10 +436,6 @@ public class OrderServices {
             }
         } catch (SQLException ex) {
             AlertPopUp.sqlQueryError(ex);
-        }
-        finally {
-            psLoadOrder.close();
-            rsLoadOrder.close();
         }
         //Wrap the ObservableList in a filtered List (initially display all data)
         FilteredList<Order> filteredData = new FilteredList<>(ordersData, b -> true);

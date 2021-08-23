@@ -19,9 +19,11 @@ import javafx.util.Callback;
 import model.SalesItem;
 import service.BillingServices;
 import service.ProductServices;
+import util.authenticate.AdminManagementHandler;
 import util.authenticate.CashierHandler;
 import util.authenticate.UserAuthentication;
 import util.systemAlerts.AlertPopUp;
+import util.utility.Constant;
 import util.utility.PrintReport;
 import util.utility.UtilityMethod;
 import util.validation.DataValidation;
@@ -112,9 +114,13 @@ public class BillingController implements Initializable {
     @FXML
     private Label OrderPaymentLabel;
 
+    @FXML
+    private Label footerLabel;
+
     private static SalesItem existingSalesItemData;
 
     private LinkedList<SalesItem> salesItemLinkedList = new LinkedList<>();
+
     @FXML
     private AnchorPane rootpane;
 
@@ -125,6 +131,11 @@ public class BillingController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         loadData();
         searchTable();
+        setInitialization();
+    }
+
+    private void setInitialization(){
+        footerLabel.setText(Constant.SYSTEM_FOOTER);
     }
 
     @FXML

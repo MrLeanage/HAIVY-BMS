@@ -7,6 +7,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.MenuButton;
 import javafx.scene.layout.AnchorPane;
 import util.authenticate.*;
+import util.utility.UtilityMethod;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -18,6 +19,13 @@ public class AdminBaseController implements Initializable {
 
     @FXML
     private Label sessionUser;
+
+    @FXML
+    private Label systemDateLabel;
+
+    @FXML
+    private Label systemTimeLabel;
+
 
     @FXML
     private AnchorPane rootpane;
@@ -36,6 +44,8 @@ public class AdminBaseController implements Initializable {
         sessionUser.setText(UserAuthentication.getAuthenticatedSession().getuName());
         AdminManagementHandler adminManagementHandler = new AdminManagementHandler();
         adminManagementHandler.loadStockItems(rootpane);
+        UtilityMethod.getClock(systemTimeLabel);
+        UtilityMethod.getCalendar(systemDateLabel);
     }
     @FXML
     private void logoutSession(ActionEvent event){
@@ -94,5 +104,36 @@ public class AdminBaseController implements Initializable {
         System.out.println("called");
         AdminManagementHandler adminManagementHandler = new AdminManagementHandler();
         adminManagementHandler.loadSystemUsers(rootpane);
+    }
+    /**
+     * Employee Navigation Functions
+     */
+    @FXML
+    void loadEmployeeAccount(ActionEvent event) {
+        AdminManagementHandler adminManagementHandler = new AdminManagementHandler();
+        adminManagementHandler.loadEmployeeAccount(rootpane);
+    }
+    @FXML
+    void loadSalaryScheme(ActionEvent event) {
+        AdminManagementHandler adminManagementHandler = new AdminManagementHandler();
+        adminManagementHandler.loadSalaryScheme(rootpane);
+    }
+    @FXML
+    void loadAllowance(ActionEvent event) {
+        AdminManagementHandler adminManagementHandler = new AdminManagementHandler();
+        adminManagementHandler.loadAllowance(rootpane);
+    }
+    /**
+     * Employee Navigation Functions
+     */
+    @FXML
+    void loadOrderMenu(ActionEvent event) {
+        AdminManagementHandler adminManagementHandler = new AdminManagementHandler();
+        adminManagementHandler.loadOrderMenu(rootpane);
+    }
+    @FXML
+    void loadOrderStatus(ActionEvent event) {
+        AdminManagementHandler adminManagementHandler = new AdminManagementHandler();
+        adminManagementHandler.loadOrderStatus(rootpane);
     }
 }

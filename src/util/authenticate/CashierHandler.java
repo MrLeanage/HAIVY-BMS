@@ -51,7 +51,7 @@ public class CashierHandler {
         }
 
     }
-    public void loadOrder(AnchorPane rootpane){
+    public void loadNewOrder(AnchorPane rootpane){
         try{
             AnchorPane pane = FXMLLoader.load(getClass().getResource("/view/OrderManagement/Orders.fxml"));
             rootpane.getChildren().setAll(pane);

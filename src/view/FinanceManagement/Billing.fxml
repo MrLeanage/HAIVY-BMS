@@ -35,7 +35,7 @@
             </AnchorPane>
             <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="1145.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="210.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0">
                <children>
-                  <Label alignment="CENTER" layoutX="-3.0" layoutY="580.0" prefHeight="30.0" prefWidth="1135.0" style="-fx-background-color: #ffffff;" text="DEVELOPED BY TECH_LEAD IT SOLUTIONS PVT (LTD) 2021 All rights Reserved " AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="10.0">
+                  <Label fx:id="footerLabel" alignment="CENTER" layoutX="-3.0" layoutY="580.0" prefHeight="30.0" prefWidth="1135.0" style="-fx-background-color: #ffffff;" text="DEVELOPED BY TECH_LEAD IT SOLUTIONS PVT (LTD) 2021 All rights Reserved " AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="10.0">
                      <font>
                         <Font name="Calibri Bold" size="12.0" />
                      </font>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTimePicker?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="624.0" prefWidth="1355.0" styleClass="system-background-theme" stylesheets="@../../lib/css/bms-system.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.OrderManagement.OrderController">
+   <children>
+      <AnchorPane fx:id="rootpane" layoutX="10.0" layoutY="10.0" prefHeight="624.0" prefWidth="1355.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="620.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="5.0" width="1351.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0" />
+            <AnchorPane layoutX="69.0" layoutY="69.0" prefHeight="564.0" prefWidth="200.0" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="1145.0" AnchorPane.topAnchor="10.0">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="605.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="3.0" width="198.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <ImageView fitHeight="187.0" fitWidth="557.0" layoutX="-181.0" layoutY="229.0" pickOnBounds="true" rotate="-90.0" AnchorPane.leftAnchor="-181.0" AnchorPane.rightAnchor="-176.0" AnchorPane.topAnchor="229.0">
+                     <image>
+                        <Image url="@../../lib/img/cover.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" layoutX="3.0" layoutY="1.0" prefHeight="42.0" prefWidth="193.0" style="-fx-background-color: #ffffff;" text="ONGOING ORDERS" textFill="#8c0000">
+                     <font>
+                        <Font name="Calibri Bold" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="1145.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="210.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#37001a" height="211.0" layoutX="3.0" layoutY="360.0" stroke="BLACK" strokeType="INSIDE" width="1130.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="360.0" />
+                  <TableView fx:id="OrderTable" layoutX="14.0" layoutY="42.0" onMouseClicked="#loadSelectedModelData" onMousePressed="#loadSelectedData" prefHeight="319.0" prefWidth="1130.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="38.0">
+                     <columns>
+                        <TableColumn fx:id="OIDColumn" prefWidth="64.00003051757812" text="ID" />
+                        <TableColumn fx:id="OCustomerNameColumn" prefWidth="153.33331298828125" text="Customer Name" />
+                        <TableColumn fx:id="OCustomerNICColumn" prefWidth="97.3333740234375" text="Customer NIC" />
+                        <TableColumn fx:id="OTypeColumn" prefWidth="93.888916015625" text="Order Type" />
+                        <TableColumn fx:id="ODetailsColumn" prefWidth="295.111083984375" text="Details" />
+                        <TableColumn fx:id="OQuantityColumn" prefWidth="92.6666259765625" text="Quantity" />
+                        <TableColumn fx:id="OAdvancePayColumn" prefWidth="84.666748046875" text="Advance Pay" />
+                        <TableColumn fx:id="OTotalColumn" prefWidth="109.0" text="Total Amount" />
+                        <TableColumn fx:id="OStatusColumn" prefWidth="135.0" text="Payment Status" />
+                     </columns>
+                  </TableView>
+                  <TextField fx:id="SearchTextBox" layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="728.0" promptText="Search in Here" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="3.0">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </TextField>
+                  <FontAwesomeIconView fill="#182c49" glyphName="SEARCH" layoutX="1110.0" layoutY="23.0" size="20" />
+                  <Label fx:id="footerLabel" alignment="CENTER" layoutX="5.0" layoutY="573.0" prefHeight="30.0" prefWidth="1130.0" style="-fx-background-color: #ffffff;" text="DEVELOPED BY TECH_LEAD IT SOLUTIONS PVT (LTD) 2021 All rights Reserved " AnchorPane.rightAnchor="12.0">
+                     <font>
+                        <Font name="Calibri Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="20.0" layoutY="372.0" text="Select Menu :" textFill="WHITE" AnchorPane.leftAnchor="18.0" AnchorPane.topAnchor="372.0" />
+                  <Label layoutX="270.0" layoutY="380.0" text="Order Type :" textFill="WHITE" AnchorPane.topAnchor="372.0" />
+                  <Label layoutX="507.0" layoutY="380.0" text="Order Details  :" textFill="WHITE" AnchorPane.topAnchor="372.0" />
+                  <Label layoutX="507.0" layoutY="480.0" prefHeight="17.0" prefWidth="83.0" text="Quantity  :" textFill="WHITE" AnchorPane.topAnchor="472.0" />
+                  <Label layoutX="20.0" layoutY="478.0" text="Delivery Date :" textFill="WHITE" AnchorPane.leftAnchor="18.0" AnchorPane.topAnchor="472.0" />
+                  <Label layoutX="270.0" layoutY="478.0" text="Delivery Time :" textFill="WHITE" AnchorPane.topAnchor="472.0" />
+                  <Label layoutX="39.0" layoutY="532.0" text="Customer Name :" textFill="WHITE" AnchorPane.leftAnchor="18.0" AnchorPane.topAnchor="524.0" />
+                  <Label layoutX="271.0" layoutY="525.0" text="Customer NIC :" textFill="WHITE" />
+                  <Label layoutX="507.0" layoutY="525.0" text="Customer Phone :" textFill="WHITE" AnchorPane.topAnchor="525.0" />
+                  <TextField fx:id="OMenuIDTextBox" editable="false" layoutX="114.0" layoutY="372.0" prefHeight="25.0" prefWidth="90.0" AnchorPane.topAnchor="372.0" />
+                  <ChoiceBox fx:id="OTypeChoiceBox" layoutX="353.0" layoutY="380.0" prefWidth="150.0" AnchorPane.topAnchor="372.0" />
+                  <TextArea fx:id="ODetailsTextArea" layoutX="605.0" layoutY="380.0" prefHeight="75.0" prefWidth="240.0" AnchorPane.topAnchor="372.0" />
+                  <TextField fx:id="OQuantityTextBox" layoutX="605.0" layoutY="480.0" prefWidth="240.0" AnchorPane.topAnchor="472.0" />
+                  <DatePicker fx:id="ODeliveryDateDatePicker" layoutX="114.0" layoutY="478.0" prefWidth="150.0" AnchorPane.topAnchor="472.0" />
+                  <JFXTimePicker fx:id="ODeliveryTimeTimePicker" defaultColor="#182c49" layoutX="353.0" layoutY="478.0" prefWidth="150.0" style="-fx-background-color: #ffffff;" AnchorPane.topAnchor="472.0">
+                     <opaqueInsets>
+                        <Insets bottom="5.0" left="20.0" right="5.0" top="5.0" />
+                     </opaqueInsets>
+                  </JFXTimePicker>
+                  <TextField fx:id="OCustomerNameTextBox" layoutX="114.0" layoutY="528.0" prefWidth="150.0" AnchorPane.topAnchor="524.0" />
+                  <TextField fx:id="OCustomerNICTextBox" layoutX="353.0" layoutY="522.0" prefWidth="150.0" AnchorPane.topAnchor="524.0" />
+                  <TextField fx:id="OCustomerPhoneTextBox" layoutX="605.0" layoutY="537.0" prefHeight="25.0" prefWidth="240.0" AnchorPane.topAnchor="524.0" />
+                  <Button layoutX="209.0" layoutY="372.0" mnemonicParsing="false" onAction="#selectOrderMenu" text="Browse" AnchorPane.topAnchor="372.0" />
+                  <JFXButton buttonType="RAISED" layoutX="1015.0" layoutY="417.0" onAction="#addData" prefHeight="40.0" prefWidth="110.0" style="-fx-background-color: f8ea03;" text="Add" AnchorPane.rightAnchor="20.0">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" layoutX="1015.0" layoutY="467.0" onAction="#updateData" prefHeight="40.0" prefWidth="110.0" style="-fx-background-color: f8ea03;" text="Update" AnchorPane.rightAnchor="20.0">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" layoutX="1015.0" layoutY="519.0" onAction="#deleteData" prefHeight="40.0" prefWidth="110.0" style="-fx-background-color: #b8020b;" text="Delete" textFill="WHITE" AnchorPane.rightAnchor="20.0">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" layoutX="942.0" layoutY="367.0" onAction="#clearFields" prefHeight="40.0" prefWidth="110.0" style="-fx-background-color: #585757;" text="Clear Fields" textFill="WHITE" AnchorPane.rightAnchor="20.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXButton>
+                  <Label fx:id="OTypeLabel" layoutX="270.0" layoutY="402.0" prefHeight="17.0" prefWidth="235.0" textFill="#f8ea03" />
+                  <Label fx:id="ODeliveryTimeLabel" layoutX="268.0" layoutY="501.0" prefHeight="17.0" prefWidth="235.0" textFill="#f8ea03" />
+                  <Label fx:id="OCustomerNICLabel" layoutX="269.0" layoutY="551.0" prefHeight="17.0" prefWidth="235.0" textFill="#f8ea03" />
+               </children>
+            </AnchorPane>
+            <Label fx:id="ODeliveryDateLabel" layoutX="230.0" layoutY="512.0" prefHeight="17.0" prefWidth="243.0" textFill="#f8ea03" />
+            <Label fx:id="OCustomerNameLabel" layoutX="230.0" layoutY="563.0" prefHeight="17.0" prefWidth="243.0" textFill="#f8ea03" />
+            <Label fx:id="ODetailsLabel" layoutX="718.0" layoutY="462.0" prefHeight="17.0" prefWidth="338.0" textFill="#f8ea03" />
+            <Label fx:id="OCustomerPhoneLabel" layoutX="720.0" layoutY="561.0" prefHeight="17.0" prefWidth="338.0" textFill="#f8ea03" />
+            <Label fx:id="OQuantityLabel" layoutX="718.0" layoutY="510.0" prefHeight="17.0" prefWidth="337.0" textFill="#f8ea03" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

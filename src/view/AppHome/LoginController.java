@@ -108,5 +108,11 @@ public class LoginController implements Initializable {
         }
     }
 
+    @FXML
+    private void fillData(ActionEvent actionEvent){
+        UIDTextField.setText("administrator");
+        UPasswordPasswordField.setText("123456");
+    }
+
 
 }

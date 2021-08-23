@@ -79,7 +79,7 @@ public class ItemWithdrawServices {
                 psItemWithdraw.setInt(1, UtilityMethod.seperateID(itemWithdraw.getiWIID()));
                 psItemWithdraw.setString(2, itemWithdraw.getiWDescription());
                 psItemWithdraw.setInt(3, itemWithdraw.getiWQuantity());
-                psItemWithdraw.setInt(4, UtilityMethod.seperateID(itemWithdraw.getiWUser()));
+                psItemWithdraw.setString(4, itemWithdraw.getiWUser());
                 psItemWithdraw.setString(5, itemWithdraw.getiWDate());
                 psItemWithdraw.setString(6, itemWithdraw.getiWTime());
 

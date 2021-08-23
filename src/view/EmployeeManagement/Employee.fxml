@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="624.0" prefWidth="1355.0" styleClass="system-background-theme" stylesheets="@../../lib/css/bms-system.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.EmployeeManagement.EmployeeController">
+   <children>
+      <AnchorPane fx:id="rootpane" layoutX="10.0" layoutY="10.0" prefHeight="624.0" prefWidth="1355.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="620.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="5.0" width="1351.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0" />
+            <AnchorPane layoutX="69.0" layoutY="69.0" prefHeight="564.0" prefWidth="200.0" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="1145.0" AnchorPane.topAnchor="10.0">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="605.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="3.0" width="198.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <ImageView fitHeight="187.0" fitWidth="557.0" layoutX="-181.0" layoutY="229.0" pickOnBounds="true" rotate="-90.0" AnchorPane.leftAnchor="-181.0" AnchorPane.rightAnchor="-176.0" AnchorPane.topAnchor="229.0">
+                     <image>
+                        <Image url="@../../lib/img/cover.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" layoutX="3.0" layoutY="1.0" prefHeight="42.0" prefWidth="193.0" style="-fx-background-color: #ffffff;" text="EMPLOYEES" textFill="#8c0000">
+                     <font>
+                        <Font name="Calibri Bold" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="1145.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="210.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#37001a" height="211.0" layoutX="3.0" layoutY="360.0" stroke="BLACK" strokeType="INSIDE" width="1130.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="360.0" />
+                  <TableView fx:id="EmployeeTable" layoutX="14.0" layoutY="42.0" onMouseClicked="#loadSelectedModelData" onMousePressed="#loadSelectedData" prefHeight="319.0" prefWidth="1130.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="38.0">
+                     <columns>
+                        <TableColumn fx:id="EIDColumn" prefWidth="45.000030517578125" text="ID" />
+                        <TableColumn fx:id="ENameColumn" prefWidth="129.0" text="Full Name" />
+                        <TableColumn fx:id="ENICColumn" prefWidth="82.33331298828125" text="NIC" />
+                        <TableColumn fx:id="EAddressColumn" prefWidth="160.66668701171875" text="Address" />
+                        <TableColumn fx:id="EGenderColumn" prefWidth="56.888916015625" text="Gender" />
+                        <TableColumn fx:id="EDOBColumn" prefWidth="67.22222900390625" text="DOB" />
+                        <TableColumn fx:id="ETitleColumn" prefWidth="78.111083984375" text="Titile" />
+                        <TableColumn fx:id="EPhoneColumn" prefWidth="72.77783203125" text="Contact No" />
+                        <TableColumn fx:id="EBankColumn" prefWidth="153.66668701171875" text="Bank" />
+                        <TableColumn fx:id="EAccNoColumn" prefWidth="75.333251953125" text="Acc No" />
+                        <TableColumn fx:id="EBSSIDColumn" prefWidth="76.0" text="BSSID" />
+                        <TableColumn fx:id="EMoreColumn" prefWidth="127.0" text="More" />
+                     </columns>
+                  </TableView>
+                  <TextField fx:id="SearchTextBox" layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="728.0" promptText="Search in Here" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="3.0">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </TextField>
+                  <FontAwesomeIconView fill="#182c49" glyphName="SEARCH" layoutX="1110.0" layoutY="23.0" size="20" />
+                  <JFXButton buttonType="RAISED" layoutX="1017.0" layoutY="419.0" onAction="#addData" prefHeight="40.0" prefWidth="110.0" style="-fx-background-color: f8ea03;" text="Add" AnchorPane.rightAnchor="18.0">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" layoutX="1017.0" layoutY="366.0" onAction="#clearFields" prefHeight="40.0" prefWidth="110.0" style="-fx-background-color: #585757;" text="Clear Fields" textFill="WHITE" AnchorPane.rightAnchor="18.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" layoutX="1017.0" layoutY="472.0" onAction="#updateData" prefHeight="40.0" prefWidth="110.0" style="-fx-background-color: f8ea03;" text="Update" AnchorPane.rightAnchor="18.0">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" layoutX="1018.0" layoutY="525.0" onAction="#deleteData" prefHeight="40.0" prefWidth="110.0" style="-fx-background-color: #b8020b;" text="Delete" textFill="WHITE" AnchorPane.rightAnchor="17.0">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <Label fx:id="footerLabel" alignment="CENTER" layoutX="5.0" layoutY="573.0" prefHeight="30.0" prefWidth="1130.0" style="-fx-background-color: #ffffff;" text="DEVELOPED BY TECH_LEAD IT SOLUTIONS PVT (LTD) 2021 All rights Reserved " AnchorPane.rightAnchor="12.0">
+                     <font>
+                        <Font name="Calibri Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="EGenderLabel1" layoutX="344.0" layoutY="448.0" prefHeight="19.0" prefWidth="269.0" textFill="#f8ea03" />
+                  <Label fx:id="EDOBLabel1" layoutX="623.0" layoutY="448.0" prefHeight="19.0" prefWidth="309.0" textFill="#f8ea03" />
+               </children>
+            </AnchorPane>
+            <Label layoutX="222.0" layoutY="380.0" text="Full Name :" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="222.0" layoutY="430.0" text="Gender :" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="ENameTextBox" layoutX="342.0" layoutY="380.0" prefHeight="25.0" prefWidth="200.0" AnchorPane.topAnchor="380.0" />
+            <TextField fx:id="ENICTextBox" layoutX="622.0" layoutY="389.0" prefWidth="200.0" AnchorPane.topAnchor="380.0" />
+            <Label layoutX="552.0" layoutY="389.0" text="NIC :" textFill="WHITE" AnchorPane.topAnchor="380.0">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="832.0" layoutY="389.0" text="Address :" textFill="WHITE" AnchorPane.topAnchor="380.0">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="EAddressTextBox" layoutX="942.0" layoutY="389.0" prefWidth="200.0" AnchorPane.topAnchor="380.0" />
+            <ChoiceBox fx:id="EGenderChoiceBox" layoutX="342.0" layoutY="430.0" prefWidth="200.0" AnchorPane.topAnchor="430.0" />
+            <Label layoutX="552.0" layoutY="439.0" text="DOB :" textFill="WHITE" AnchorPane.topAnchor="430.0">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <DatePicker fx:id="EDOBDatePicker" layoutX="622.0" layoutY="439.0" prefWidth="200.0" AnchorPane.topAnchor="430.0" />
+            <Label layoutX="832.0" layoutY="439.0" text="Job Title :" textFill="WHITE" AnchorPane.topAnchor="430.0">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <ChoiceBox fx:id="ETitleChoiceBox" layoutX="942.0" layoutY="439.0" prefWidth="200.0" AnchorPane.topAnchor="430.0" />
+            <Label layoutX="222.0" layoutY="480.0" text="Bank Name :" textFill="WHITE" AnchorPane.leftAnchor="222.0">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="EBankNameTextBox" layoutX="342.0" layoutY="480.0" prefHeight="25.0" prefWidth="200.0" AnchorPane.leftAnchor="342.0" AnchorPane.topAnchor="480.0" />
+            <Label layoutX="552.0" layoutY="489.0" text="Acc No :" textFill="WHITE" AnchorPane.topAnchor="480.0">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="EAccNoTextBox" layoutX="621.0" layoutY="489.0" prefWidth="200.0" AnchorPane.topAnchor="480.0" />
+            <Label layoutX="832.0" layoutY="489.0" text="Salary Scheme :" textFill="WHITE" AnchorPane.topAnchor="480.0">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="EBSSIDTextBox" layoutX="942.0" layoutY="489.0" prefHeight="25.0" prefWidth="95.0" AnchorPane.topAnchor="480.0" />
+            <Button layoutX="1042.0" layoutY="489.0" mnemonicParsing="false" onAction="#selectSalaryScheme" prefHeight="25.0" prefWidth="100.0" text="Browse Scheme" AnchorPane.topAnchor="480.0" />
+            <Label layoutX="222.0" layoutY="531.0" text="Contact No :" textFill="WHITE" AnchorPane.leftAnchor="222.0">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="EPhoneTextBox" layoutX="342.0" layoutY="529.0" prefHeight="25.0" prefWidth="200.0" AnchorPane.leftAnchor="342.0" />
+            <Label fx:id="ENameLabel" layoutX="232.0" layoutY="407.0" prefHeight="19.0" prefWidth="319.0" textFill="#f8ea03" />
+            <Label fx:id="EGenderLabel" layoutX="232.0" layoutY="459.0" prefHeight="19.0" prefWidth="319.0" textFill="#f8ea03" />
+            <Label fx:id="EBankNameLabel" layoutX="232.0" layoutY="508.0" prefHeight="19.0" prefWidth="319.0" textFill="#f8ea03" />
+            <Label fx:id="ENICLabel" layoutX="562.0" layoutY="407.0" prefHeight="19.0" prefWidth="269.0" textFill="#f8ea03" />
+            <Label fx:id="EDOBLabel" layoutX="569.0" layoutY="514.0" prefHeight="19.0" prefWidth="269.0" textFill="#f8ea03" />
+            <Label fx:id="EAccNoLabel" layoutX="552.0" layoutY="507.0" prefHeight="19.0" prefWidth="269.0" textFill="#f8ea03" />
+            <Label fx:id="ETitleLabel" layoutX="857.0" layoutY="518.0" prefHeight="19.0" prefWidth="309.0" textFill="#f8ea03" />
+            <Label fx:id="EAddressLabel" layoutX="833.0" layoutY="408.0" prefHeight="19.0" prefWidth="309.0" textFill="#f8ea03" AnchorPane.topAnchor="408.0" />
+            <Label fx:id="EBSSIDLabel" layoutX="842.0" layoutY="506.0" prefHeight="19.0" prefWidth="309.0" textFill="#f8ea03" />
+            <Label fx:id="EPhonelabel" layoutX="223.0" layoutY="557.0" prefHeight="19.0" prefWidth="319.0" textFill="#f8ea03" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

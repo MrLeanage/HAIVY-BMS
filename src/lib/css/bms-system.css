@@ -7,6 +7,9 @@
 .system-background-theme{
     -fx-background-color: #4d0024;
 }
+.system-background-theme-dark{
+    -fx-background-color: #37001a;
+}
 .default-button-color-scheme1{
     -fx-background-color: #4d0024;
 }

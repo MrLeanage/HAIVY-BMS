@@ -9,6 +9,7 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.layout.AnchorPane;
 import util.authenticate.SupervisorHandler;
 import util.authenticate.UserAuthentication;
+import util.utility.UtilityMethod;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -32,6 +33,12 @@ public class SupervisorBaseController implements Initializable {
     private Label sessionUser;
 
     @FXML
+    private Label systemDateLabel;
+
+    @FXML
+    private Label systemTimeLabel;
+
+    @FXML
     private AnchorPane rootpane;
 
     @Override
@@ -42,6 +49,8 @@ public class SupervisorBaseController implements Initializable {
         sessionUser.setText(UserAuthentication.getAuthenticatedSession().getuName());
         SupervisorHandler supervisorHandler = new SupervisorHandler();
         supervisorHandler.loadItemWithdraw(rootpane);
+        UtilityMethod.getClock(systemTimeLabel);
+        UtilityMethod.getCalendar(systemDateLabel);
 
         if(UserAuthentication.getCurrentAdminType().equals("default")){
             AdminPanelMenuItem.setVisible(false);
@@ -73,5 +82,39 @@ public class SupervisorBaseController implements Initializable {
         UserAuthentication userAuthentication = new UserAuthentication();
         userAuthentication.getSupervisorMenu(OptionMenuButton);
     }
-
+    @FXML
+    private void loadItemWithdraw(ActionEvent event){
+        SupervisorHandler supervisorHandler = new SupervisorHandler();
+        supervisorHandler.loadItemWithdraw(rootpane);
+    }
+    @FXML
+    private void loadWithdrawedItems(ActionEvent event){
+        SupervisorHandler supervisorHandler = new SupervisorHandler();
+        supervisorHandler.loadWithdrawedItems(rootpane);
+    }
+    @FXML
+    private void loadNewOrders(ActionEvent event){
+        SupervisorHandler supervisorHandler = new SupervisorHandler();
+        supervisorHandler.loadNewOrders(rootpane);
+    }
+    @FXML
+    private void loadOnGoingOrders(ActionEvent event){
+        SupervisorHandler supervisorHandler = new SupervisorHandler();
+        supervisorHandler.loadOnGoingOrders(rootpane);
+    }
+    @FXML
+    private void loadCompletedOrders(ActionEvent event){
+        SupervisorHandler supervisorHandler = new SupervisorHandler();
+        supervisorHandler.loadCompletedOrders(rootpane);
+    }
+    @FXML
+    private void loadCancelledOrders(ActionEvent event){
+        SupervisorHandler supervisorHandler = new SupervisorHandler();
+        supervisorHandler.loadCancelledOrders(rootpane);
+    }
+    @FXML
+    private void loadOrderMenu(ActionEvent event){
+        SupervisorHandler supervisorHandler = new SupervisorHandler();
+        supervisorHandler.loadOrderMenu(rootpane);
+    }
 }

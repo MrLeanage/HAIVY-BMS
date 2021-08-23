@@ -9,6 +9,7 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.layout.AnchorPane;
 import util.authenticate.CashierHandler;
 import util.authenticate.UserAuthentication;
+import util.utility.UtilityMethod;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -31,6 +32,12 @@ public class CashierBaseController implements Initializable {
     private Label sessionUser;
 
     @FXML
+    private Label systemDateLabel;
+
+    @FXML
+    private Label systemTimeLabel;
+
+    @FXML
     private AnchorPane rootpane;
 
     @Override
@@ -42,6 +49,8 @@ public class CashierBaseController implements Initializable {
         sessionUser.setText(UserAuthentication.getAuthenticatedSession().getuName());
         CashierHandler cashierHandler = new CashierHandler();
         cashierHandler.loadBilling(rootpane);
+        UtilityMethod.getClock(systemTimeLabel);
+        UtilityMethod.getCalendar(systemDateLabel);
 
         if(UserAuthentication.getCurrentAdminType().equals("default")){
             AdminPanelMenuItem.setVisible(false);
@@ -72,5 +81,26 @@ public class CashierBaseController implements Initializable {
     private void supervisorPanel(ActionEvent event){
         UserAuthentication userAuthentication = new UserAuthentication();
         userAuthentication.getSupervisorMenu(OptionMenuButton);
+    }
+
+    @FXML
+    private void loadBilling(ActionEvent event){
+        CashierHandler cashierHandler = new CashierHandler();
+        cashierHandler.loadBilling(rootpane);
+    }
+    @FXML
+    private void loadNewOrder(ActionEvent event){
+        CashierHandler cashierHandler = new CashierHandler();
+        cashierHandler.loadNewOrder(rootpane);
+    }
+    @FXML
+    private void loadOrderMenu(ActionEvent event){
+        CashierHandler cashierHandler = new CashierHandler();
+        cashierHandler.loadOrderMenu(rootpane);
+    }
+    @FXML
+    private void loadOrderStatus(ActionEvent event){
+        CashierHandler cashierHandler = new CashierHandler();
+        cashierHandler.loadOrderStatus(rootpane);
     }
 }

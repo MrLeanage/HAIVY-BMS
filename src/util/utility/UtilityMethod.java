@@ -1,10 +1,15 @@
 package util.utility;
 
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.embed.swing.SwingFXUtils;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.util.Duration;
 import model.ItemStock;
 import org.apache.commons.io.IOUtils;
 import org.omg.CORBA.StringHolder;
@@ -18,6 +23,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
 import java.time.format.TextStyle;
 import java.time.temporal.ChronoUnit;
 import java.util.*;
@@ -241,5 +247,23 @@ public class UtilityMethod {
     public static Integer getTotalNoOfDays(String oldDate, String newDate){
 
         return Integer.parseInt(String.valueOf(ChronoUnit.DAYS.between(LocalDate.parse(oldDate), LocalDate.parse(newDate))));
+    }
+    public static void getClock(Label clockLabel){
+
+        Timeline clock = new Timeline(new KeyFrame(Duration.ZERO, e -> {
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss a");
+            clockLabel.setText(LocalDateTime.now().format(formatter));
+        }), new KeyFrame(Duration.seconds(1)));
+        clock.setCycleCount(Animation.INDEFINITE);
+        clock.play();
+    }
+    public static void getCalendar(Label clockLabel){
+
+        Timeline clock = new Timeline(new KeyFrame(Duration.ZERO, e -> {
+            DateTimeFormatter formatter = DateTimeFormatter.ofLocalizedDate(FormatStyle.FULL);
+            clockLabel.setText(LocalDateTime.now().format(formatter));
+        }), new KeyFrame(Duration.seconds(1)));
+        clock.setCycleCount(Animation.INDEFINITE);
+        clock.play();
     }
 }

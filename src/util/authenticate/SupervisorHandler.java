@@ -42,7 +42,7 @@ public class SupervisorHandler {
             AlertPopUp.generalError(ex);
         }
     }
-    public void loadPendingOrders(AnchorPane rootpane){
+    public void loadNewOrders(AnchorPane rootpane){
         try{
             AnchorPane pane = FXMLLoader.load(getClass().getResource("/view/OrderManagement/NewOrders.fxml"));
             rootpane.getChildren().setAll(pane);

@@ -18,38 +18,44 @@
          <children>
             <AnchorPane prefHeight="30.0" prefWidth="1355.0" styleClass="system-background" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <MenuBar nodeOrientation="LEFT_TO_RIGHT" prefHeight="30.0" prefWidth="800.0" styleClass="system-background" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="2.0">
+                  <MenuBar nodeOrientation="LEFT_TO_RIGHT" prefHeight="30.0" prefWidth="969.0" styleClass="system-background" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="2.0">
                      <menus>
                         <Menu mnemonicParsing="false" text="File">
                            <items>
                               <MenuItem mnemonicParsing="false" text="Close" />
                            </items>
                         </Menu>
-                        <Menu mnemonicParsing="false" text="Inventory">
+                        <Menu mnemonicParsing="false" text="Inventory Management">
                            <items>
                               <MenuItem mnemonicParsing="false" onAction="#loadItemStocks" text="Stock Items" />
                               <MenuItem mnemonicParsing="false" onAction="#loadBakeryProducts" text="Bakery Items" />
                               <MenuItem mnemonicParsing="false" onAction="#loadAgencyProducts" text="Agency Products" />
                            </items>
                         </Menu>
-                        <Menu mnemonicParsing="false" text="Suppliers">
+                        <Menu mnemonicParsing="false" text="Suppliers Management">
                            <items>
                               <MenuItem mnemonicParsing="false" onAction="#loadSuppliers" text="Supplier Accounts" />
                            </items>
                         </Menu>
-                        <Menu mnemonicParsing="false" text="Employee">
+                        <Menu mnemonicParsing="false" text="Employee Management">
                            <items>
-                              <MenuItem mnemonicParsing="false" text="Employee Accounts" />
-                              <MenuItem mnemonicParsing="false" text="Salary Schemes" />
-                              <MenuItem mnemonicParsing="false" text="Allowance Schemes" />
+                              <MenuItem mnemonicParsing="false" onAction="#loadEmployeeAccount" text="Employee Accounts" />
+                              <MenuItem mnemonicParsing="false" onAction="#loadSalaryScheme" text="Salary Schemes" />
+                              <MenuItem mnemonicParsing="false" onAction="#loadAllowance" text="Allowance Schemes" />
                            </items>
                         </Menu>
-                        <Menu mnemonicParsing="false" text="Finance &amp; Statistics">
+                        <Menu mnemonicParsing="false" text="Order Management">
+                           <items>
+                              <MenuItem mnemonicParsing="false" onAction="#loadOrderMenu" text="Order Menu" />
+                              <MenuItem mnemonicParsing="false" onAction="#loadOrderStatus" text="Order Status" />
+                           </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Finance &amp; Statistics Management">
                            <items>
                               <MenuItem mnemonicParsing="false" text="About" />
                            </items>
                         </Menu>
-                        <Menu mnemonicParsing="false" text="System Users">
+                        <Menu mnemonicParsing="false" text="System Users Management">
                            <items>
                               <MenuItem mnemonicParsing="false" onAction="#loadSystemUsers" text="Users" />
                            </items></Menu>
@@ -63,7 +69,7 @@
                         <MenuItem mnemonicParsing="false" onAction="#logoutSession" text="Logout" />
                      </items>
                   </MenuButton>
-                  <Label fx:id="sessionUser" alignment="CENTER_RIGHT" layoutX="889.0" layoutY="8.0" prefHeight="17.0" prefWidth="343.0" text="User" AnchorPane.rightAnchor="123.0" AnchorPane.topAnchor="8.0">
+                  <Label fx:id="sessionUser" alignment="CENTER_RIGHT" layoutX="889.0" layoutY="8.0" prefHeight="17.0" prefWidth="257.0" text="User" AnchorPane.rightAnchor="123.0" AnchorPane.topAnchor="8.0">
                      <graphic>
                         <FontAwesomeIconView glyphName="USER" size="14.0" />
                      </graphic>
@@ -83,12 +89,12 @@
                         <Image url="@../../lib/img/haivy-head-icon%2060x60.png" />
                      </image>
                   </ImageView>
-                  <Label alignment="CENTER_RIGHT" layoutX="1169.0" layoutY="10.0" prefHeight="28.0" prefWidth="257.0" text="20th August 2021" textFill="WHITE" AnchorPane.rightAnchor="11.0">
+                  <Label fx:id="systemDateLabel" alignment="CENTER_RIGHT" layoutX="1169.0" layoutY="10.0" prefHeight="28.0" prefWidth="450.0" text="20th August 2021" textFill="WHITE" AnchorPane.rightAnchor="11.0">
                      <font>
                         <Font name="Calibri Bold" size="24.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER_RIGHT" layoutX="1171.0" layoutY="39.0" prefHeight="28.0" prefWidth="172.0" text="8.59 AM" textFill="WHITE">
+                  <Label fx:id="systemTimeLabel" alignment="CENTER_RIGHT" layoutX="1015.0" layoutY="39.0" prefHeight="28.0" prefWidth="400.0" text="8.59 AM" textFill="WHITE" AnchorPane.rightAnchor="11.0">
                      <font>
                         <Font name="Calibri Bold" size="22.0" />
                      </font>

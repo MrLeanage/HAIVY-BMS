@@ -37,7 +37,7 @@
             <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="1145.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="210.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0">
                <children>
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#37001a" height="175.0" layoutX="3.0" layoutY="396.0" stroke="BLACK" strokeType="INSIDE" width="1130.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="396.0" />
-                  <TableView fx:id="OrderMenuTable" layoutX="14.0" layoutY="42.0" onMouseClicked="#loadSelectedModelData" onMousePressed="#loadSelectedData" prefHeight="355.0" prefWidth="1130.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="38.0">
+                  <TableView fx:id="OrderMenuTable" layoutX="14.0" layoutY="42.0" onMouseClicked="#loadSelectedData" onMousePressed="#loadSelectedModelData" prefHeight="355.0" prefWidth="1130.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="38.0">
                      <columns>
                         <TableColumn fx:id="OMIIDColumn" prefWidth="64.00003051757812" text="ID" />
                         <TableColumn fx:id="OMIImageColumn" prefWidth="134.3333740234375" />
@@ -83,18 +83,18 @@
                   </Label>
                   <TextField fx:id="OMIPriceTextField" layoutX="842.0" layoutY="410.0" prefHeight="25.0" prefWidth="190.0" AnchorPane.leftAnchor="842.0" AnchorPane.topAnchor="410.0" />
                   <TextArea fx:id="OMIDescriptionTextArea" layoutX="154.0" layoutY="468.0" prefHeight="72.0" prefWidth="191.0" AnchorPane.topAnchor="468.0" />
-                  <Label layoutX="372.0" layoutY="468.0" text="Status :" textFill="WHITE" AnchorPane.topAnchor="468.0">
+                  <Label layoutX="711.0" layoutY="461.0" text="Status :" textFill="WHITE" AnchorPane.topAnchor="461.0">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </Label>
-                  <ChoiceBox fx:id="OMIStatusChoiceBox" layoutX="496.0" layoutY="468.0" prefHeight="25.0" prefWidth="190.0" AnchorPane.leftAnchor="496.0" AnchorPane.topAnchor="468.0" />
-                  <JFXButton buttonType="RAISED" layoutX="791.0" layoutY="473.0" onAction="#clearFields" prefHeight="40.0" prefWidth="110.0" style="-fx-background-color: #585757;" text="Clear Fields" textFill="WHITE">
+                  <ChoiceBox fx:id="OMIStatusChoiceBox" layoutX="815.0" layoutY="461.0" prefHeight="25.0" prefWidth="190.0" AnchorPane.leftAnchor="842.0" AnchorPane.topAnchor="461.0" />
+                  <JFXButton buttonType="RAISED" layoutX="795.0" layoutY="522.0" onAction="#clearFields" prefHeight="40.0" prefWidth="110.0" style="-fx-background-color: #585757;" text="Clear Fields" textFill="WHITE">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton buttonType="RAISED" layoutX="922.0" layoutY="473.0" onAction="#updateData" prefHeight="40.0" prefWidth="110.0" style="-fx-background-color: f8ea03;" text="Update">
+                  <JFXButton buttonType="RAISED" layoutX="926.0" layoutY="522.0" onAction="#updateData" prefHeight="40.0" prefWidth="110.0" style="-fx-background-color: f8ea03;" text="Update">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -102,8 +102,9 @@
                   <Label fx:id="OMINameLabel" layoutX="22.0" layoutY="439.0" prefHeight="21.0" prefWidth="320.0" textFill="#f8ea03" />
                   <Label fx:id="OMIDescriptionLabel" layoutX="9.0" layoutY="545.0" prefHeight="21.0" prefWidth="338.0" textFill="#f8ea03" />
                   <Label fx:id="OMIWeightLabel" layoutX="367.0" layoutY="440.0" prefHeight="21.0" prefWidth="320.0" textFill="#f8ea03" />
-                  <Label fx:id="OMIStatusLabel" layoutX="367.0" layoutY="497.0" prefHeight="21.0" prefWidth="320.0" textFill="#f8ea03" />
-                  <Label fx:id="OMIPriceLabel" layoutX="720.0" layoutY="440.0" prefHeight="21.0" prefWidth="298.0" textFill="#f8ea03" />
+                  <Label fx:id="OMIStatusLabel" layoutX="706.0" layoutY="490.0" prefHeight="21.0" prefWidth="320.0" textFill="#f8ea03" AnchorPane.leftAnchor="720.0" />
+                  <Label fx:id="OMIPriceLabel" layoutX="720.0" layoutY="440.0" prefHeight="21.0" prefWidth="298.0" textFill="#f8ea03" AnchorPane.leftAnchor="720.0" />
+                  <ImageView fx:id="OMIImageView" fitHeight="92.0" fitWidth="187.0" layoutX="459.0" layoutY="450.0" nodeOrientation="INHERIT" pickOnBounds="true" AnchorPane.leftAnchor="496.0" />
                </children>
             </AnchorPane>
          </children>

@@ -8,19 +8,15 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
-import javafx.stage.FileChooser;
 import model.OrderMenu;
 import service.OrderMenuServices;
-import util.authenticate.SupervisorHandler;
 import util.systemAlerts.AlertPopUp;
 import util.utility.UtilityMethod;
 import util.validation.DataValidation;
 
 import java.io.File;
-import java.io.IOException;
 import java.net.URL;
 import java.util.Optional;
 import java.util.ResourceBundle;
@@ -96,57 +92,12 @@ public class OrderMenuSupervisorController implements Initializable {
 
     @FXML
     AnchorPane rootpane;
-    SupervisorHandler supervisorHandler = new SupervisorHandler();
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         OMIStatusChoiceBox.setValue("Available");
         OMIStatusChoiceBox.setItems(choiceboxList);
         loadData();
         searchTable();
-    }
-    @FXML
-    private void ItemWithdraw(ActionEvent event) {
-        supervisorHandler.loadItemWithdraw(event);
-    }
-    @FXML
-    private void WithdrawedItems(ActionEvent event) {
-        supervisorHandler.loadWithdrawedItems(rootpane);
-    }
-    @FXML
-    private void PendingOrders(ActionEvent event){
-        supervisorHandler.loadNewOrders(rootpane);
-    }
-    @FXML
-    private void OnGoingOrders(ActionEvent event) {
-        supervisorHandler.loadOnGoingOrders(rootpane);
-    }
-    @FXML
-    private void CompletedOrders(ActionEvent event) {
-        supervisorHandler.loadCompletedOrders(rootpane);
-    }
-    @FXML
-    private void CancelledOrders(ActionEvent event) {
-        supervisorHandler.loadCancelledOrders(rootpane);
-    }
-    @FXML
-    private void OrderMenu(ActionEvent event) {
-        supervisorHandler.loadOrderMenu(rootpane);
-    }
-
-
-
-    @FXML
-    private void imageChooser(ActionEvent event) throws IOException{
-        FileChooser fileChooser = new FileChooser();
-        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Image Files","*.jpg"));
-        File file = fileChooser.showOpenDialog(null);
-        if(file != null){
-            System.out.println(file.getAbsolutePath());
-            //OMIImageView.setImage();
-            staticFile = file;
-            Image image = new Image(file.toURI().toString());
-            OMIImageView.setImage(image);
-        }
     }
     @FXML
     private void clearFields(){
@@ -289,37 +240,12 @@ public class OrderMenuSupervisorController implements Initializable {
         loadData();
         clearLabels();
     }
-    //Add Supplier
-    @FXML
-    private void addData(ActionEvent event) throws Exception{
-
-        clearLabels();
-        OrderMenu orderMenuModel = new OrderMenu();
-        OrderMenuServices orderMenuServices = new OrderMenuServices();
-
-        if(dataValidate()){
-
-            orderMenuModel.setoMIName(OMINameTextField.getText());
-            orderMenuModel.setoMIImage(OMIImageView);
-            orderMenuModel.setoMIDescription(OMIDescriptionTextArea.getText());
-            orderMenuModel.setoMIWeight(OMIWeightTextField.getText());
-            orderMenuModel.setoMIPrice(Float.parseFloat(OMIPriceTextField.getText()));
-            orderMenuModel.setoMIStatus(OMIStatusChoiceBox.getValue());
-
-            Boolean resultVal = orderMenuServices.insertData(orderMenuModel);
-            if(resultVal){
-                refreshTable();
-            }
-        }else{
-            dataValidateMessage();
-        }
-    }
     @FXML
     private void loadSelectedData( ){
 
-        OrderMenu orderMenuModel;
 
         try{
+            OrderMenu orderMenuModel;
             orderMenuModel = OrderMenuTable.getSelectionModel().getSelectedItem();
             OMINameTextField.setText(orderMenuModel.getoMIName());
             OMIImageView.setImage(orderMenuModel.getoMIImage().getImage());
@@ -329,6 +255,8 @@ public class OrderMenuSupervisorController implements Initializable {
             OMIStatusChoiceBox.setValue(orderMenuModel.getoMIStatus());
             clearLabels();
         }catch(Exception ex){
+
+            System.out.println(ex);
             AlertPopUp.generalError(ex);
         }
     }
@@ -340,6 +268,7 @@ public class OrderMenuSupervisorController implements Initializable {
             orderMenuModel = OrderMenuTable.getSelectionModel().getSelectedItem();
             existingOrderMenuProductModel = orderMenuModel;
         }catch(Exception ex){
+            System.out.println(ex);
             AlertPopUp.generalError(ex);
         }
     }
@@ -378,34 +307,6 @@ public class OrderMenuSupervisorController implements Initializable {
         }
 
 
-    }
-    @FXML
-    private void deleteData(){
-
-        int ID;
-        OrderMenu orderMenuModel;
-        OrderMenuServices orderMenuServices = new OrderMenuServices();
-        orderMenuModel = OrderMenuTable.getSelectionModel().getSelectedItem();
-
-        //checking for null ID Selection with try
-        try{
-            ID = UtilityMethod.seperateID(orderMenuModel.getoMIID());
-
-            if(ID != 0){
-                Optional<ButtonType> action = AlertPopUp.deleteConfirmation("Order Menu Item");
-                //Checking for confirmation
-                if(action.get() == ButtonType.OK){
-                    Boolean resultVal = orderMenuServices.deleteData(ID);
-                    if(resultVal){
-                        refreshTable();
-                    }
-                }else if(action.get() == ButtonType.CANCEL){
-                    refreshTable();
-                }
-            }
-        }catch(Exception ex){
-            AlertPopUp.selectRowToDelete("Order Menu Item");
-        }
     }
     public void searchTable(){
         OrderMenuServices orderMenuServices = new OrderMenuServices();

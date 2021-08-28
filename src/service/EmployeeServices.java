@@ -61,10 +61,6 @@ public class EmployeeServices {
         } catch (SQLException ex) {
             AlertPopUp.insertionFailed(ex, "Employee Info");
         }
-        finally{
-            psEmployee.close();
-
-        }
         return resultval;
     }
 
@@ -93,8 +89,6 @@ public class EmployeeServices {
         } catch (SQLException ex) {
             AlertPopUp.updateFailed(ex, "Employee Info");
 
-        } finally {
-            psEmployee.close();
         }
         return resultVal;
     }
@@ -111,8 +105,6 @@ public class EmployeeServices {
 
         }catch (SQLException ex) {
             AlertPopUp.deleteFailed(ex, "Employee Info");
-        }finally{
-            psEmployee.close();
         }
         return resultVal;
     }

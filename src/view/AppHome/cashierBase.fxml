@@ -28,12 +28,12 @@
                         <Menu mnemonicParsing="false" text="Finance Management">
                            <items>
                               <MenuItem mnemonicParsing="false" onAction="#loadBilling" text="Cashier Billing" />
-                              <MenuItem mnemonicParsing="false" text="Sales Info" />
+                              <MenuItem mnemonicParsing="false" onAction="#loadSalesInfo" text="Sales Info" />
                            </items>
                         </Menu>
                         <Menu mnemonicParsing="false" text="Inventory Management">
                            <items>
-                              <MenuItem mnemonicParsing="false" text="Products" />
+                              <MenuItem mnemonicParsing="false" onAction="#loadProducts" text="Products" />
                            </items>
                         </Menu>
                         <Menu mnemonicParsing="false" text="Order Management">

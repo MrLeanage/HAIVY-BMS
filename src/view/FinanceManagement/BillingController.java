@@ -387,13 +387,13 @@ public class BillingController implements Initializable {
     public void getPayOrder(){
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("PayOrderPopUP.fxml"));
-//        try{
-//            loader.load();
-//        }catch (IOException ex){
-//            Logger.getLogger(PayOrderPopUPController.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-//        PayOrderPopUPController payOrderPopUPController = loader.getController();
-        // String sID = getID();
+        try{
+            loader.load();
+        }catch (IOException ex){
+            Logger.getLogger(PayOrderPopUPController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        PayOrderPopUPController payOrderPopUPController = loader.getController();
+//         String sID = getID();
 
         Parent p = loader.getRoot();
         Stage stage = new Stage();

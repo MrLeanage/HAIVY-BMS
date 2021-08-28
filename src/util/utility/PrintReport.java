@@ -4,22 +4,18 @@ package util.utility;
 import javafx.collections.ObservableList;
 import model.PaySheet;
 import model.Purchase;
-import model.SalesItem;
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import net.sf.jasperreports.engine.design.JasperDesign;
 import net.sf.jasperreports.engine.xml.JRXmlLoader;
 import net.sf.jasperreports.view.JRViewer;
+
 import util.dbConnect.DBConnection;
 import util.systemAlerts.AlertPopUp;
 
 import javax.swing.*;
 import java.io.File;
 import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.text.ParseException;
 import java.time.LocalDate;
 import java.util.*;
 
@@ -28,7 +24,7 @@ public class PrintReport extends JFrame{
     public void printPaySheet(PaySheet paySheet) {
         Connection conn = DBConnection.getDBConnection();// Database Connection
         try{
-            HashMap parameter = new HashMap();
+            HashMap<String, Object> parameter = new HashMap<String, Object>();
             parameter.put("pSID", paySheet.getpSID());
             parameter.put("pSEID", UtilityMethod.seperateID(paySheet.getpSEID()));
             parameter.put("pSEName", paySheet.getpSEName());
@@ -56,12 +52,6 @@ public class PrintReport extends JFrame{
 
             } catch (Exception ex) {
                 AlertPopUp.generalError(ex);
-            }finally {
-                try{
-                    conn.close();
-                }catch(SQLException ex){
-                    AlertPopUp.generalError(ex);
-                }
             }
         }catch (JRException e) {
             e.printStackTrace();
@@ -77,7 +67,7 @@ public class PrintReport extends JFrame{
             period = LocalDate.now().getYear() + "-" + LocalDate.now().getMonthValue();
         }
         try {
-            HashMap parameter = new HashMap();
+            HashMap<String, Object> parameter = new HashMap<String, Object>();
             parameter.put("pPeriod", period);
             parameter.put("pYear", UtilityMethod.getYear(String.valueOf(LocalDate.now())));
             parameter.put("pMonth", UtilityMethod.getMonth(String.valueOf(LocalDate.now())));
@@ -96,12 +86,6 @@ public class PrintReport extends JFrame{
 
         } catch (Exception e) {
             AlertPopUp.generalError(e);
-        }finally {
-            try{
-                conn.close();
-            }catch(SQLException ex){
-                AlertPopUp.connectionError(ex);
-            }
         }
 
     }
@@ -109,7 +93,7 @@ public class PrintReport extends JFrame{
         Connection conn = DBConnection.getDBConnection();// Database Connection
 
         try {
-            HashMap parameter = new HashMap();
+            HashMap<String, Object> parameter = new HashMap<>();
             parameter.put("pOID", UtilityMethod.seperateID(oID));
             parameter.put("pStatus", "Process Pending");
 
@@ -127,12 +111,6 @@ public class PrintReport extends JFrame{
 
         } catch (Exception e) {
             AlertPopUp.generalError(e);
-        }finally {
-            try{
-                conn.close();
-            }catch(SQLException ex){
-                AlertPopUp.connectionError(ex);
-            }
         }
 
     }
@@ -140,7 +118,7 @@ public class PrintReport extends JFrame{
         Connection conn = DBConnection.getDBConnection();// Database Connection
         try {
             //HashMap parameter = new HashMap();
-            HashMap parameter = new HashMap();
+            HashMap<String, Object> parameter = new HashMap<>();
             parameter.put("billNo",billNo);
 
             JasperDesign jd = JRXmlLoader.load(new File("").getAbsolutePath()+"/src/view/JRXMLReports/Bill.jrxml");
@@ -157,12 +135,6 @@ public class PrintReport extends JFrame{
 
         } catch (Exception e) {
             AlertPopUp.generalError(e);
-        }finally {
-            try{
-                conn.close();
-            }catch(SQLException ex){
-                AlertPopUp.connectionError(ex);
-            }
         }
 
     }
@@ -175,7 +147,7 @@ public class PrintReport extends JFrame{
             period = year + "-" + UtilityMethod.getMonthNumber(month);
         }
         try {
-            HashMap parameter = new HashMap();
+            HashMap<String, Object> parameter = new HashMap<>();
             parameter.put("sPeriod", period);
             parameter.put("sYear", year);
             parameter.put("sMonth", month);
@@ -194,12 +166,6 @@ public class PrintReport extends JFrame{
 
         } catch (Exception e) {
             AlertPopUp.generalError(e);
-        }finally {
-            try{
-                conn.close();
-            }catch(SQLException ex){
-                AlertPopUp.connectionError(ex);
-            }
         }
 
     }
@@ -207,7 +173,7 @@ public class PrintReport extends JFrame{
 
 
         try {
-            HashMap parameter = new HashMap();
+            HashMap<String, Object> parameter = new HashMap<String, Object>();
             JRBeanCollectionDataSource jrBeanCollectionDataSource = new JRBeanCollectionDataSource(purchaseLinkedList);
 
             parameter.put("pPeriod", year + " " + month);
@@ -233,7 +199,7 @@ public class PrintReport extends JFrame{
 
     }
     public void printIncomeStatement(String period){
-        HashMap parameter = new HashMap();
+        HashMap<String, Object> parameter = new HashMap<>();
         Connection conn = DBConnection.getDBConnection();// Database Connection
 
         parameter.put("iSPeriod", period);

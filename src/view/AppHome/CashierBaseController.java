@@ -103,4 +103,14 @@ public class CashierBaseController implements Initializable {
         CashierHandler cashierHandler = new CashierHandler();
         cashierHandler.loadOrderStatus(rootpane);
     }
+    @FXML
+    private void loadSalesInfo(ActionEvent event){
+        CashierHandler cashierHandler = new CashierHandler();
+        cashierHandler.loadSalesInfo(rootpane);
+    }
+    @FXML
+    private void loadProducts(ActionEvent event){
+        CashierHandler cashierHandler = new CashierHandler();
+        cashierHandler.loadProducts(rootpane);
+    }
 }

@@ -54,9 +54,6 @@ public class SalarySchemeServices {
             }
         } catch (SQLException ex) {
             AlertPopUp.sqlQueryError(ex);
-        }finally {
-            psLoadBasicSalaryScheme.close();
-            rsLoadBasicSalaryScheme.close();
         }
         return salaryScheme;
     }
@@ -76,9 +73,6 @@ public class SalarySchemeServices {
 
         } catch (SQLException ex) {
             AlertPopUp.insertionFailed(ex, "Salary Scheme");
-        }
-        finally{
-            psSalaryScheme.close();
         }
         return resultval;
     }
@@ -101,8 +95,6 @@ public class SalarySchemeServices {
         } catch (SQLException ex) {
             AlertPopUp.updateFailed(ex, "Salary Scheme");
 
-        } finally {
-            psSalaryScheme.close();
         }
         return resultVal;
     }
@@ -119,8 +111,6 @@ public class SalarySchemeServices {
 
         }catch (SQLException ex) {
             AlertPopUp.deleteFailed(ex, "Salary Scheme");
-        }finally{
-            psSalaryScheme.close();
         }
         return resultVal;
     }

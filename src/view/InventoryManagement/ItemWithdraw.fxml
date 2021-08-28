@@ -41,7 +41,7 @@
                         <Font name="Calibri Bold" size="12.0" />
                      </font>
                   </Label>
-                  <TableView fx:id="WithdrawTable" layoutX="14.0" layoutY="16.0" prefHeight="504.0" prefWidth="625.0" stylesheets="@../../lib/css/pms-ui.css" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0">
+                  <TableView fx:id="WithdrawTable" layoutX="14.0" layoutY="16.0" prefHeight="504.0" prefWidth="625.0" stylesheets="@../../lib/css/haivy-bms-ui.css" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0">
                      <columns>
                         <TableColumn fx:id="WIDColumn" prefWidth="34.000030517578125" text=" ID" />
                         <TableColumn fx:id="WNameColumn" prefWidth="172.0" text="Item Name" />

@@ -79,10 +79,6 @@ public class BakeryProductServices {
         } catch (SQLException ex) {
             AlertPopUp.insertionFailed(ex, "Bakery SalesItem");
         }
-        finally{
-            psBakeryProduct.close();
-
-        }
         return resultval;
     }
 
@@ -107,8 +103,6 @@ public class BakeryProductServices {
         } catch (SQLException ex) {
             AlertPopUp.updateFailed(ex, "Bakery SalesItem");
 
-        } finally {
-            psBackeryProduct.close();
         }
         return resultVal;
     }
@@ -125,8 +119,6 @@ public class BakeryProductServices {
 
         }catch (SQLException ex) {
             AlertPopUp.deleteFailed(ex, "Bakery SalesItem");
-        }finally{
-            psBakeryProduct.close();
         }
         return resultVal;
     }

@@ -44,14 +44,6 @@ public class BillingServices {
             }
         }catch(SQLException ex){
             AlertPopUp.sqlQueryError(ex);
-        }finally {
-            try {
-                psLoadBilling.close();
-                psLoadItem.close();
-            }catch (SQLException ex){
-                AlertPopUp.sqlQueryError(ex);
-            }
-
         }
         return SalesItemData;
     }
@@ -80,14 +72,6 @@ public class BillingServices {
             }
         }catch(SQLException ex){
             AlertPopUp.sqlQueryError(ex);
-        }finally {
-            try {
-                psLoadBilling.close();
-                psLoadItem.close();
-            }catch (SQLException ex){
-                AlertPopUp.sqlQueryError(ex);
-            }
-
         }
         return SalesItemData;
     }
@@ -154,16 +138,6 @@ public class BillingServices {
             }
         }catch(SQLException ex){
             AlertPopUp.sqlQueryError(ex);
-        }finally {
-            try {
-                psLoadBilling.close();
-                psLoadItem.close();
-                rsLoadBilling.close();
-                rsLoadItem.close();
-            }catch (SQLException ex){
-                AlertPopUp.sqlQueryError(ex);
-            }
-
         }
         return salesItemData;
     }
@@ -227,15 +201,6 @@ public class BillingServices {
         } catch (SQLException ex) {
             AlertPopUp.insertionFailed(ex, "Billing");
         }
-        finally{
-            try{
-                psBilling.close();
-                psSalesItem.close();
-                rsBilling.close();
-            }catch (SQLException ex){
-                AlertPopUp.sqlQueryError(ex);
-            }
-        }
         return billingID;
     }
     public boolean updateClearance(LinkedList<SalesItem> salesItemLinkedList){
@@ -255,12 +220,6 @@ public class BillingServices {
         } catch (SQLException ex) {
             AlertPopUp.updateFailed(ex, "Sales Claimed");
 
-        } finally {
-            try{
-                psSalesItem.close();
-            }catch(SQLException ex){
-                AlertPopUp.sqlQueryError(ex);
-            }
         }
         return resultVal;
     }

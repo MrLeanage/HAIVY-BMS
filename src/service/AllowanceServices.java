@@ -72,10 +72,6 @@ public class AllowanceServices {
         } catch (SQLException ex) {
             AlertPopUp.insertionFailed(ex, "Allowance Scheme");
         }
-        finally{
-            psAllowance.close();
-
-        }
         return resultval;
     }
 
@@ -98,8 +94,6 @@ public class AllowanceServices {
         } catch (SQLException ex) {
             AlertPopUp.updateFailed(ex, "Allowance Scheme");
 
-        } finally {
-            psAllowance.close();
         }
         return resultVal;
     }
@@ -116,8 +110,6 @@ public class AllowanceServices {
 
         }catch (SQLException ex) {
             AlertPopUp.deleteFailed(ex, "Allowance Scheme");
-        }finally{
-            psAllowance.close();
         }
         return resultVal;
     }

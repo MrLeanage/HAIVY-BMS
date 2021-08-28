@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="624.0" prefWidth="1355.0" styleClass="system-background-theme" stylesheets="@../../lib/css/bms-system.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.FinanceManagement.SalesCounterAdminController">
+   <children>
+      <AnchorPane fx:id="rootpane" layoutX="10.0" layoutY="10.0" prefHeight="624.0" prefWidth="1355.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="620.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="5.0" width="1351.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0" />
+            <AnchorPane layoutX="69.0" layoutY="69.0" prefHeight="564.0" prefWidth="200.0" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="1145.0" AnchorPane.topAnchor="10.0">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="605.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="3.0" width="198.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <ImageView fitHeight="187.0" fitWidth="557.0" layoutX="-181.0" layoutY="229.0" pickOnBounds="true" rotate="-90.0" AnchorPane.leftAnchor="-181.0" AnchorPane.rightAnchor="-176.0" AnchorPane.topAnchor="229.0">
+                     <image>
+                        <Image url="@../../lib/img/cover.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" layoutX="3.0" layoutY="1.0" prefHeight="42.0" prefWidth="193.0" style="-fx-background-color: #ffffff;" text="SALES COUNTER " textFill="#8c0000">
+                     <font>
+                        <Font name="Calibri Bold" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="1145.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="210.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0">
+               <children>
+                  <Label fx:id="footerLabel" alignment="CENTER" layoutX="5.0" layoutY="573.0" prefHeight="30.0" prefWidth="1130.0" style="-fx-background-color: #ffffff;" text="DEVELOPED BY TECH_LEAD IT SOLUTIONS PVT (LTD) 2021 All rights Reserved " AnchorPane.rightAnchor="12.0">
+                     <font>
+                        <Font name="Calibri Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4d0024" height="94.0" layoutX="3.0" layoutY="475.0" stroke="BLACK" strokeType="INSIDE" width="796.0" AnchorPane.leftAnchor="3.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#37001a" height="566.0" layoutX="801.0" layoutY="3.0" stroke="BLACK" strokeType="INSIDE" width="330.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="3.0" />
+                  <Label layoutX="20.0" layoutY="7.0" text="Sales Counter" textFill="WHITE" AnchorPane.leftAnchor="3.0" AnchorPane.topAnchor="3.0">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <JFXButton buttonType="RAISED" layoutX="611.0" layoutY="482.0" onAction="#claimSales" prefHeight="80.0" prefWidth="179.0" style="-fx-background-color: #029206;" text="Claim Sales" textFill="WHITE">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" layoutX="229.0" layoutY="530.0" onAction="#clearSalesList" prefHeight="34.0" prefWidth="117.0" style="-fx-background-color: #585757;" text="Clear " textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXButton>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#37001a" height="83.0" layoutX="358.0" layoutY="480.0" stroke="TRANSPARENT" strokeType="INSIDE" width="220.0" />
+                  <Label layoutX="419.0" layoutY="487.0" prefHeight="25.0" prefWidth="139.0" text="TOTAL SALES" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="TotalAmountLabel" alignment="CENTER" layoutX="369.0" layoutY="509.0" prefHeight="38.0" prefWidth="188.0" text="Rs : 0.00" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font size="26.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="21.0" layoutY="482.0" text="Total Items :" textFill="WHITE">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="21.0" layoutY="509.0" text="Date           :" textFill="WHITE">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <TableView fx:id="BillingTable" layoutX="3.0" layoutY="28.0" prefHeight="441.0" prefWidth="796.0" AnchorPane.leftAnchor="3.0">
+                     <columns>
+                        <TableColumn fx:id="BIDColumn" prefWidth="104.66668701171875" text="Product ID" />
+                        <TableColumn fx:id="BNameColumn" prefWidth="253.33334350585938" text="Product Name" />
+                        <TableColumn fx:id="BWeightColumn" minWidth="0.0" prefWidth="83.77774047851562" text="Unit Weight" />
+                        <TableColumn fx:id="BPriceColumn" prefWidth="107.77777099609375" text="Unit Price" />
+                        <TableColumn fx:id="BQuantityColumn" prefWidth="78.11114501953125" text="Qty" />
+                        <TableColumn fx:id="BTotalColumn" prefWidth="118.888916015625" text="Total" />
+                     </columns>
+                  </TableView>
+                  <TableView fx:id="UserTable" layoutX="815.0" layoutY="46.0" onMouseClicked="#loadSelectedData" prefHeight="343.0" prefWidth="310.0">
+                     <columns>
+                        <TableColumn fx:id="UIDColumn" prefWidth="61.6666259765625" text="User ID" />
+                        <TableColumn fx:id="UNameColumn" prefWidth="169.4443359375" text="User Name" />
+                        <TableColumn fx:id="UStatusColumn" prefWidth="74.5556640625" text="Status" />
+                     </columns>
+                  </TableView>
+                  <TextField fx:id="SearchTextBox" layoutX="815.0" layoutY="9.0" prefHeight="30.0" prefWidth="310.0" promptText="Search in Cashier Here">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </TextField>
+                  <FontAwesomeIconView fill="#182c49" glyphName="SEARCH" layoutX="1101.0" layoutY="32.0" size="20" />
+                  <JFXButton buttonType="RAISED" layoutX="959.0" layoutY="511.0" onAction="#loadSalesData" prefHeight="49.0" prefWidth="165.0" style="-fx-background-color: #f8ea03;" text="Get User Sales">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fill="#182c49" glyphName="SEARCH" size="30" wrappingWidth="40.49999702721834" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" layoutX="818.0" layoutY="511.0" onAction="#clearField" prefHeight="49.0" prefWidth="134.0" style="-fx-background-color: #585757;" text="Clear Fields" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </JFXButton>
+                  <Label layoutX="818.0" layoutY="412.0" prefHeight="21.0" prefWidth="117.0" text="User ID :" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="818.0" layoutY="455.0" prefHeight="27.0" prefWidth="103.0" text="User Name :" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="UNameTextbox" editable="false" layoutX="975.0" layoutY="455.0" />
+                  <TextField fx:id="UIDTextbox" editable="false" layoutX="975.0" layoutY="412.0" />
+                  <Label fx:id="TotalItemLabel" layoutX="120.0" layoutY="485.0" prefHeight="17.0" prefWidth="154.0" text="0" textFill="WHITE">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="DateLabel" layoutX="117.0" layoutY="510.0" prefHeight="25.0" prefWidth="92.0" textFill="WHITE">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

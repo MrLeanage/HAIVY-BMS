@@ -57,7 +57,7 @@
                         <Font size="14.0" />
                      </font>
                   </JFXButton>
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#121d2c" height="110.0" layoutX="303.0" layoutY="455.0" stroke="TRANSPARENT" strokeType="INSIDE" width="257.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#37001a" height="110.0" layoutX="303.0" layoutY="455.0" stroke="TRANSPARENT" strokeType="INSIDE" width="257.0" />
                   <Label layoutX="373.0" layoutY="466.0" prefHeight="25.0" prefWidth="139.0" text="TOTAL AMOUNT" textAlignment="CENTER" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="16.0" />

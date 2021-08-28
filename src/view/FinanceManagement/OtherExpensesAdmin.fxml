@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="624.0" prefWidth="1355.0" styleClass="system-background-theme" stylesheets="@../../lib/css/bms-system.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.FinanceManagement.OtherExpensesAdminController">
+   <children>
+      <AnchorPane fx:id="rootpane" layoutX="10.0" layoutY="10.0" prefHeight="624.0" prefWidth="1355.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="620.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="5.0" width="1351.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0" />
+            <AnchorPane layoutX="69.0" layoutY="69.0" prefHeight="564.0" prefWidth="200.0" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="1145.0" AnchorPane.topAnchor="10.0">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="605.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="3.0" width="198.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <ImageView fitHeight="187.0" fitWidth="557.0" layoutX="-181.0" layoutY="229.0" pickOnBounds="true" rotate="-90.0" AnchorPane.leftAnchor="-181.0" AnchorPane.rightAnchor="-176.0" AnchorPane.topAnchor="229.0">
+                     <image>
+                        <Image url="@../../lib/img/cover.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" layoutX="3.0" layoutY="1.0" prefHeight="42.0" prefWidth="193.0" style="-fx-background-color: #ffffff;" text="OTHER EXPENSES" textFill="#8c0000">
+                     <font>
+                        <Font name="Calibri Bold" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="1145.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="210.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#37001a" height="186.0" layoutX="3.0" layoutY="385.0" stroke="BLACK" strokeType="INSIDE" width="1130.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="385.0" />
+                  <Label fx:id="footerLabel" alignment="CENTER" layoutX="5.0" layoutY="573.0" prefHeight="30.0" prefWidth="1130.0" style="-fx-background-color: #ffffff;" text="DEVELOPED BY TECH_LEAD IT SOLUTIONS PVT (LTD) 2021 All rights Reserved " AnchorPane.rightAnchor="12.0">
+                     <font>
+                        <Font name="Calibri Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="SearchTextBox" layoutX="3.0" layoutY="31.0" prefWidth="1080.0" promptText="Search Here" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="31.0" />
+                  <FontAwesomeIconView fill="#182c49" glyphName="SEARCH" layoutX="1112.0" layoutY="50.0" size="20" />
+                  <TableView fx:id="ExpenseTable" layoutX="3.0" layoutY="61.0" onMouseClicked="#loadSelectedData" onMousePressed="#loadSelectedModelData" prefHeight="321.0" prefWidth="1130.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="61.0">
+                     <columns>
+                        <TableColumn fx:id="EXPIDColumn" prefWidth="86.3333740234375" text="ID" />
+                        <TableColumn fx:id="EXPTitleColumn" prefWidth="186.77777099609375" text="Expense Title" />
+                        <TableColumn fx:id="EXPDescriptionColumn" prefWidth="279.6666259765625" text="Expense Description" />
+                        <TableColumn fx:id="EXPPeriodColumn" prefWidth="157.5555419921875" text="Expense Period" />
+                        <TableColumn fx:id="EXPAmountColumn" prefWidth="130.4444580078125" text="Amount" />
+                        <TableColumn fx:id="EXPPaidDateColumn" prefWidth="150.0" text="Paid Date" />
+                        <TableColumn fx:id="EXPAddedDateColumn" prefWidth="136.0" text="Added Date" />
+                     </columns>
+                  </TableView>
+                  <Label layoutX="14.0" layoutY="2.0" text="Purchases for :" textFill="WHITE" AnchorPane.leftAnchor="3.0" AnchorPane.topAnchor="3.0">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="PurchasePeriodLabel" layoutX="129.0" layoutY="5.0" prefHeight="21.0" prefWidth="501.0" textFill="#fbff00" AnchorPane.topAnchor="5.0">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="419.0" text="Expense Title :" textFill="WHITE" AnchorPane.topAnchor="419.0">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="EXPTitleTextBox" layoutX="137.0" layoutY="420.0" prefHeight="25.0" prefWidth="144.0" />
+                  <Label layoutX="309.0" layoutY="419.0" text="Expense Description :" textFill="WHITE" AnchorPane.topAnchor="419.0">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <TextArea fx:id="EXPDescriptionTextArea" layoutX="501.0" layoutY="432.0" prefHeight="52.0" prefWidth="434.0" AnchorPane.topAnchor="419.0" />
+                  <Label layoutX="14.0" layoutY="504.0" text="Expense Period :" textFill="WHITE">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="EXPYearTextBox" layoutX="137.0" layoutY="505.0" prefHeight="25.0" prefWidth="53.0" promptText="Year" />
+                  <ComboBox fx:id="EXPMonthComboBox" layoutX="199.0" layoutY="505.0" prefHeight="25.0" prefWidth="82.0" AnchorPane.topAnchor="505.0" />
+                  <Label layoutX="309.0" layoutY="527.0" text="Expense Amount :" textFill="WHITE" AnchorPane.topAnchor="505.0">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="EXPAmountTextBox" layoutX="503.0" layoutY="519.0" prefHeight="25.0" prefWidth="174.0" AnchorPane.topAnchor="505.0" />
+                  <Label layoutX="691.0" layoutY="521.0" text="Paid Date :" textFill="WHITE" AnchorPane.topAnchor="505.0">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <DatePicker fx:id="EXPDateDatePicker" layoutX="784.0" layoutY="520.0" prefHeight="25.0" prefWidth="150.0" AnchorPane.topAnchor="505.0" />
+                  <Label fx:id="EXPTitleLabel" layoutX="9.0" layoutY="450.0" prefHeight="19.0" prefWidth="272.0" textFill="#f8ea03" />
+                  <Label fx:id="EXPPeriodLabel" layoutX="13.0" layoutY="534.0" prefHeight="20.0" prefWidth="269.0" textFill="#f8ea03" />
+                  <Label fx:id="EXPDescriptionLabel" layoutX="307.0" layoutY="478.0" prefHeight="20.0" prefWidth="630.0" textFill="#f8ea03" />
+                  <JFXButton buttonType="RAISED" layoutX="1017.0" layoutY="436.0" onAction="#addData" prefHeight="40.0" prefWidth="110.0" style="-fx-background-color: f8ea03;" text="Add">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" layoutX="1017.0" layoutY="482.0" onAction="#updateData" prefHeight="40.0" prefWidth="110.0" style="-fx-background-color: f8ea03;" text="Update">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" layoutX="1016.0" layoutY="528.0" onAction="#deleteData" prefHeight="40.0" prefWidth="110.0" style="-fx-background-color: #b8020b;" text="Delete" textFill="WHITE">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" layoutX="1018.0" layoutY="390.0" onAction="#clearFields" prefHeight="40.0" prefWidth="110.0" style="-fx-background-color: #585757;" text="Clear Fields" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+            <Label fx:id="EXPAmountLabel" layoutX="523.0" layoutY="546.0" prefHeight="19.0" prefWidth="363.0" textFill="#f8ea03" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

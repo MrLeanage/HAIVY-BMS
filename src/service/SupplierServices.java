@@ -60,14 +60,6 @@ public class SupplierServices{
             }
         }catch (SQLException ex){
             AlertPopUp.sqlQueryError(ex);
-        }finally{
-            try{
-                rsLoadSupplier.close();
-                psLoadSupplier.close();
-                conn.close();
-            }catch(SQLException ex){
-
-            }
         }
 
         return supplierData;

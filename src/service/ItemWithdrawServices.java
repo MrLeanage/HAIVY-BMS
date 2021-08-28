@@ -51,7 +51,7 @@ public class ItemWithdrawServices {
             Connection conn = DBConnection.getDBConnection();
             itemWithdrawsData = FXCollections.observableArrayList();
             psLoadItemWithdraw = conn.prepareStatement(ItemWithdrawQueries.LOAD_SPECIFIC_USER_ITEM_WITHDRAW_DATA_QUERY);
-            psLoadItemWithdraw.setInt(1, UtilityMethod.seperateID(id));
+            psLoadItemWithdraw.setString(1, id);
             rsLoadItemWithdraw = psLoadItemWithdraw.executeQuery();
 
             while (rsLoadItemWithdraw.next()) {
@@ -60,9 +60,6 @@ public class ItemWithdrawServices {
             }
         } catch (SQLException ex) {
             AlertPopUp.sqlQueryError(ex);
-        }finally {
-            psLoadItemWithdraw.close();
-            rsLoadItemWithdraw.close();
         }
         return itemWithdrawsData;
     }
@@ -92,10 +89,6 @@ public class ItemWithdrawServices {
         } catch (SQLException ex) {
             AlertPopUp.insertionFailed(ex, "Withdraw Item List");
         }
-        finally{
-            psItemWithdraw.close();
-
-        }
         return resultval;
     }
     public boolean withdrawStockQuantity(ItemStock itemStock) throws SQLException {
@@ -113,8 +106,6 @@ public class ItemWithdrawServices {
         } catch (SQLException ex) {
             //AlertPopUp.updateFailed(ex, "Withdraw Quantity");
 
-        } finally {
-            psStockItem.close();
         }
         return resultVal;
     }
@@ -136,8 +127,6 @@ public class ItemWithdrawServices {
         } catch (SQLException ex) {
             //AlertPopUp.updateFailed(ex, "Withdraw Quantity");
 
-        } finally {
-            psStockItem.close();
         }
         return resultVal;
     }

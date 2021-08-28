@@ -41,9 +41,6 @@ public class AllowancePayServices {
             }
         } catch (SQLException ex) {
             AlertPopUp.sqlQueryError(ex);
-        }finally {
-            psAllowance.close();
-            psAllowancePay.close();
         }
 
         return allowancesData;
@@ -65,8 +62,6 @@ public class AllowancePayServices {
             }
         } catch (SQLException ex) {
             AlertPopUp.sqlQueryError(ex);
-        }finally {
-            psAllowance.close();
         }
 
         return allowancesData;
@@ -88,8 +83,6 @@ public class AllowancePayServices {
             }
         } catch (SQLException ex) {
             AlertPopUp.sqlQueryError(ex);
-        }finally {
-            psAllowance.close();
         }
 
         return allowancesData;
@@ -110,10 +103,6 @@ public class AllowancePayServices {
         } catch (SQLException ex) {
             AlertPopUp.insertionFailed(ex, "Allowance");
         }
-        finally{
-            psAllowance.close();
-
-        }
         return resultval;
     }
     public Boolean deleteData(int eID, int aID ) throws SQLException {
@@ -130,8 +119,6 @@ public class AllowancePayServices {
 
         }catch (SQLException ex) {
             AlertPopUp.deleteFailed(ex, "Allowance Scheme");
-        }finally{
-            psAllowancePay.close();
         }
         return resultVal;
     }
@@ -158,9 +145,6 @@ public class AllowancePayServices {
             }
         } catch (SQLException ex) {
             AlertPopUp.sqlQueryError(ex);
-        }finally {
-            psAllowance.close();
-            psAllowancePay.close();
         }
         //Wrap the ObservableList in a filtered List (initially display all data)
         FilteredList<Allowance> filteredData = new FilteredList<>(allowancesData, b -> true);
@@ -218,8 +202,6 @@ public class AllowancePayServices {
             }
         } catch (SQLException ex) {
             AlertPopUp.sqlQueryError(ex);
-        }finally {
-            psAllowance.close();
         }
         //Wrap the ObservableList in a filtered List (initially display all data)
         FilteredList<Allowance> filteredData = new FilteredList<>(allowancesData, b -> true);

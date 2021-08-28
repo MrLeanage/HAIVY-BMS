@@ -52,7 +52,13 @@
                         </Menu>
                         <Menu mnemonicParsing="false" text="Finance &amp; Statistics Management">
                            <items>
-                              <MenuItem mnemonicParsing="false" text="About" />
+                              <MenuItem mnemonicParsing="false" onAction="#loadSalesCounter" text="Sales Counter" />
+                              <MenuItem mnemonicParsing="false" onAction="#loadSalesReport" text="Sales Report" />
+                              <MenuItem mnemonicParsing="false" onAction="#loadPurchases" text="Purchases" />
+                              <MenuItem mnemonicParsing="false" onAction="#loadPaySheet" text="Paysheets" />
+                              <MenuItem mnemonicParsing="false" onAction="#loadPayroll" text="Payroll" />
+                              <MenuItem mnemonicParsing="false" onAction="#loadOtherExpense" text="Other Expenses" />
+                              <MenuItem mnemonicParsing="false" onAction="#loadIncomeStatement" text="Income Statement" />
                            </items>
                         </Menu>
                         <Menu mnemonicParsing="false" text="System Users Management">

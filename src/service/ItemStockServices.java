@@ -134,11 +134,6 @@ public class ItemStockServices {
         } catch (SQLException ex) {
             AlertPopUp.insertionFailed(ex, "Stock Item");
         }
-        finally{
-            psItemStock.close();
-            psPurchase.close();
-
-        }
         return resultval;
     }
 
@@ -180,9 +175,6 @@ public class ItemStockServices {
         } catch (SQLException ex) {
             AlertPopUp.updateFailed(ex, "Stock Item");
 
-        } finally {
-            psItemStock.close();
-            psPurchase.close();
         }
         return resultVal;
     }
@@ -206,9 +198,6 @@ public class ItemStockServices {
 
         }catch (SQLException ex) {
             AlertPopUp.deleteFailed(ex, "Stock Item");
-        }finally{
-            psItemStock.close();
-            psPurchase.close();
         }
         return resultVal;
     }

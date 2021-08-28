@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="624.0" prefWidth="1355.0" styleClass="system-background-theme" stylesheets="@../../lib/css/bms-system.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.FinanceManagement.PaySheetAdminController">
+   <children>
+      <AnchorPane fx:id="rootpane" layoutX="10.0" layoutY="10.0" prefHeight="624.0" prefWidth="1355.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="620.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="5.0" width="1351.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0" />
+            <AnchorPane layoutX="69.0" layoutY="69.0" prefHeight="564.0" prefWidth="200.0" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="1145.0" AnchorPane.topAnchor="10.0">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="605.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="3.0" width="198.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <ImageView fitHeight="187.0" fitWidth="557.0" layoutX="-181.0" layoutY="229.0" pickOnBounds="true" rotate="-90.0" AnchorPane.leftAnchor="-181.0" AnchorPane.rightAnchor="-176.0" AnchorPane.topAnchor="229.0">
+                     <image>
+                        <Image url="@../../lib/img/cover.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" layoutX="3.0" layoutY="1.0" prefHeight="42.0" prefWidth="193.0" style="-fx-background-color: #ffffff;" text="PAY SHEET" textFill="#8c0000">
+                     <font>
+                        <Font name="Calibri Bold" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="1145.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="210.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#37001a" height="569.0" layoutX="697.0" layoutY="2.0" stroke="BLACK" strokeType="INSIDE" width="436.0" AnchorPane.leftAnchor="697.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="2.0" />
+                  <Label fx:id="footerLabel" alignment="CENTER" layoutX="5.0" layoutY="573.0" prefHeight="30.0" prefWidth="1130.0" style="-fx-background-color: #ffffff;" text="DEVELOPED BY TECH_LEAD IT SOLUTIONS PVT (LTD) 2021 All rights Reserved " AnchorPane.rightAnchor="12.0">
+                     <font>
+                        <Font name="Calibri Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="SearchTextBox" layoutX="29.0" layoutY="24.0" prefHeight="25.0" prefWidth="691.0" promptText="Search for NIC" AnchorPane.leftAnchor="3.0" AnchorPane.topAnchor="3.0" />
+                  <FontAwesomeIconView fill="#374b8d" glyphName="SEARCH" layoutX="671.0" layoutY="22.0" size="20" />
+                  <TableView fx:id="EmployeeTable" layoutX="3.0" layoutY="35.0" onMouseClicked="#loadSelectedData" prefHeight="534.0" prefWidth="691.0" AnchorPane.leftAnchor="3.0">
+                     <columns>
+                        <TableColumn fx:id="EIDColumn" prefWidth="47.4444580078125" text="ID" />
+                        <TableColumn fx:id="ENameColumn" prefWidth="267.0" text="Employee Name" />
+                        <TableColumn fx:id="ENICColumn" prefWidth="114.0" text="NIC" />
+                        <TableColumn fx:id="EGenderColumn" prefWidth="123.0" text="Gender" />
+                        <TableColumn fx:id="ETitleColumn" prefWidth="138.0" text="Title" />
+                     </columns>
+                  </TableView>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="443.0" layoutX="711.0" layoutY="12.0" stroke="#03254c" strokeType="INSIDE" width="410.0" />
+                  <Label layoutX="727.0" layoutY="82.0" text="Name of  Employee        :">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="726.0" layoutY="105.0" text="NIC of Employee             :">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="746.0" layoutY="154.0" text="Salary Scheme Type            :">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="746.0" layoutY="180.0" text="Basic Salary Amount           :">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="726.0" layoutY="126.0" text="Year   :">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="883.0" layoutY="128.0" text="Month   :" />
+                  <Label layoutX="746.0" layoutY="205.0" text="Allowances for the Month  :">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="746.0" layoutY="230.0" text="Total Net Salary                  :">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="726.0" layoutY="275.0" text="Transferring Bank Details">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="724.0" layoutY="18.0" prefHeight="38.0" prefWidth="384.0" text="HAIVY PASTRY SHOP - Salary Slip">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="726.0" layoutY="48.0" prefHeight="20.0" prefWidth="384.0" text="--------------------------------------------------------------------------------" />
+                  <Label layoutX="746.0" layoutY="302.0" text="Bank Name and Branch      :">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="746.0" layoutY="327.0" text="Bank Account Number       :">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="726.0" layoutY="139.0" prefHeight="17.0" prefWidth="390.0" text="--------------------------------------------------------------------------------" />
+                  <Label layoutX="726.0" layoutY="263.0" prefHeight="17.0" prefWidth="390.0" text="--------------------------------------------------------------------------------" />
+                  <Label layoutX="726.0" layoutY="350.0" prefHeight="17.0" prefWidth="390.0" text="--------------------------------------------------------------------------------" />
+                  <Label layoutX="921.0" layoutY="220.0" prefHeight="17.0" prefWidth="181.0" text="-------------------------------------" />
+                  <Label layoutX="746.0" layoutY="364.0" text="Date Issued                                :" />
+                  <Label layoutX="726.0" layoutY="380.0" prefHeight="17.0" prefWidth="390.0" text="--------------------------------------------------------------------------------" />
+                  <Label layoutX="921.0" layoutY="249.0" prefHeight="17.0" prefWidth="181.0" text="-------------------------------------" />
+                  <Label layoutX="761.0" layoutY="407.0" prefHeight="13.0" prefWidth="356.0" text="1. This is a Computer generated statement and does not need any signature">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="761.0" layoutY="416.0" prefHeight="17.0" prefWidth="336.0" text="2. Discrepancy if any noted, should be intimated within 7 days">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="726.0" layoutY="391.0" text="Note   :">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="726.0" layoutY="63.0" prefHeight="20.0" prefWidth="160.0" text="Employee ID                    :">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Button id="rbred" layoutX="712.0" layoutY="465.0" mnemonicParsing="false" onAction="#addData" prefHeight="41.0" prefWidth="410.0" style="-fx-background-color: #f8ea03;" text="Generate Salary Slip For Selected">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Button>
+                  <Button id="rbred" layoutX="711.0" layoutY="514.0" mnemonicParsing="false" onAction="#addAllTableData" prefHeight="41.0" prefWidth="410.0" text="Generate Payroll Slip For the Month">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <Label fx:id="ENameLabel" layoutX="1095.0" layoutY="95.0" prefHeight="17.0" prefWidth="230.0" />
+            <Label fx:id="ENICLabel" layoutX="1095.0" layoutY="119.0" prefHeight="17.0" prefWidth="230.0" />
+            <Label fx:id="EYearLabel" layoutX="983.0" layoutY="139.0" prefHeight="17.0" prefWidth="90.0" />
+            <Label fx:id="EMonthLabel" layoutX="1146.0" layoutY="139.0" prefHeight="17.0" prefWidth="173.0" />
+            <Label fx:id="ETypeLabel" layoutX="1131.0" layoutY="167.0" prefHeight="17.0" prefWidth="180.0" />
+            <Label fx:id="EAmountLabel" layoutX="1131.0" layoutY="195.0" prefHeight="17.0" prefWidth="180.0" />
+            <Label fx:id="EAllowanceLabel" layoutX="1131.0" layoutY="219.0" prefHeight="17.0" prefWidth="180.0" />
+            <Label fx:id="ETotalSalaryLabel" layoutX="1125.0" layoutY="249.0" prefHeight="17.0" prefWidth="180.0" />
+            <Label fx:id="EBankBranchLabel" layoutX="1131.0" layoutY="313.0" prefHeight="17.0" prefWidth="180.0" />
+            <Label fx:id="EAccountLabel" layoutX="1131.0" layoutY="341.0" prefHeight="17.0" prefWidth="180.0" />
+            <Label fx:id="EDateLabel" layoutX="1131.0" layoutY="376.0" prefHeight="17.0" prefWidth="180.0" />
+            <Label fx:id="EIDLabel" layoutX="1095.0" layoutY="74.0" prefHeight="17.0" prefWidth="230.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

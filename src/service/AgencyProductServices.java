@@ -159,11 +159,6 @@ public class AgencyProductServices {
         } catch (SQLException ex) {
             AlertPopUp.insertionFailed(ex, "Agency SalesItem");
         }
-        finally{
-            psAgencyProduct.close();
-            psPurchase.close();
-
-        }
         return resultval;
     }
 
@@ -204,8 +199,6 @@ public class AgencyProductServices {
         } catch (SQLException ex) {
             AlertPopUp.updateFailed(ex, "Agency SalesItem");
 
-        } finally {
-            psAgencyProduct.close();
         }
         return resultVal;
     }
@@ -229,9 +222,6 @@ public class AgencyProductServices {
 
         }catch (SQLException ex) {
             AlertPopUp.deleteFailed(ex, "Agency SalesItem");
-        }finally{
-            psAgencyProduct.close();
-            psPurchase.close();
         }
         return resultVal;
     }

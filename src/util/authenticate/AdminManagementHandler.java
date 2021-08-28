@@ -102,4 +102,70 @@ public class AdminManagementHandler {
             AlertPopUp.generalError(ex);
         }
     }
+
+    /**
+     * Admin Finance Management
+     */
+    public void loadSalesCounter(AnchorPane rootpane){
+        try{
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("/view/FinanceManagement/SalesCounterAdmin.fxml"));
+            rootpane.getChildren().setAll(pane);
+        }catch(IOException ex){
+            AlertPopUp.generalError(ex);
+        }
+    }
+    public void loadSalesReport(AnchorPane rootpane){
+        try{
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("/view/FinanceManagement/SalesReportAdmin.fxml"));
+            rootpane.getChildren().setAll(pane);
+        }catch(IOException ex){
+            System.out.println(ex);
+            AlertPopUp.generalError(ex);
+        }
+    }
+    public void loadPurchases(AnchorPane rootpane){
+        try{
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("/view/FinanceManagement/PurchasesReportAdmin.fxml"));
+            rootpane.getChildren().setAll(pane);
+        }catch(IOException ex){
+            System.out.println(ex);
+            AlertPopUp.generalError(ex);
+        }
+    }
+    public void loadPaySheet(AnchorPane rootpane){
+        try{
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("/view/FinanceManagement/PaySheetAdmin.fxml"));
+            rootpane.getChildren().setAll(pane);
+        }catch(IOException ex){
+            System.out.println(ex);
+            AlertPopUp.generalError(ex);
+        }
+    }
+    public void loadPayroll(AnchorPane rootpane){
+        try{
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("/view/FinanceManagement/PayRollAdmin.fxml"));
+            rootpane.getChildren().setAll(pane);
+        }catch(IOException ex){
+            System.out.println(ex);
+            AlertPopUp.generalError(ex);
+        }
+    }
+    public void loadOtherExpense(AnchorPane rootpane){
+        try{
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("/view/FinanceManagement/OtherExpensesAdmin.fxml"));
+            rootpane.getChildren().setAll(pane);
+        }catch(IOException ex){
+            System.out.println(ex);
+            AlertPopUp.generalError(ex);
+        }
+    }
+    public void loadIncomeStatement(AnchorPane rootpane){
+        try{
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("/view/FinanceManagement/IncomeStatementAdmin.fxml"));
+            rootpane.getChildren().setAll(pane);
+        }catch(IOException ex){
+            System.out.println(ex);
+            AlertPopUp.generalError(ex);
+        }
+    }
 }

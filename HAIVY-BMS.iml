@@ -10,9 +10,9 @@
     <orderEntry type="library" name="mysql-connector-java-5.1.46-bin" level="project" />
     <orderEntry type="library" name="jfoenix-8.0.8" level="project" />
     <orderEntry type="library" name="fontawesomefx-8.9" level="project" />
-    <orderEntry type="library" name="commons-io-2.6" level="project" />
     <orderEntry type="library" name="AnimateFX-1.2.1" level="project" />
     <orderEntry type="library" name="controlsfx-8.40.11" level="project" />
-    <orderEntry type="library" name="xmpcore-5.1.1" level="project" />
+    <orderEntry type="library" name="commons-io-2.6" level="project" />
+    <orderEntry type="library" name="ant-1.7.1" level="project" />
   </component>
 </module>

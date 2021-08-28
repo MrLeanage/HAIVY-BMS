@@ -76,14 +76,6 @@ public class UserServices {
             }
         } catch (SQLException ex) {
             ex.printStackTrace();
-        } finally {
-            try {
-                rsLoadUser.close();
-                psUser.close();
-            } catch (SQLException ex) {
-                ex.printStackTrace();
-            }
-
         }
         return user;
     }
@@ -105,13 +97,6 @@ public class UserServices {
             }
         } catch (SQLException | NullPointerException ex) {
             AlertPopUp.sqlQueryError(ex);
-        }finally {
-            try{
-                rsLoadUser.close();
-                psLoadUser.close();
-            }catch (SQLException ex){
-                AlertPopUp.generalError(ex);
-            }
         }
         System.out.println(user.getuID());
         return user;
@@ -135,14 +120,6 @@ public class UserServices {
         } catch (SQLException ex) {
             AlertPopUp.insertionFailed(ex, "User Record");
         }
-        finally{
-            try{
-                psUser.close();
-            }catch(Exception ex){
-                AlertPopUp.generalError(ex);
-            }
-
-        }
         return resultval;
     }
 
@@ -165,8 +142,6 @@ public class UserServices {
         } catch (SQLException ex) {
             AlertPopUp.updateFailed(ex, "User Record");
 
-        } finally {
-            psUser.close();
         }
         return resultVal;
     }
@@ -183,8 +158,6 @@ public class UserServices {
 
         }catch (SQLException ex) {
             AlertPopUp.deleteFailed(ex, "User Record");
-        }finally{
-            psUser.close();
         }
         return resultVal;
     }

@@ -84,10 +84,6 @@ public class OrderMenuServices {
         } catch (SQLException ex) {
             AlertPopUp.insertionFailed(ex, "Order Menu SalesItem");
         }
-        finally{
-            psOrderMenu.close();
-
-        }
         return resultval;
     }
 
@@ -111,8 +107,6 @@ public class OrderMenuServices {
         } catch (SQLException ex) {
             AlertPopUp.updateFailed(ex, "Order Menu SalesItem");
 
-        } finally {
-            psOrderMenu.close();
         }
         return resultVal;
     }
@@ -129,8 +123,6 @@ public class OrderMenuServices {
 
         }catch (SQLException ex) {
             AlertPopUp.deleteFailed(ex, "Order Menu SalesItem");
-        }finally{
-            psOrderMenu.close();
         }
         return resultVal;
     }

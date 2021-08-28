@@ -89,7 +89,7 @@ public class AdminBaseController implements Initializable {
         adminManagementHandler.loadStockItems(rootpane);
     }
     /**
-     * Suppluier Navigation Functions
+     * Supplier Navigation Functions
      */
     @FXML
     void loadSuppliers(ActionEvent event) {
@@ -135,5 +135,43 @@ public class AdminBaseController implements Initializable {
     void loadOrderStatus(ActionEvent event) {
         AdminManagementHandler adminManagementHandler = new AdminManagementHandler();
         adminManagementHandler.loadOrderStatus(rootpane);
+    }
+    /**
+     * Finance Navigation Functions
+     */
+    @FXML
+    void loadSalesCounter(ActionEvent event) {
+        AdminManagementHandler adminManagementHandler = new AdminManagementHandler();
+        adminManagementHandler.loadSalesCounter(rootpane);
+    }
+    @FXML
+    void loadSalesReport(ActionEvent event) {
+        AdminManagementHandler adminManagementHandler = new AdminManagementHandler();
+        adminManagementHandler.loadSalesReport(rootpane);
+    }
+    @FXML
+    void loadPurchases(ActionEvent event) {
+        AdminManagementHandler adminManagementHandler = new AdminManagementHandler();
+        adminManagementHandler.loadPurchases(rootpane);
+    }
+    @FXML
+    void loadPaySheet(ActionEvent event) {
+        AdminManagementHandler adminManagementHandler = new AdminManagementHandler();
+        adminManagementHandler.loadPaySheet(rootpane);
+    }
+    @FXML
+    void loadPayroll(ActionEvent event) {
+        AdminManagementHandler adminManagementHandler = new AdminManagementHandler();
+        adminManagementHandler.loadPayroll(rootpane);
+    }
+    @FXML
+    void loadOtherExpense(ActionEvent event) {
+        AdminManagementHandler adminManagementHandler = new AdminManagementHandler();
+        adminManagementHandler.loadOtherExpense(rootpane);
+    }
+    @FXML
+    void loadIncomeStatement(ActionEvent event) {
+        AdminManagementHandler adminManagementHandler = new AdminManagementHandler();
+        adminManagementHandler.loadIncomeStatement(rootpane);
     }
 }

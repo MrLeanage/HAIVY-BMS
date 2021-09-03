@@ -19,7 +19,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class ItemWithdrawServices {
@@ -83,7 +82,7 @@ public class ItemWithdrawServices {
                 psItemWithdraw.execute();
             }
 
-            AlertPopUp.insertSuccesfully("Withdraw Item List");
+            AlertPopUp.insertSuccessfully("Withdraw Item List");
             resultval = true;
 
         } catch (SQLException ex) {

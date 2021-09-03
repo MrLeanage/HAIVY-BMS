@@ -103,7 +103,6 @@ public class EmployeeSalarySchemePopUPController implements Initializable {
 
 
         }catch(Exception ex){
-            AlertPopUp.generalError(ex);
 
         }
     }

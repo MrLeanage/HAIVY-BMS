@@ -1,16 +1,19 @@
 package view.AppHome;
 
+import com.sun.javafx.application.LauncherImpl;
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
+import javafx.application.Preloader;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import service.UserServices;
 import util.authenticate.UserAuthentication;
+import util.loader.HaivyPreloader;
 
 public class Main extends Application {
+
+    private static final int COUNT_LIMIT = 200000;
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -32,9 +35,18 @@ public class Main extends Application {
 
 
     }
+    @Override
+    public void init() throws Exception{
+        for(int i = 0; i< COUNT_LIMIT; i++){
+            double progress = (100*i) / COUNT_LIMIT;
+            LauncherImpl.notifyPreloader(this, new Preloader.ProgressNotification(progress));
+        }
+    }
 
 
     public static void main(String[] args) {
-        launch(args);
+
+        LauncherImpl.launchApplication(Main.class, HaivyPreloader.class, args);
+        //launch(args);
     }
 }

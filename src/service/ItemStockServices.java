@@ -124,7 +124,7 @@ public class ItemStockServices {
                         psPurchase.setString(4, String.valueOf(LocalDate.now()));
                         psPurchase.setString(5,"Pending");
                         psPurchase.execute();
-                        AlertPopUp.insertSuccesfully("Stock Item");
+                        AlertPopUp.insertSuccessfully("Stock Item");
                         resultval = true;
                     }
                 }catch(SQLException ex){
@@ -190,7 +190,7 @@ public class ItemStockServices {
                 psPurchase = conn.prepareStatement(PurchaseProductQueries.DELETE_PURCHASE_STOCK_DATA_QUERRY);
                 psPurchase.setInt(1, itemID);
                 psPurchase.executeUpdate();
-                AlertPopUp.deleteSuccesfull("Stock Item");
+                AlertPopUp.deleteSuccessful("Stock Item");
                 resultVal = true;
             }catch(SQLException ex){
                 AlertPopUp.deleteFailed(ex, "Stock Item");

@@ -1,18 +1,52 @@
 package view.AppHome;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuButton;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.shape.Circle;
 import util.authenticate.*;
+import util.loader.Loader;
+import util.systemAlerts.AlertPopUp;
 import util.utility.UtilityMethod;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class AdminBaseController implements Initializable {
+
+    @FXML
+    private Circle Circle1;
+
+    @FXML
+    private Circle Circle2;
+
+    @FXML
+    private Circle Circle3;
+
+    @FXML
+    private Circle Circle4;
+
+    @FXML
+    private Circle Circle5;
+
+    @FXML
+    private Circle Circle6;
+
+    @FXML
+    private Circle Circle7;
+
+    @FXML
+    private Circle Circle8;
+
+    @FXML
+    private AnchorPane LoadingAnchorPane;
+
+    @FXML
+    private AnchorPane rootpane;
 
     @FXML
     private MenuButton OptionMenuButton;
@@ -27,9 +61,6 @@ public class AdminBaseController implements Initializable {
     private Label systemTimeLabel;
 
 
-    @FXML
-    private AnchorPane rootpane;
-
     private AdminManagementHandler adminManagementHandler = new AdminManagementHandler();
     private CashierHandler cashierHandler = new CashierHandler();
     private SupervisorHandler supervisorHandler = new SupervisorHandler();
@@ -41,6 +72,12 @@ public class AdminBaseController implements Initializable {
     }
 
     private void setGeneralizationInfo(){
+        try{
+            Loader loader = new Loader();
+            loader.startUpAnimation(Circle1, Circle2, Circle3, Circle4, Circle5, Circle6, Circle7, Circle8, LoadingAnchorPane);
+        }catch(Exception exception){
+            exception.printStackTrace();
+        }
         sessionUser.setText(UserAuthentication.getAuthenticatedSession().getuName());
         AdminManagementHandler adminManagementHandler = new AdminManagementHandler();
         adminManagementHandler.loadStockItems(rootpane);
@@ -173,5 +210,10 @@ public class AdminBaseController implements Initializable {
     void loadIncomeStatement(ActionEvent event) {
         AdminManagementHandler adminManagementHandler = new AdminManagementHandler();
         adminManagementHandler.loadIncomeStatement(rootpane);
+    }
+
+    @FXML
+    void closeProgram(ActionEvent actionEvent){
+        AlertPopUp.exitConfirmation();
     }
 }

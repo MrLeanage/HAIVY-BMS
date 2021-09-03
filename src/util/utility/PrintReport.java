@@ -110,7 +110,8 @@ public class PrintReport extends JFrame{
             this.setVisible(true);
 
         } catch (Exception e) {
-            AlertPopUp.generalError(e);
+            e.printStackTrace();
+            //AlertPopUp.generalError(e);
         }
 
     }

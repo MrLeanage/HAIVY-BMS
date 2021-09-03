@@ -149,7 +149,7 @@ public class AgencyProductServices {
                         psPurchase.setString(4, String.valueOf(LocalDate.now()));
                         psPurchase.setString(5,"Pending");
                         psPurchase.execute();
-                        AlertPopUp.insertSuccesfully("Agency SalesItem");
+                        AlertPopUp.insertSuccessfully("Agency SalesItem");
                         resultval = true;
                     }
                 }catch(SQLException ex){
@@ -214,7 +214,7 @@ public class AgencyProductServices {
                 psPurchase = conn.prepareStatement(PurchaseProductQueries.DELETE_PURCHASE_AGENCY_DATA_QUERRY);
                 psPurchase.setInt(1, itemID);
                 psPurchase.executeUpdate();
-                AlertPopUp.deleteSuccesfull("Agency SalesItem");
+                AlertPopUp.deleteSuccessful("Agency SalesItem");
                 resultVal = true;
             }catch(SQLException ex){
                 AlertPopUp.deleteFailed(ex, "Agency SalesItem");

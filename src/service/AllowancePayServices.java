@@ -97,7 +97,7 @@ public class AllowancePayServices {
             psAllowance.setInt(1, eID);
             psAllowance.setInt(2, aID);
             psAllowance.execute();
-            AlertPopUp.insertSuccesfully("Allowance");
+            AlertPopUp.insertSuccessfully("Allowance");
             resultval = true;
 
         } catch (SQLException ex) {
@@ -114,7 +114,7 @@ public class AllowancePayServices {
             psAllowancePay.setInt(1, eID);
             psAllowancePay.setInt(2, aID);
             psAllowancePay.executeUpdate();
-            AlertPopUp.deleteSuccesfull("Allowance Scheme");
+            AlertPopUp.deleteSuccessful("Allowance Scheme");
             resultVal = true;
 
         }catch (SQLException ex) {

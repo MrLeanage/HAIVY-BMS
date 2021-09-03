@@ -13,7 +13,7 @@
 			<rightPen lineWidth="1.0" lineColor="#000000"/>
 		</box>
 	</style>
-	<style name="Table_TH" mode="Opaque" backcolor="#F0F8FF">
+	<style name="Table_TH" mode="Opaque" backcolor="#4D0024">
 		<box>
 			<pen lineWidth="0.5" lineColor="#000000"/>
 			<topPen lineWidth="0.5" lineColor="#000000"/>
@@ -22,7 +22,7 @@
 			<rightPen lineWidth="0.5" lineColor="#000000"/>
 		</box>
 	</style>
-	<style name="Table_CH" mode="Opaque" backcolor="#006699">
+	<style name="Table_CH" mode="Opaque" backcolor="#4D0024">
 		<box>
 			<pen lineWidth="0.5" lineColor="#000000"/>
 			<topPen lineWidth="0.5" lineColor="#000000"/>
@@ -139,22 +139,29 @@ FROM haivy_bms.salesitem
 	<title>
 		<band height="103">
 			<frame>
-				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="123" backcolor="#006699" uuid="6321f5e3-86eb-444f-acc1-8daaaa0d6c60"/>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="123" backcolor="#4D0024" uuid="6321f5e3-86eb-444f-acc1-8daaaa0d6c60"/>
 				<staticText>
-					<reportElement x="30" y="80" width="180" height="20" forecolor="#FFFFFF" uuid="0a399baa-bad3-4b1a-9fe3-bb1c563e6a27"/>
-					<textElement textAlignment="Right">
+					<reportElement x="21" y="80" width="290" height="20" forecolor="#FFFFFF" uuid="0a399baa-bad3-4b1a-9fe3-bb1c563e6a27"/>
+					<textElement textAlignment="Left">
 						<font size="14" isBold="false"/>
 					</textElement>
-					<text><![CDATA[Add a description here]]></text>
+					<text><![CDATA[Sales Report for the period if Time]]></text>
 				</staticText>
 				<textField>
-					<reportElement x="19" y="20" width="551" height="40" forecolor="#FFFFFF" uuid="8be310b9-b8d8-4981-9f22-6e6276ca9932"/>
+					<reportElement x="19" y="41" width="551" height="29" forecolor="#FFFFFF" uuid="8be310b9-b8d8-4981-9f22-6e6276ca9932"/>
 					<box topPadding="2" leftPadding="5" rightPadding="5"/>
 					<textElement>
-						<font size="22"/>
+						<font size="18" isBold="false"/>
 					</textElement>
 					<textFieldExpression><![CDATA["Sales Report - " +$P{sMonth} + " " + $P{sYear}]]></textFieldExpression>
 				</textField>
+				<staticText>
+					<reportElement x="18" y="10" width="375" height="50" forecolor="#FFFFFF" uuid="3774f551-f0bf-49d9-92b1-964b33f7433a"/>
+					<textElement textAlignment="Left">
+						<font size="26" isBold="true"/>
+					</textElement>
+					<text><![CDATA[HAIVY PASTRY SHOP]]></text>
+				</staticText>
 			</frame>
 		</band>
 	</title>

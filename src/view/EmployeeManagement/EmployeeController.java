@@ -459,7 +459,6 @@ public class EmployeeController implements Initializable {
             EPhoneTextBox.setText("0"+ employeeModel.getePhone());
             clearLabels();
         }catch(Exception ex){
-            AlertPopUp.generalError(ex);
         }
     }
 
@@ -470,7 +469,6 @@ public class EmployeeController implements Initializable {
             employeeModel = EmployeeTable.getSelectionModel().getSelectedItem();
             existingEmployeeModel = employeeModel;
         }catch(Exception ex){
-            AlertPopUp.generalError(ex);
         }
     }
 

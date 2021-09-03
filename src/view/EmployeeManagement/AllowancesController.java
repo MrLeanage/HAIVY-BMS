@@ -235,7 +235,6 @@ public class AllowancesController implements Initializable {
             AValueTextBox.setText(String.valueOf(allowanceModel.getaValue()));
             clearLabels();
         }catch(Exception ex){
-            AlertPopUp.generalError(ex);
         }
     }
 
@@ -246,7 +245,6 @@ public class AllowancesController implements Initializable {
             allowanceModel = AllowanceTable.getSelectionModel().getSelectedItem();
             existingAllowaneModel = allowanceModel;
         }catch(Exception ex){
-            AlertPopUp.generalError(ex);
         }
     }
 

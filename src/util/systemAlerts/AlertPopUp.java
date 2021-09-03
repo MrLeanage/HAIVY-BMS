@@ -1,5 +1,6 @@
 package util.systemAlerts;
 
+import javafx.application.Platform;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 
@@ -39,9 +40,18 @@ public class AlertPopUp {
         Optional<ButtonType> action = alert.showAndWait();
         return action;
     }
-    public static void insertSuccesfully(String text){
+    public static void exitConfirmation(){
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Confirm Your Action");
+        alert.setHeaderText(null);
+        alert.setContentText("Do you want to Close Application? Make sure you have no unsaved Data..");
+        Optional<ButtonType> action = alert.showAndWait();
+        if(action.get().equals(ButtonType.OK))
+            Platform.exit();
+    }
+    public static void insertSuccessfully(String text){
         Alert msg = new Alert(Alert.AlertType.INFORMATION);
-        msg.setTitle("Successfull..");
+        msg.setTitle("Successful..");
         msg.setHeaderText(null);
         msg.setContentText(text + " Added Successfully.. " );
         msg.showAndWait();
@@ -57,14 +67,14 @@ public class AlertPopUp {
     }
     public static void insertionFailed(Exception ex, String text){
         Alert msg = new Alert(Alert.AlertType.ERROR);
-        msg.setTitle("Error Occured!..");
+        msg.setTitle("Error Occurred!..");
         msg.setHeaderText(null);
         msg.setContentText(text +" not Added, Try Again!..SQL Exception found in :"+ ex );
         msg.showAndWait();
     }
     public static void updateSuccesfully(String text){
         Alert msg = new Alert(Alert.AlertType.INFORMATION);
-        msg.setTitle("Successfull..");
+        msg.setTitle("Successful..");
         msg.setHeaderText(null);
         msg.setContentText(text + " Updated Successfully.. " );
         msg.showAndWait();
@@ -97,9 +107,9 @@ public class AlertPopUp {
         successMsg.setContentText("Please Select a "+ text + " record to Update..");
         successMsg.showAndWait();
     }
-    public static void deleteSuccesfull(String text){
+    public static void deleteSuccessful(String text){
         Alert msg = new Alert(Alert.AlertType.INFORMATION);
-        msg.setTitle("Successfull..");
+        msg.setTitle("Successful..");
         msg.setHeaderText(null);
         msg.setContentText(text + " Deleted Successfully.. " );
         msg.showAndWait();

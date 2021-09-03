@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
@@ -8,6 +9,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
@@ -17,8 +19,8 @@
          <children>
             <AnchorPane prefHeight="440.0" prefWidth="1355.0" styleClass="system-background" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
             <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="290.0" prefWidth="1355.0" styleClass="system-background-theme" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="710.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="5.0" width="1335.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e3e3e3" height="434.0" stroke="#4d0024" strokeType="INSIDE" strokeWidth="5.0" width="1335.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="710.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="3.0" width="1335.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e3e3e3" height="434.0" stroke="#4d0024" strokeType="INSIDE" strokeWidth="3.0" width="1335.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
             <ImageView fitHeight="408.0" fitWidth="1154.0" layoutX="107.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="256.0" AnchorPane.leftAnchor="107.0" AnchorPane.rightAnchor="108.335205078125" AnchorPane.topAnchor="64.0">
                <image>
                   <Image url="@../../lib/img/cover.png" />
@@ -31,10 +33,10 @@
             </ImageView>
             <AnchorPane layoutX="307.0" layoutY="120.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="740.0" styleClass="system-fore-ground" AnchorPane.bottomAnchor="110.0" AnchorPane.leftAnchor="307.5" AnchorPane.rightAnchor="307.5" AnchorPane.topAnchor="120.0">
                <children>
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="480.0" layoutX="151.0" layoutY="112.0" stroke="#4d0024" strokeType="INSIDE" strokeWidth="5.0" width="720.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="480.0" layoutX="151.0" layoutY="112.0" stroke="#4d0024" strokeType="INSIDE" strokeWidth="3.0" width="720.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0" />
                   <ImageView fitHeight="138.0" fitWidth="134.0" layoutX="313.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="338.0" AnchorPane.leftAnchor="313.0" AnchorPane.rightAnchor="313.0" AnchorPane.topAnchor="28.0">
                      <image>
-                        <Image url="@../../lib/img/haivy-icon.png" />
+                        <Image url="@../../lib/img/logo.png" />
                      </image>
                   </ImageView>
                   <Label layoutX="154.0" layoutY="175.0" prefHeight="58.0" prefWidth="432.0" text="HAIVY PASTRY SHOP" textFill="#4d0024" AnchorPane.leftAnchor="154.0" AnchorPane.rightAnchor="154.0">
@@ -53,14 +55,21 @@
                      <font>
                         <Font name="Calibri Bold" size="19.0" />
                      </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </JFXButton>
                   <JFXButton layoutX="375.0" layoutY="399.0" onAction="#clearFields" prefHeight="40.0" prefWidth="175.0" style="-fx-border-color: #4d0024; -fx-border-radius: 5;" styleClass="default-button-color-scheme2" text="CLEAR" AnchorPane.rightAnchor="190.0">
                      <font>
                         <Font name="Calibri Bold" size="19.0" />
                      </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </JFXButton>
                   <Label fx:id="LoginValidateLabel" layoutX="190.0" layoutY="372.0" prefHeight="17.0" prefWidth="357.0" textFill="RED" />
                   <Button layoutX="647.0" layoutY="442.0" mnemonicParsing="false" onAction="#fillData" text="Fill Data" />
+                  <Circle fill="#ffffff00" layoutX="380.0" layoutY="95.0" radius="66.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="5.0" />
                </children>
             </AnchorPane>
          </children>

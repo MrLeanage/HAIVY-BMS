@@ -5,7 +5,7 @@
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<parameter name="iSPeriod" class="java.lang.String"/>
 	<queryString>
-		<![CDATA[SELECT * FROM  haivy_bms.incomestatement WHERE   haivy_bms.incomestatement.`ISPeriod` =  $P{iSPeriod} ]]>
+		<![CDATA[SELECT * FROM  haivy_bms.incomestatement WHERE   haivy_bms.incomestatement.`ISPeriod` =  $P{iSPeriod}]]>
 	</queryString>
 	<field name="ISID" class="java.lang.Long">
 		<property name="com.jaspersoft.studio.field.label" value="ISID"/>
@@ -44,14 +44,21 @@
 	<title>
 		<band height="66" splitType="Stretch">
 			<frame>
-				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="80" backcolor="#006699" uuid="82803d08-0efa-4721-80c7-1b00b7b72aee"/>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="80" backcolor="#4D0024" uuid="82803d08-0efa-4721-80c7-1b00b7b72aee"/>
 				<textField>
-					<reportElement x="22" y="25" width="558" height="30" forecolor="#FFFFFF" uuid="c6021606-db5b-4ea6-845f-d3f77d07bf1c"/>
+					<reportElement x="22" y="43" width="558" height="25" forecolor="#FFFFFF" uuid="c6021606-db5b-4ea6-845f-d3f77d07bf1c"/>
 					<textElement>
-						<font size="22" isBold="true"/>
+						<font size="16" isBold="false"/>
 					</textElement>
 					<textFieldExpression><![CDATA["Monthly Income Report  - " + $P{iSPeriod}]]></textFieldExpression>
 				</textField>
+				<staticText>
+					<reportElement x="22" y="11" width="557" height="39" forecolor="#FFFFFF" uuid="a427c6ff-9b78-41d1-a50f-9e777dde83e8"/>
+					<textElement>
+						<font size="24" isBold="true"/>
+					</textElement>
+					<text><![CDATA[HAIVY PASTRY SHOP]]></text>
+				</staticText>
 			</frame>
 		</band>
 	</title>
@@ -101,7 +108,7 @@
 				</reportElement>
 			</rectangle>
 			<frame>
-				<reportElement mode="Opaque" x="2" y="0" width="558" height="86" backcolor="#182C49" uuid="132b32a4-004c-492a-b1bb-6f1481588800"/>
+				<reportElement mode="Opaque" x="2" y="0" width="558" height="86" backcolor="#4D0024" uuid="132b32a4-004c-492a-b1bb-6f1481588800"/>
 				<staticText>
 					<reportElement x="83" y="14" width="188" height="16" forecolor="#FFFFFF" uuid="7bd74fca-7f69-4180-8cdc-baff33fb00e2"/>
 					<textElement>
@@ -147,7 +154,7 @@
 					<textElement textAlignment="Right" verticalAlignment="Middle">
 						<font size="12"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$V{ISIncomeAmount} - $V{ISExpenseeAmount} ]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$V{ISIncomeAmount} - $V{ISExpenseeAmount}]]></textFieldExpression>
 					<patternExpression><![CDATA["#,##0.00"]]></patternExpression>
 				</textField>
 				<textField>
@@ -155,7 +162,7 @@
 					<textElement verticalAlignment="Middle">
 						<font size="12"/>
 					</textElement>
-					<textFieldExpression><![CDATA[ $V{profitStatus}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$V{profitStatus}]]></textFieldExpression>
 				</textField>
 			</frame>
 			<staticText>

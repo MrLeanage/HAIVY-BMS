@@ -100,7 +100,6 @@ public class SalesReportAdminController implements Initializable {
     @FXML
     private AnchorPane rootpane;
 
-    private AdminManagementHandler adminManagementHandler = new AdminManagementHandler();
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         loadData();
@@ -120,6 +119,7 @@ public class SalesReportAdminController implements Initializable {
             BillingServices billingServices = new BillingServices();
             //getting all Sales Items with billing Date
             salesItemsData = billingServices.loadSortedDateData(0, "None", "None", "Claimed");
+
 
             for(SalesItem salesItem : salesItemsData){
                 //Adding dates to observable list
@@ -171,8 +171,8 @@ public class SalesReportAdminController implements Initializable {
 
             //Setting text on Sales report Generate Button
             MonthlySalesReportButton.setText("Generate " +month + " " + year+" Sales Report");
-        }catch(NullPointerException ex){
-
+        }catch(Exception ex){
+            ex.printStackTrace();
         }
     }
     //load data to View table
@@ -237,7 +237,12 @@ public class SalesReportAdminController implements Initializable {
     private void generateMonthlySalesReport(ActionEvent actionEvent) throws ParseException {
         PrintReport printReport = new PrintReport();
         if(!month.equals("None")){
-            printReport.printSalesReport(year, month);
+            if(SalesTable.getItems().size() != 0){
+                printReport.printSalesReport(year, month);
+            }else{
+                AlertPopUp.generalError("You have no records in table to generate Report");
+            }
+
         }else{
             AlertPopUp.generalError("Please Select a valid Month to generate Report");
         }
@@ -258,10 +263,8 @@ public class SalesReportAdminController implements Initializable {
 
         int size = getChartData(type).size();
         //declaring starting index of linked list to access relevant month data from the last record to show last month record last at chart
-        int startIndex;
-        if(size < 3){
-            startIndex = 0;
-        }else{
+        int startIndex = 0;
+        if(size >= 3){
             startIndex = size - noOfMonths;
         }
 
@@ -270,8 +273,7 @@ public class SalesReportAdminController implements Initializable {
         String typeOrder = "Order Product";
         String typeAll = "All Products";
         //executing loop from 0 to no of months
-        for(int i = 0; i < noOfMonths ; i++){
-
+        for(int i = 0; i < size ; i++){
             All.getData().add(new XYChart.Data(getChartData(typeAll).get(startIndex + i).getDataYear()+ " " + getChartData(typeAll).get(startIndex + i).getDataMonth(), getChartData(typeAll).get(startIndex + i).getDataValue()));
             bakery.getData().add(new XYChart.Data(getChartData(typeBakery).get(startIndex + i).getDataYear()+ " " + getChartData(typeBakery).get(startIndex + i).getDataMonth(), getChartData(typeBakery).get(startIndex + i).getDataValue()));
             agency.getData().add(new XYChart.Data(getChartData(typeAgency).get(startIndex + i).getDataYear()+ " " + getChartData(typeAgency).get(startIndex + i).getDataMonth(), getChartData(typeAgency).get(startIndex + i).getDataValue()));

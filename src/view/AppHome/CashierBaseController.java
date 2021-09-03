@@ -7,14 +7,43 @@ import javafx.scene.control.Label;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.shape.Circle;
 import util.authenticate.CashierHandler;
 import util.authenticate.UserAuthentication;
+import util.loader.Loader;
 import util.utility.UtilityMethod;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class CashierBaseController implements Initializable {
+
+    @FXML
+    private Circle Circle1;
+
+    @FXML
+    private Circle Circle2;
+
+    @FXML
+    private Circle Circle3;
+
+    @FXML
+    private Circle Circle4;
+
+    @FXML
+    private Circle Circle5;
+
+    @FXML
+    private Circle Circle6;
+
+    @FXML
+    private Circle Circle7;
+
+    @FXML
+    private Circle Circle8;
+
+    @FXML
+    private AnchorPane LoadingAnchorPane;
 
     @FXML
     private MenuButton OptionMenuButton;
@@ -46,6 +75,12 @@ public class CashierBaseController implements Initializable {
     }
 
     private void setGeneralizationInfo(){
+        try{
+            Loader loader = new Loader();
+            loader.startUpAnimation(Circle1, Circle2, Circle3, Circle4, Circle5, Circle6, Circle7, Circle8, LoadingAnchorPane);
+        }catch(Exception exception){
+            exception.printStackTrace();
+        }
         sessionUser.setText(UserAuthentication.getAuthenticatedSession().getuName());
         CashierHandler cashierHandler = new CashierHandler();
         cashierHandler.loadBilling(rootpane);

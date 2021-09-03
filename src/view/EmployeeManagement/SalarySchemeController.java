@@ -194,7 +194,6 @@ public class SalarySchemeController implements Initializable {
             BSSAmountTextBox.setText(String.valueOf(salarySchemeModel.getbSSAmount()));
             clearLabels();
         }catch(Exception ex){
-            AlertPopUp.generalError(ex);
         }
     }
 
@@ -205,7 +204,6 @@ public class SalarySchemeController implements Initializable {
             salarySchemeModel = BasicSalarySchemeTable.getSelectionModel().getSelectedItem();
             existingSalarySchemeModel = salarySchemeModel;
         }catch(Exception ex){
-            AlertPopUp.generalError(ex);
         }
     }
 

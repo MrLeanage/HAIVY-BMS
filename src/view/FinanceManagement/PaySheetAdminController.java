@@ -252,7 +252,7 @@ public class PaySheetAdminController implements Initializable {
         Integer resultVal = paySheetServices.insertData(paySheetObservableList);
         if(resultVal != 0){
             PrintReport printReport =  new PrintReport();
-            //printReport.printPaySheetList();
+            printReport.printPaySheetList();
             clearFields();
         }
     }

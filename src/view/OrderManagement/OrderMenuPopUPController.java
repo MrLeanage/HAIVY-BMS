@@ -141,7 +141,6 @@ public class OrderMenuPopUPController implements Initializable {
 
 
         }catch(Exception ex){
-            AlertPopUp.generalError(ex);
 
         }
     }

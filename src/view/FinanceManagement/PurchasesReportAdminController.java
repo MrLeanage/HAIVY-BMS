@@ -351,7 +351,7 @@ public class PurchasesReportAdminController implements Initializable {
                 }
             }
             PrintReport printReport = new PrintReport();
-            //printReport.printPurchaseReport(year,MonthChoiceBox.getValue(), CategoryChoiceBox.getValue(), status, sortedPurchaseList);
+            printReport.printPurchaseReport(year,MonthChoiceBox.getValue(), CategoryChoiceBox.getValue(), status, sortedPurchaseList);
 
         }else{
             AlertPopUp.noRecordFound("No records found to generate Purchase Report");

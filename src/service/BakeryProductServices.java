@@ -73,7 +73,7 @@ public class BakeryProductServices {
             psBakeryProduct.setFloat(5, bakeryProduct.getbPPrice());
             psBakeryProduct.setString(6, bakeryProduct.getbPStatus());
             psBakeryProduct.execute();
-            AlertPopUp.insertSuccesfully("Bakery SalesItem");
+            AlertPopUp.insertSuccessfully("Bakery SalesItem");
             resultval = true;
 
         } catch (SQLException ex) {
@@ -114,7 +114,7 @@ public class BakeryProductServices {
             psBakeryProduct = conn.prepareStatement(BakeryProductQueries.DELETE_ITEM_STOCK_DATA_QUERY);
             psBakeryProduct.setInt(1, itemID);
             psBakeryProduct.executeUpdate();
-            AlertPopUp.deleteSuccesfull("Bakery SalesItem");
+            AlertPopUp.deleteSuccessful("Bakery SalesItem");
             resultVal = true;
 
         }catch (SQLException ex) {

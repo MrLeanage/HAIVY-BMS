@@ -220,7 +220,6 @@ public class OrderMenuCashierController implements Initializable {
             orderMenuModel = OrderMenuTable.getSelectionModel().getSelectedItem();
             existingOrderMenuProductModel = orderMenuModel;
         }catch(Exception ex){
-            AlertPopUp.generalError(ex);
         }
     }
 

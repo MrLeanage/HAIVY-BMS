@@ -264,7 +264,6 @@ public class SystemUsersController implements Initializable {
             UStatusChoiceBox.setValue(userModel.getuStatus());
             clearLabels();
         }catch(Exception ex){
-            AlertPopUp.generalError(ex);
         }
     }
 
@@ -276,7 +275,6 @@ public class SystemUsersController implements Initializable {
             userModel = UserTable.getSelectionModel().getSelectedItem();
             existingUserModel = userModel;
         }catch(Exception ex){
-            AlertPopUp.generalError(ex);
         }
     }
 

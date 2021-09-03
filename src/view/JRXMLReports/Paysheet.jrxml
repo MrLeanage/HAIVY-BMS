@@ -45,11 +45,11 @@
 	<title>
 		<band height="59" splitType="Stretch">
 			<staticText>
-				<reportElement x="140" y="0" width="290" height="56" uuid="66c15d0d-c914-4b5a-9620-5e86e4e34ee3"/>
+				<reportElement x="10" y="0" width="536" height="56" uuid="66c15d0d-c914-4b5a-9620-5e86e4e34ee3"/>
 				<textElement>
-					<font size="33" isBold="true"/>
+					<font size="31" isBold="true"/>
 				</textElement>
-				<text><![CDATA[BMS - Salary Slip]]></text>
+				<text><![CDATA[HAIVY PASTRY SHOP - Salary Slip]]></text>
 			</staticText>
 		</band>
 	</title>
@@ -288,7 +288,7 @@
 			</staticText>
 			<staticText>
 				<reportElement x="176" y="160" width="367" height="16" uuid="f9d2b11d-d3a2-4e3a-a97e-a33de9b1c42e"/>
-				<text><![CDATA[2. Discrepancy if any noted, should be intimated to H.R. department within 7 days]]></text>
+				<text><![CDATA[2. Discrepancy if any noted, should be intimated to Proprietor within 7 days]]></text>
 			</staticText>
 			<textField pattern="MMMMM dd, yyyy">
 				<reportElement x="76" y="182" width="100" height="20" uuid="5bcaacbb-e7c0-4b59-846e-b494855558d6"/>
@@ -310,7 +310,7 @@
 				<textElement textAlignment="Right">
 					<font size="12" isBold="true"/>
 				</textElement>
-				<textFieldExpression><![CDATA[ $P{pSBSSAmount} +$V{pAllowance} ]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{pSBSSAmount} +$V{pAllowance}]]></textFieldExpression>
 				<patternExpression><![CDATA["#,##0.00"]]></patternExpression>
 			</textField>
 		</band>

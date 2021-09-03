@@ -246,7 +246,6 @@ public class OtherExpensesAdminController implements Initializable {
             EXPDateDatePicker.setValue(LocalDate.parse(otherExpenseModel.geteXPPaidDate()));
             clearLabels();
         }catch(Exception ex){
-            AlertPopUp.generalError(ex);
         }
     }
     @FXML
@@ -256,7 +255,6 @@ public class OtherExpensesAdminController implements Initializable {
             otherExpenseModel = ExpenseTable.getSelectionModel().getSelectedItem();
             existingOtherExpenseModel = otherExpenseModel;
         }catch(Exception ex){
-            AlertPopUp.generalError(ex);
         }
     }
     @FXML

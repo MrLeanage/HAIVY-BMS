@@ -110,7 +110,6 @@ public class AgencySupplierPopUPController implements Initializable {
 
 
         }catch(Exception ex){
-            AlertPopUp.generalError(ex);
 
         }
     }

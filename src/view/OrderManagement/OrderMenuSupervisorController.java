@@ -255,9 +255,6 @@ public class OrderMenuSupervisorController implements Initializable {
             OMIStatusChoiceBox.setValue(orderMenuModel.getoMIStatus());
             clearLabels();
         }catch(Exception ex){
-
-            System.out.println(ex);
-            AlertPopUp.generalError(ex);
         }
     }
 
@@ -268,8 +265,6 @@ public class OrderMenuSupervisorController implements Initializable {
             orderMenuModel = OrderMenuTable.getSelectionModel().getSelectedItem();
             existingOrderMenuProductModel = orderMenuModel;
         }catch(Exception ex){
-            System.out.println(ex);
-            AlertPopUp.generalError(ex);
         }
     }
 

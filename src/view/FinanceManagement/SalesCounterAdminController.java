@@ -158,7 +158,6 @@ public class SalesCounterAdminController implements Initializable {
             UIDTextbox.setText(user.getuID());
             UNameTextbox.setText(user.getuName());
         }catch(NullPointerException ex){
-            AlertPopUp.generalError(ex);
         }
     }
     private void counter(){

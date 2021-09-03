@@ -78,7 +78,7 @@ public class OrderMenuServices {
             psOrderMenu.setFloat(5, orderMenu.getoMIPrice());
             psOrderMenu.setString(6, orderMenu.getoMIStatus());
             psOrderMenu.execute();
-            AlertPopUp.insertSuccesfully("Order Menu SalesItem");
+            AlertPopUp.insertSuccessfully("Order Menu SalesItem");
             resultval = true;
 
         } catch (SQLException ex) {
@@ -118,7 +118,7 @@ public class OrderMenuServices {
             psOrderMenu = conn.prepareStatement(OrderMenuQueries.DELETE_ORDER_MENU_DATA_QUERY);
             psOrderMenu.setInt(1, itemID);
             psOrderMenu.executeUpdate();
-            AlertPopUp.deleteSuccesfull("Order Menu SalesItem");
+            AlertPopUp.deleteSuccessful("Order Menu SalesItem");
             resultVal = true;
 
         }catch (SQLException ex) {

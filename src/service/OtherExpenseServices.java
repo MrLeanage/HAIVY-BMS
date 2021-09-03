@@ -5,10 +5,8 @@ import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
 import javafx.scene.control.TextField;
-import model.Allowance;
 import model.OtherExpense;
 import util.dbConnect.DBConnection;
-import util.query.AllowanceQueries;
 import util.query.OtherExpenseQueries;
 import util.systemAlerts.AlertPopUp;
 import util.utility.UtilityMethod;
@@ -54,7 +52,7 @@ public class OtherExpenseServices {
             psOtherExpense.setString(5, otherExpense.geteXPPaidDate());
             psOtherExpense.setString(6, otherExpense.geteXPAddedDate());
             psOtherExpense.execute();
-            AlertPopUp.insertSuccesfully("Expense Info");
+            AlertPopUp.insertSuccessfully("Expense Info");
             resultval = true;
 
         } catch (SQLException ex) {
@@ -97,7 +95,7 @@ public class OtherExpenseServices {
             psOtherExpense = conn.prepareStatement(OtherExpenseQueries.DELETE_EXPENSE_DATA_QUERY);
             psOtherExpense.setInt(1, itemID);
             psOtherExpense.executeUpdate();
-            AlertPopUp.deleteSuccesfull("Expense Info");
+            AlertPopUp.deleteSuccessful("Expense Info");
             resultVal = true;
 
         }catch (SQLException ex) {

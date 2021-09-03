@@ -377,7 +377,6 @@ public class OrderController implements Initializable {
             OCustomerPhoneTextBox.setText("0"+orderModel.getoCustomerPhone());
             clearLabels();
         }catch(Exception ex){
-            AlertPopUp.generalError(ex);
         }
     }
 
@@ -388,7 +387,6 @@ public class OrderController implements Initializable {
             orderTableModel = OrderTable.getSelectionModel().getSelectedItem();
             existingOrderModel = orderTableModel;
         }catch(Exception ex){
-            AlertPopUp.generalError(ex);
         }
     }
 

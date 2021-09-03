@@ -368,7 +368,6 @@ public class ItemWithdrawController implements Initializable {
             IQuantitySpinner.setValueFactory(quantityValueFactory);
             clearLabels();
         }catch(Exception ex){
-            AlertPopUp.generalError(ex);
         }
     }
     @FXML

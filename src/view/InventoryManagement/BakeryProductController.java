@@ -264,7 +264,6 @@ public class BakeryProductController implements Initializable {
             BPStatusChoiceBox.setValue(bakeryProductModel.getbPStatus());
             clearLabels();
         }catch(Exception ex){
-            AlertPopUp.generalError(ex);
         }
     }
 

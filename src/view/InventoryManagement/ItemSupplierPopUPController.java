@@ -110,7 +110,6 @@ public class ItemSupplierPopUPController implements Initializable {
 
 
         }catch(Exception ex){
-            AlertPopUp.generalError(ex);
 
         }
     }

@@ -317,7 +317,6 @@ public class ItemStockController implements Initializable {
             ISupplierIDTextField.setText(supplier.getsIID());
             ISupplierNameTextField.setText(supplier.getsIName());
         }catch(NullPointerException ex){
-            AlertPopUp.generalError(ex);
         }
 
 
@@ -333,7 +332,7 @@ public class ItemStockController implements Initializable {
             this.supplier = supplierInfo;
             resultval = true;
         }catch(NullPointerException ex){
-            AlertPopUp.generalError(ex);
+//            AlertPopUp.generalError(ex);
         }
         return resultval;
     }
@@ -419,7 +418,6 @@ public class ItemStockController implements Initializable {
 
             clearLabels();
         }catch(Exception ex){
-            AlertPopUp.generalError(ex);
         }
     }
 
@@ -430,7 +428,6 @@ public class ItemStockController implements Initializable {
             itemStockModel = ItemStockTable.getSelectionModel().getSelectedItem();
             existingItemStockModel = itemStockModel;
         }catch(Exception ex){
-            AlertPopUp.generalError(ex);
         }
     }
     public ItemStock getExistingItemStockModel(){

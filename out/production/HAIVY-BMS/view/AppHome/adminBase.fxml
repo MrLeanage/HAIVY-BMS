@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
@@ -9,20 +12,22 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="730.0" prefWidth="1355.0" styleClass="system-background-theme" stylesheets="@../../lib/css/bms-system.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.AppHome.AdminBaseController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="730.0" prefWidth="1355.0" styleClass="system-background-theme" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.AppHome.AdminBaseController">
    <children>
       <AnchorPane prefHeight="106.0" prefWidth="1355.0" AnchorPane.bottomAnchor="624.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <AnchorPane prefHeight="30.0" prefWidth="1355.0" styleClass="system-background" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <MenuBar nodeOrientation="LEFT_TO_RIGHT" prefHeight="30.0" prefWidth="969.0" styleClass="system-background" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="2.0">
+                  <MenuBar maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="30.0" prefWidth="1103.0" styleClass="system-background" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="252.0" AnchorPane.topAnchor="2.0">
                      <menus>
                         <Menu mnemonicParsing="false" text="File">
                            <items>
-                              <MenuItem mnemonicParsing="false" text="Close" />
+                              <MenuItem mnemonicParsing="false" onAction="#closeProgram" text="Close" />
                            </items>
                         </Menu>
                         <Menu mnemonicParsing="false" text="Inventory Management">
@@ -66,6 +71,9 @@
                               <MenuItem mnemonicParsing="false" onAction="#loadSystemUsers" text="Users" />
                            </items></Menu>
                      </menus>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </MenuBar>
                   <MenuButton fx:id="OptionMenuButton" layoutX="1251.0" layoutY="4.0" mnemonicParsing="false" styleClass="system-background" text="My Account" AnchorPane.bottomAnchor="3.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="4.0">
                      <items>
@@ -74,8 +82,11 @@
                         <MenuItem mnemonicParsing="false" onAction="#supervisorPanel" text="Supervisor Panel" />
                         <MenuItem mnemonicParsing="false" onAction="#logoutSession" text="Logout" />
                      </items>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </MenuButton>
-                  <Label fx:id="sessionUser" alignment="CENTER_RIGHT" layoutX="889.0" layoutY="8.0" prefHeight="17.0" prefWidth="257.0" text="User" AnchorPane.rightAnchor="123.0" AnchorPane.topAnchor="8.0">
+                  <Label fx:id="sessionUser" alignment="CENTER_RIGHT" layoutX="889.0" layoutY="8.0" prefHeight="17.0" prefWidth="195.0" text="User" AnchorPane.rightAnchor="123.0" AnchorPane.topAnchor="8.0">
                      <graphic>
                         <FontAwesomeIconView glyphName="USER" size="14.0" />
                      </graphic>
@@ -114,5 +125,64 @@
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="620.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="5.0" width="1351.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0" />
          </children>
       </AnchorPane>
+      <AnchorPane fx:id="LoadingAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="730.0" prefWidth="1355.0" styleClass="system-background-theme" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="720.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="3.0" width="1345.0" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0" />
+            <Label layoutX="515.0" layoutY="426.0" prefHeight="53.0" prefWidth="363.0" text="System is Loading Please Wait..." textFill="WHITE" AnchorPane.leftAnchor="515.0" AnchorPane.rightAnchor="477.0">
+               <font>
+                  <Font name="Calibri" size="25.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER" layoutX="588.0" layoutY="469.0" prefHeight="53.0" prefWidth="162.0" spacing="3.0" AnchorPane.leftAnchor="588.0" AnchorPane.rightAnchor="582.0">
+               <children>
+                  <Circle fx:id="Circle1" fill="WHITE" radius="10.0" stroke="BLACK" strokeType="INSIDE">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Circle>
+                  <Circle fx:id="Circle2" fill="WHITE" radius="10.0" stroke="BLACK" strokeType="INSIDE">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Circle>
+                  <Circle fx:id="Circle3" fill="WHITE" radius="10.0" stroke="BLACK" strokeType="INSIDE">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Circle>
+                  <Circle fx:id="Circle4" fill="WHITE" radius="10.0" stroke="BLACK" strokeType="INSIDE">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Circle>
+                  <Circle fx:id="Circle5" fill="WHITE" radius="10.0" stroke="BLACK" strokeType="INSIDE">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Circle>
+                  <Circle fx:id="Circle6" fill="WHITE" radius="10.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fx:id="Circle7" fill="WHITE" radius="10.0" stroke="BLACK" strokeType="INSIDE">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Circle>
+                  <Circle fx:id="Circle8" fill="WHITE" radius="10.0" stroke="BLACK" strokeType="INSIDE" />
+               </children>
+               <padding>
+                  <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+               </padding>
+            </HBox>
+            <ImageView fitHeight="233.0" fitWidth="225.0" layoutX="565.0" layoutY="168.0" pickOnBounds="true" smooth="false" AnchorPane.leftAnchor="565.0" AnchorPane.rightAnchor="565.0">
+               <image>
+                  <Image url="@../../lib/img/logo.png" />
+               </image>
+            </ImageView>
+            <Circle fill="#ffffff00" layoutX="677.0" layoutY="284.0" radius="100.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="2.0" />
+         </children>
+      </AnchorPane>
    </children>
+   <stylesheets>
+      <URL value="@../../lib/css/bms-system.css" />
+      <URL value="@../../lib/css/haivy-bms-ui.css" />
+   </stylesheets>
 </AnchorPane>

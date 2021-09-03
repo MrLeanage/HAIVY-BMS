@@ -12,7 +12,9 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import model.User;
 import util.systemAlerts.AlertPopUp;
-//import util.userNotifications.Notification;
+//import view.NotificationManagement.Notification;
+import view.AppHome.SplashScreenController;
+import view.NotificationManagement.Notification;
 import view.AppHome.LoginController;
 
 
@@ -52,7 +54,7 @@ public class UserAuthentication {
      * Will show the login application screen.
      */
     public void endAuthenticatedSession(MenuButton menuButton) {
-
+        Notification.stopExecution();
 
         Optional<ButtonType> action = AlertPopUp.sessionEndConfirmation("Make sure you have no record to Save, Do you want to logout from the System now??");
         //Checking for confirmation
@@ -78,17 +80,18 @@ public class UserAuthentication {
         try {
             FXMLLoader loader = new FXMLLoader(
                     getClass().getResource("/view/AppHome/login.fxml")
+//                    getClass().getResource("/view/AppHome/splashScreen.fxml")
             );
             scene.setRoot((Parent) loader.load());
-            LoginController controller =
-                    loader.getController();
+            LoginController controller = loader.getController();
+//            SplashScreenController controller = loader.getController();
         } catch (IOException ex) {
             Logger.getLogger(UserAuthentication.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
     public void showMainView(ActionEvent actionEvent, AnchorPane rootpane) {
-        //Notification notification = new Notification();
+        Notification notification = new Notification();
         if(userSession.getuType().equals("Admin")){
             try {
                 AnchorPane home_page = (AnchorPane) FXMLLoader.load(getClass().getResource("/view/AppHome/adminBase.fxml"));
@@ -130,10 +133,10 @@ public class UserAuthentication {
         }
     }
     public void getCashierMenu(MenuButton menuButton){
-        //Notification.stopExecution();
+        Notification.stopExecution();
         userSession.setuType("Cashier");
         setCurrentAdminType(userSession.getuType());
-        //Notification notification = new Notification();
+        Notification notification = new Notification();
         try {
             AnchorPane home_page = (AnchorPane) FXMLLoader.load(getClass().getResource("/view/AppHome/cashierBase.fxml"));
 
@@ -146,10 +149,10 @@ public class UserAuthentication {
         }
     }
     public void getSupervisorMenu(MenuButton menuButton){
-        //Notification.stopExecution();
+        Notification.stopExecution();
         userSession.setuType("Supervisor");
         setCurrentAdminType(userSession.getuType());
-        //Notification notification = new Notification();
+        Notification notification = new Notification();
         try {
             AnchorPane home_page = (AnchorPane) FXMLLoader.load(getClass().getResource("/view/AppHome/supervisorBase.fxml"));
 
@@ -162,10 +165,10 @@ public class UserAuthentication {
         }
     }
     public void getAdminMenu(MenuButton menuButton){
-        //Notification.stopExecution();
+        Notification.stopExecution();
         userSession.setuType("Admin");
         setCurrentAdminType(userSession.getuType());
-        //Notification notification = new Notification();
+        Notification notification = new Notification();
         try {
             AnchorPane home_page = (AnchorPane) FXMLLoader.load(getClass().getResource("/view/AppHome/adminBase.fxml"));
 

@@ -66,7 +66,7 @@ public class AllowanceServices {
             psAllowance.setString(3, allowance.getaType());
             psAllowance.setFloat(4, allowance.getaValue());
             psAllowance.execute();
-            AlertPopUp.insertSuccesfully("Allowance Scheme");
+            AlertPopUp.insertSuccessfully("Allowance Scheme");
             resultval = true;
 
         } catch (SQLException ex) {
@@ -105,7 +105,7 @@ public class AllowanceServices {
             psAllowance = conn.prepareStatement(AllowanceQueries.DELETE_ALLOWANCE_DATA_QUERY);
             psAllowance.setInt(1, itemID);
             psAllowance.executeUpdate();
-            AlertPopUp.deleteSuccesfull("Allowance Scheme");
+            AlertPopUp.deleteSuccessful("Allowance Scheme");
             resultVal = true;
 
         }catch (SQLException ex) {

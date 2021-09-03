@@ -350,7 +350,7 @@ public class IncomeStatemetAdminController implements Initializable {
         IncomeStatementServices incomeStatementServices = new IncomeStatementServices();
         incomeStatementServices.UpdateIncomeStatementInfo(barChartData());
         PrintReport printReport = new PrintReport();
-        //printReport.printIncomeStatement(IncomeStatementMonthComboBox.getValue());
+        printReport.printIncomeStatement(IncomeStatementMonthComboBox.getValue());
     }
 
 }

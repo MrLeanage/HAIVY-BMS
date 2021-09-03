@@ -456,7 +456,6 @@ public class AgencyProductsController implements Initializable {
 
             clearLabels();
         }catch(Exception ex){
-            AlertPopUp.generalError(ex);
         }
 
 

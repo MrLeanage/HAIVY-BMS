@@ -1,6 +1,5 @@
 package service;
 
-import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
@@ -114,7 +113,7 @@ public class UserServices {
             psUser.setString(4, user.getuType());
             psUser.setString(5, user.getuStatus());
             psUser.execute();
-            AlertPopUp.insertSuccesfully("User Record");
+            AlertPopUp.insertSuccessfully("User Record");
             resultval = true;
 
         } catch (SQLException ex) {
@@ -153,7 +152,7 @@ public class UserServices {
             psUser = conn.prepareStatement(UserQueries.DELETE_USER_DATA_QUERY);
             psUser.setString(1, uID);
             psUser.executeUpdate();
-            AlertPopUp.deleteSuccesfull("User Record");
+            AlertPopUp.deleteSuccessful("User Record");
             resultVal = true;
 
         }catch (SQLException ex) {

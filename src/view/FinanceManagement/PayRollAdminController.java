@@ -179,7 +179,7 @@ public class PayRollAdminController implements Initializable {
                                         if(resultVal != 0){
                                             paySheet.setpSID(String.valueOf(resultVal));
                                             PrintReport printReport =  new PrintReport();
-                                            //printReport.printPaySheet(paySheet);
+                                            printReport.printPaySheet(paySheet);
 
                                         }
                                     });

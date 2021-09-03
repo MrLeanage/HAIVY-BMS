@@ -48,7 +48,7 @@
                         <Font name="System Bold" size="16.0" />
                      </font>
                   </Label>
-                  <Label fx:id="PayRollPeriodLabel" layoutX="138.0" layoutY="6.0" prefHeight="21.0" prefWidth="501.0" textFill="#fbff00" AnchorPane.topAnchor="6.0">
+                  <Label fx:id="PayRollPeriodLabel" layoutX="138.0" layoutY="5.0" prefHeight="21.0" prefWidth="501.0" textFill="#fbff00" AnchorPane.topAnchor="5.0">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>

@@ -4,7 +4,6 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
-import javafx.fxml.Initializable;
 import javafx.scene.control.TextField;
 import model.Supplier;
 import util.dbConnect.DBConnection;
@@ -12,12 +11,10 @@ import util.query.SupplierQueries;
 import util.systemAlerts.AlertPopUp;
 import util.utility.UtilityMethod;
 
-import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ResourceBundle;
 
 public class SupplierServices{
     private ObservableList<Supplier> supplierData;
@@ -81,7 +78,7 @@ public class SupplierServices{
             ps.setLong(8, supplier.getsIAccNo());
 
             ps.execute();
-            AlertPopUp.insertSuccesfully("Supplier Information");
+            AlertPopUp.insertSuccessfully("Supplier Information");
             //supplierViewController.refreshTable();
             resultval = true;
 
@@ -128,7 +125,7 @@ public class SupplierServices{
             ps.setInt(1, ID);
 
             ps.executeUpdate();
-            AlertPopUp.deleteSuccesfull("Supplier Information");
+            AlertPopUp.deleteSuccessful("Supplier Information");
             resultVal = true;
 
         }catch (Exception ex) {

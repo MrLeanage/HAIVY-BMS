@@ -2,7 +2,6 @@ package service;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import model.BakeryProduct;
 import model.SalesItem;
 import util.dbConnect.DBConnection;
 import util.query.BillingQueries;
@@ -76,7 +75,7 @@ public class BillingServices {
         return SalesItemData;
     }
     public ObservableList<SalesItem> loadSortedDateData(Integer year, String month, String category, String clearance){
-        ObservableList<SalesItem> salesItemData = null;
+        ObservableList<SalesItem> salesItemData = FXCollections.observableArrayList();
         ResultSet rsLoadBilling = null;
         ResultSet rsLoadItem = null;
         PreparedStatement psLoadBilling = null;
@@ -136,7 +135,8 @@ public class BillingServices {
                     }
                 }
             }
-        }catch(SQLException ex){
+        }catch(Exception ex){
+            ex.printStackTrace();
             AlertPopUp.sqlQueryError(ex);
         }
         return salesItemData;
@@ -196,7 +196,7 @@ public class BillingServices {
                 }
             }
 
-            AlertPopUp.insertSuccesfully("Billed");
+            AlertPopUp.insertSuccessfully("Billed");
 
         } catch (SQLException ex) {
             AlertPopUp.insertionFailed(ex, "Billing");

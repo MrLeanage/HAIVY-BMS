@@ -28,7 +28,7 @@
                         <Image url="@../../lib/img/cover.png" />
                      </image>
                   </ImageView>
-                  <Label alignment="CENTER" layoutX="3.0" layoutY="1.0" prefHeight="42.0" prefWidth="193.0" style="-fx-background-color: #ffffff;" text="SALES REPORT ADMIN" textFill="#8c0000">
+                  <Label alignment="CENTER" layoutX="3.0" layoutY="1.0" prefHeight="42.0" prefWidth="193.0" style="-fx-background-color: #ffffff;" text="SALES REPORT" textFill="#8c0000">
                      <font>
                         <Font name="Calibri Bold" size="20.0" />
                      </font>
@@ -47,7 +47,7 @@
                         <Font name="System Bold" size="16.0" />
                      </font>
                   </Label>
-                  <Label fx:id="SalesPeriodLabel" layoutX="101.0" layoutY="6.0" prefHeight="21.0" prefWidth="264.0" textFill="#fbff00" AnchorPane.topAnchor="6.0">
+                  <Label fx:id="SalesPeriodLabel" layoutX="110.0" layoutY="6.0" prefHeight="21.0" prefWidth="264.0" textFill="#fbff00" AnchorPane.leftAnchor="110.0" AnchorPane.topAnchor="6.0">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>

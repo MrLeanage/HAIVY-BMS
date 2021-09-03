@@ -90,7 +90,7 @@ FROM haivy_bms.orders
 		<property name="com.jaspersoft.studio.field.label" value="UID"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="user"/>
 	</field>
-	<field name="OTakenUID" class="java.lang.Long">
+	<field name="OTakenUID" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="OTakenUID"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="orders"/>
 	</field>
@@ -114,7 +114,7 @@ FROM haivy_bms.orders
 		<property name="com.jaspersoft.studio.field.label" value="OMIDescription"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="ordermenuitem"/>
 	</field>
-	<field name="OMIWeight" class="java.lang.Float">
+	<field name="OMIWeight" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="OMIWeight"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="ordermenuitem"/>
 	</field>
@@ -128,14 +128,14 @@ FROM haivy_bms.orders
 	<title>
 		<band height="48" splitType="Stretch">
 			<rectangle>
-				<reportElement x="9" y="5" width="536" height="43" backcolor="#000000" uuid="bffb20db-0a21-4000-b067-58c6b3e1469a"/>
+				<reportElement x="10" y="5" width="537" height="43" forecolor="rgba(0, 0, 0, 0.0)" backcolor="#4D0024" uuid="bffb20db-0a21-4000-b067-58c6b3e1469a"/>
 			</rectangle>
 			<staticText>
-				<reportElement x="148" y="11" width="259" height="30" forecolor="#FFFFFF" uuid="47375ad5-c541-49d7-a34f-a064b07e0ceb"/>
+				<reportElement x="22" y="11" width="503" height="30" forecolor="#FFFFFF" uuid="47375ad5-c541-49d7-a34f-a064b07e0ceb"/>
 				<textElement textAlignment="Center">
 					<font size="20" isBold="true"/>
 				</textElement>
-				<text><![CDATA[BMS - Order Info Slip]]></text>
+				<text><![CDATA[HAIVY PASTRY SHOP - Order Info Slip]]></text>
 			</staticText>
 		</band>
 	</title>

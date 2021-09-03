@@ -68,7 +68,7 @@ public class SalarySchemeServices {
             psSalaryScheme.setFloat(2,salaryScheme.getbSSAmount());
             psSalaryScheme.setString(3, salaryScheme.getbSSAddedDate());
             psSalaryScheme.execute();
-            AlertPopUp.insertSuccesfully("Salary Scheme");
+            AlertPopUp.insertSuccessfully("Salary Scheme");
             resultval = true;
 
         } catch (SQLException ex) {
@@ -106,7 +106,7 @@ public class SalarySchemeServices {
             psSalaryScheme = conn.prepareStatement(BasicSalarySchemeQueries.DELETE_BASIC_SALARY_SCHEME_DATA_QUERY);
             psSalaryScheme.setInt(1, itemID);
             psSalaryScheme.executeUpdate();
-            AlertPopUp.deleteSuccesfull("Salary Scheme");
+            AlertPopUp.deleteSuccessful("Salary Scheme");
             resultVal = true;
 
         }catch (SQLException ex) {

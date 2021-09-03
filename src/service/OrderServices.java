@@ -171,7 +171,7 @@ public class OrderServices {
             psOrder.setString(13,order.getoStatus());
             psOrder.setString(14,order.getoProcessingStatus());
             psOrder.execute();
-            AlertPopUp.insertSuccesfully("Order");
+            AlertPopUp.insertSuccessfully("Order");
             resultval = true;
 
         } catch (SQLException ex) {
@@ -275,7 +275,7 @@ public class OrderServices {
             psOrder = conn.prepareStatement(OrderQueries.DELETE_ORDER_DATA_QUERY);
             psOrder.setInt(1, itemID);
             psOrder.executeUpdate();
-            AlertPopUp.deleteSuccesfull("Order");
+            AlertPopUp.deleteSuccessful("Order");
             resultVal = true;
 
         }catch (SQLException ex) {

@@ -55,7 +55,7 @@ public class EmployeeServices {
             psEmployee.setLong(9, employee.geteAccNo());
             psEmployee.setInt(10, UtilityMethod.seperateID(employee.geteBSSID()));
             psEmployee.execute();
-            AlertPopUp.insertSuccesfully("Employee Info");
+            AlertPopUp.insertSuccessfully("Employee Info");
             resultval = true;
 
         } catch (SQLException ex) {
@@ -100,7 +100,7 @@ public class EmployeeServices {
             psEmployee = conn.prepareStatement(EmployeeQueries.DELETE_EMPLOYEE_DATA_QUERY);
             psEmployee.setInt(1, itemID);
             psEmployee.executeUpdate();
-            AlertPopUp.deleteSuccesfull("Employee Info");
+            AlertPopUp.deleteSuccessful("Employee Info");
             resultVal = true;
 
         }catch (SQLException ex) {

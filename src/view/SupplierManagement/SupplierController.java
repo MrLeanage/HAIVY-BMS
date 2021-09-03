@@ -313,8 +313,6 @@ public class SupplierController implements Initializable {
 
             clearLabels();
         }catch(Exception ex){
-            AlertPopUp.generalError(ex);
-
         }
     }
     @FXML

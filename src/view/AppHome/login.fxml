@@ -68,7 +68,7 @@
                      </cursor>
                   </JFXButton>
                   <Label fx:id="LoginValidateLabel" layoutX="190.0" layoutY="372.0" prefHeight="17.0" prefWidth="357.0" textFill="RED" />
-                  <Button layoutX="647.0" layoutY="442.0" mnemonicParsing="false" onAction="#fillData" text="Fill Data" />
+                  <Button layoutX="647.0" layoutY="442.0" mnemonicParsing="false" onAction="#fillData" text="Fill Data" visible="false" />
                   <Circle fill="#ffffff00" layoutX="380.0" layoutY="95.0" radius="66.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="5.0" />
                </children>
             </AnchorPane>

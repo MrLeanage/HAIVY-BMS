@@ -101,7 +101,7 @@
                   </JFXButton>
                   <TextField fx:id="INameTextBox" editable="false" layoutX="898.0" layoutY="330.0" prefHeight="25.0" prefWidth="200.0" AnchorPane.rightAnchor="47.0" />
                   <TextField fx:id="IIDTextBox" editable="false" layoutX="898.0" layoutY="297.0" prefHeight="25.0" prefWidth="200.0" AnchorPane.rightAnchor="47.0" />
-                  <FontAwesomeIconView glyphName="SEARCH" layoutX="1077.0" layoutY="26.0" size="20" text="" />
+                  <FontAwesomeIconView glyphName="SEARCH" layoutX="1108.0" layoutY="24.0" size="20" text="" />
                   <TableView fx:id="ItemTable" layoutX="635.0" layoutY="36.0" onMouseClicked="#loadSelectedData" onMousePressed="#loadSelectedDataModel" prefHeight="245.0" prefWidth="472.0" AnchorPane.leftAnchor="635.0" AnchorPane.rightAnchor="13.0">
                      <columns>
                         <TableColumn fx:id="IIDColumn" prefWidth="75.0" text="ID" />
